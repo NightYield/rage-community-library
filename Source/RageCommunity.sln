@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RageCommunity.Library", "RageCommunity.Library\RageCommunity.Library.csproj", "{32AFFBFA-7F54-46F1-8B0A-F57F4C91BF74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32AFFBFA-7F54-46F1-8B0A-F57F4C91BF74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32AFFBFA-7F54-46F1-8B0A-F57F4C91BF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32AFFBFA-7F54-46F1-8B0A-F57F4C91BF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32AFFBFA-7F54-46F1-8B0A-F57F4C91BF74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2CF6618-ACA8-4A53-A1F3-14FFBC5B7709}
+	EndGlobalSection
+EndGlobal
