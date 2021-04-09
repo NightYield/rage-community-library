@@ -9,7 +9,7 @@ namespace RageCommunity.Library.Wrappers
 {
     class NativeWrappers
     {
-        internal static bool GetRoadsidePointWithHeading(Vector3 position, float heading, out Vector3 roadSidePosition)
+        public static bool GetRoadsidePointWithHeading(Vector3 position, float heading, out Vector3 roadSidePosition)
         {
             bool getRoadSidePointWithHeading = Rage.Native.NativeFunction.Natives.xA0F8A7517A273C05<bool>(position, heading, out Vector3 roadSidePointWithHeading);
             roadSidePosition = roadSidePointWithHeading;
