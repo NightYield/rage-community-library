@@ -1,7 +1,7 @@
 ﻿using System;
 using Rage;
-using Rage.Native;
 using RageCommunity.Library.Pathfinding;
+using RageCommunity.Library.Wrappers;
 
 namespace RageCommunity.Library.Extensions
 {
@@ -9,9 +9,11 @@ namespace RageCommunity.Library.Extensions
     {
         public static VehicleNode GetClosestVehicleNode(this Vector3 position)
         {
-            Boolean nodePropertiesAreValid = NativeFunction.Natives.GET_VEHICLE_NODE_PROPERTIES<Boolean>(position.X, position.Y, position.Z, out UInt32 density, out Int32 flags);
-            Boolean nodeIsValid = NativeFunction.Natives.GetClosestVehicleNodeWithHeading<Boolean>(position.X, position.Y, position.Z, out Vector3 nodePosition, out Single outHeading, 1, 3, 0);
-            return new VehicleNode(nodePosition, outHeading, density, flags);
+            bool nodePropertiesAreValid = NativeWrappers.GetVehicleNodeProperties(position, out uint density, out int flags);
+            bool nodeIsValid = NativeWrappers.GetClosestVehicleNodeWithHeading(position, out Vector3 nodePosition, out float nodeHeading);
+            bool roadSidePoint = NativeWrappers.GetRoadsidePointWithHeading(nodePosition, nodeHeading, out Vector3 roadSidePosition);
+
+            return new VehicleNode(nodePosition, nodeHeading, density, flags, roadSidePosition);
         }
     }
 }
