@@ -14,6 +14,9 @@ namespace RageCommunity.Library.Pathfinding
             
             NodeFlagsNativeValue = nodeFlagsNativeValue;
             NodeFlags = (VehicleNodeFlags)NodeFlagsNativeValue;
+
+            Wrappers.NativeWrappers.GetRoadsidePointWithHeading(Position, heading, out Vector3 roadSidePosition);
+            RoadSidePosition = roadSidePosition;
         }
 
         /// <summary>
@@ -40,6 +43,11 @@ namespace RageCommunity.Library.Pathfinding
         /// Position of the this node.
         /// </summary>
         public Vector3 Position { get; set; }
+
+        /// <summary>
+        /// The roadside position of the this node.
+        /// </summary>
+        public Vector3 RoadSidePosition { get; private set; }
 
         /// <summary>
         /// Returns a boolean indicating if the node flag for the given index is true. 
