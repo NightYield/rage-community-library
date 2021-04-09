@@ -6,6 +6,8 @@ A shared library for all "RAGE Plugin Hook" plugin developers. The goal of this 
 
 Open source projects depend on contributions. If you are a GTA5 mod developer and feel like you have something to share, do it! Please add your code, create a pull-request and help us to extend this library. We all can benefit from sharing our knowledge, to enable other devs to create new and exciting projects that can be enjoyed by everyone. 
 
+Contributions can be done in the way you prefer, in general I suggest the GitHUb flow https://guides.github.com/introduction/flow/
+
 # Code Style
 No specific code style will be enforced on this project, but there are some basic concepts everyone should stick to when contributing. 
 * Use PascalCasing for public classes and methods
