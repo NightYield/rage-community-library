@@ -48,7 +48,7 @@ namespace RageCommunity.Library.Pathfinding
         /// <summary>
         /// The roadside position of the this node.
         /// </summary>
-        public Vector3 RoadSidePosition { get; private set; }
+        public Vector3 RoadSidePosition { get; set; }
 
 
         /// <summary>
