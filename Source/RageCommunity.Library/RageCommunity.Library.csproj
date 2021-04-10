@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,10 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\VectorExtensions.cs" />
-    <Compile Include="Graphics\CheckpointHelper.cs" />
+    <Compile Include="Graphics\Checkpoint.cs" />
+    <Compile Include="Graphics\SimpleCheckpointHelper.cs" />
     <Compile Include="Pathfinding\VehicleNode.cs" />
     <Compile Include="Pathfinding\VehicleNodeFlags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wrappers\NativeGraphicsWrappers.cs" />
+    <Compile Include="Wrappers\NativeWrappers.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
