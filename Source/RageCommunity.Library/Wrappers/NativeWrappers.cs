@@ -1,14 +1,9 @@
 ﻿using Rage;
 using Rage.Native;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RageCommunity.Library.Wrappers
 {
-    public static class NativeWrappers
+    public static partial class NativeWrappers
     {
         /// <summary>
         /// Gets the roadside position of a given road node.
