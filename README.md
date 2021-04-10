@@ -11,8 +11,9 @@ Contributions can be done in the way you prefer, in general I suggest the GitHUb
 # Code Style
 No specific code style will be enforced on this project, but there are some basic concepts everyone should stick to when contributing. 
 * Use PascalCasing for public classes and methods
-* One class = One File (except for privat classes)
+* One class = One File (except for private classes)
 * Add a summary to give the reader more insights
+* Group classes according to their function and not by author
 * Try to stick with common GTA/Rage wording (for example based on Native DB). This will make it easier to look up related code and topics. 
 
 
