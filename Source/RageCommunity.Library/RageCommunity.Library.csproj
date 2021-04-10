@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="RagePluginHookSDK">
-      <HintPath>..\..\..\Gta Rage Sdk\RagePluginHookSDK.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Mod Stuff\Mod Development\Modding Resources\References\RagePluginHookSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,14 +47,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\PedExtensions.cs" />
     <Compile Include="Extensions\VectorExtensions.cs" />
+    <Compile Include="Extensions\VehicleExtensions.cs" />
     <Compile Include="Graphics\Checkpoint.cs" />
     <Compile Include="Graphics\SimpleCheckpointHelper.cs" />
     <Compile Include="Pathfinding\VehicleNode.cs" />
     <Compile Include="Pathfinding\VehicleNodeFlags.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wrappers\NativeAppWrappers.cs" />
+    <Compile Include="Wrappers\NativeAudioWrappers.cs" />
+    <Compile Include="Wrappers\NativeBrainWrappers.cs" />
+    <Compile Include="Wrappers\NativeCamWrappers.cs" />
+    <Compile Include="Wrappers\NativeClockWrappers.cs" />
+    <Compile Include="Wrappers\NativeCutsceneWrappers.cs" />
+    <Compile Include="Wrappers\NativeDatafileWrappers.cs" />
+    <Compile Include="Wrappers\NativeDecoratorWrappers.cs" />
+    <Compile Include="Wrappers\NativeDLCWrappers.cs" />
+    <Compile Include="Wrappers\NativeEntityWrappers.cs" />
+    <Compile Include="Wrappers\NativeEventWrappers.cs" />
+    <Compile Include="Wrappers\NativeFilesWrappers.cs" />
+    <Compile Include="Wrappers\NativeFireWrappers.cs" />
+    <Compile Include="Wrappers\NativeHUDWrappers.cs" />
+    <Compile Include="Wrappers\NativeInteriorWrappers.cs" />
+    <Compile Include="Wrappers\NativeItemSetWrappers.cs" />
+    <Compile Include="Wrappers\NativeLoadingScreenWrappers.cs" />
+    <Compile Include="Wrappers\NativeLocalizationWrappers.cs" />
+    <Compile Include="Wrappers\NativeZoneWrappers.cs" />
+    <Compile Include="Wrappers\NativeWeaponWrappers.cs" />
+    <Compile Include="Wrappers\NativeStreamingWrappers.cs" />
+    <Compile Include="Wrappers\NativeSocialClubWrappers.cs" />
+    <Compile Include="Wrappers\NativeScriptWrappers.cs" />
+    <Compile Include="Wrappers\NativeReplayWrappers.cs" />
+    <Compile Include="Wrappers\NativeRecordingWrappers.cs" />
+    <Compile Include="Wrappers\NativePhysicsWrappers.cs" />
+    <Compile Include="Wrappers\NativePadWrappers.cs" />
+    <Compile Include="Wrappers\NativeObjectWrappers.cs" />
+    <Compile Include="Wrappers\NativeNetShoppingWrappers.cs" />
+    <Compile Include="Wrappers\NativeMoneyWrappers.cs" />
+    <Compile Include="Wrappers\NativeSystemWrappers.cs" />
+    <Compile Include="Wrappers\NativeWaterWrappers.cs" />
+    <Compile Include="Wrappers\NativeVehicleWrappers.cs" />
+    <Compile Include="Wrappers\NativeTaskWrappers.cs" />
+    <Compile Include="Wrappers\NativeStatsWrappers.cs" />
+    <Compile Include="Wrappers\NativeShapetestWrappers.cs" />
+    <Compile Include="Wrappers\NativePlayerWrappers.cs" />
+    <Compile Include="Wrappers\NativePedWrappers.cs" />
+    <Compile Include="Wrappers\NativePathfindWrappers.cs" />
+    <Compile Include="Wrappers\NativeNetworkWrappers.cs" />
+    <Compile Include="Wrappers\NativeMobileWrappers.cs" />
+    <Compile Include="Wrappers\NativeMiscWrappers.cs" />
     <Compile Include="Wrappers\NativeGraphicsWrappers.cs" />
-    <Compile Include="Wrappers\NativeWrappers.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
