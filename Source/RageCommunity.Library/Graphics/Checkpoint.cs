@@ -60,8 +60,7 @@ namespace RageCommunity.Library.Graphics
         /// </summary>
         /// <remarks>
         /// Checkpoint type 47 for example is a simple cylinder with no arrow or number.
-        /// Visit the Grand Theft Auto V Native DB for a list of all checkpoint types.
-        /// https://nativedb.dotindustries.dev/natives?search=checkpoint
+        /// Visit the <a href="https://nativedb.dotindustries.dev/natives?search=checkpoint">Grand Theft Auto V Native DB</a> for a list of all checkpoint types.
         /// A set operation on this property will recreate the checkpoint.
         /// </remarks>
         public int CheckpointType
