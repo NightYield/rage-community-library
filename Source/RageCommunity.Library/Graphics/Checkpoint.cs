@@ -12,7 +12,7 @@ namespace RageCommunity.Library.Graphics
     /// <remarks>
     /// Originally created by PNWParksFan. 
     /// </remarks>
-    public class Checkpoint
+    public class Checkpoint : IDeletable, ISpatial
     {
         private readonly Boolean setToGround;
         private Color color;
