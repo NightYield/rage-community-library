@@ -1,5 +1,4 @@
-﻿using System;
-using Rage;
+﻿using Rage;
 using RageCommunity.Library.Pathfinding;
 using RageCommunity.Library.Wrappers;
 
