@@ -14,37 +14,40 @@ namespace RageCommunity.Library.Graphics
     /// </remarks>
     public class Checkpoint : IDeletable, ISpatial
     {
-        private readonly Boolean setToGround;
+        private readonly bool setToGround;
         private Color color;
-        private Single height;
+        private float height;
         private Vector3 nextPosition;
         private Vector3 position;
+        private float radius;
+        private int reserved;
+        private int checkpointType;
 
         public Checkpoint(Vector3 position,
                           Color color,
-                          Single radius = 1f,
-                          Single height = 1f,
-                          Int32 checkpointType = 47,
-                          Int32 reserved = 0,
-                          Boolean setZtoGround = true) : this(position, position, color, radius, height, checkpointType, reserved, setZtoGround)
+                          float radius = 1f,
+                          float height = 1f,
+                          int checkpointType = 47,
+                          int reserved = 0,
+                          bool setZtoGround = true) : this(position, position, color, radius, height, checkpointType, reserved, setZtoGround)
         {
         }
 
         public Checkpoint(Vector3 position,
                           Vector3 nextPosition,
                           Color color,
-                          Single radius,
-                          Single height,
-                          Int32 checkpointType = 0,
-                          Int32 reserved = 0,
-                          Boolean setZtoGround = true)
+                          float radius,
+                          float height,
+                          int checkpointType = 0,
+                          int reserved = 0,
+                          bool setZtoGround = true)
         {
-            CheckpointType = checkpointType;
+            this.checkpointType = checkpointType;
             this.position = position;
             this.nextPosition = nextPosition;
-            Radius = radius;
+            this.radius = radius;
             this.color = color;
-            Reserved = reserved;
+            this.reserved = reserved;
             this.setToGround = setZtoGround;
             this.height = height;
 
@@ -56,9 +59,19 @@ namespace RageCommunity.Library.Graphics
         /// </summary>
         /// <remarks>
         /// Checkpoint type 47 for example is a simple cylinder with no arrow or number.
-        /// Visit the Grand Theft Auto V Native DB for a list of all checkpoint types. 
+        /// Visit the Grand Theft Auto V Native DB for a list of all checkpoint types.
+        /// https://nativedb.dotindustries.dev/natives?search=checkpoint
+        /// A set operation on this property will recreate the checkpoint.
         /// </remarks>
-        public Int32 CheckpointType { get; }
+        public int CheckpointType
+        {
+            get => this.checkpointType;
+            set
+            {
+                this.checkpointType = value;
+                ReCreateCheckpoint();
+            }
+        }
 
         public Color Color
         {
@@ -73,9 +86,9 @@ namespace RageCommunity.Library.Graphics
         /// <summary>
         /// The ID of this checkpoint.
         /// </summary>
-        public Int32 Handle { get; private set; }
+        public int Handle { get; private set; }
 
-        public Single Height
+        public float Height
         {
             get => this.height;
             set
@@ -85,11 +98,14 @@ namespace RageCommunity.Library.Graphics
             }
         }
 
-        public Boolean IsValid { get; private set; }
+        public bool IsValid { get; private set; }
 
         /// <summary>
         /// The position of the checkpoint after this one. 
         /// </summary>
+        /// <remarks>
+        /// A set operation on this property will recreate the checkpoint.
+        /// </remarks>
         public Vector3 NextPosition
         {
             get => this.nextPosition;
@@ -100,6 +116,12 @@ namespace RageCommunity.Library.Graphics
             }
         }
 
+        /// <summary>
+        /// The position within the game. 
+        /// </summary>
+        /// <remarks>
+        /// A set operation on this property will recreate the checkpoint.
+        /// </remarks>
         public Vector3 Position
         {
             get => this.position;
@@ -110,14 +132,39 @@ namespace RageCommunity.Library.Graphics
             }
         }
 
-        public Single Radius { get; }
+        /// <summary>
+        /// The radius of this checkpoint instance.
+        /// </summary>
+        /// <remarks>
+        /// A set operation on this property will recreate the checkpoint.
+        /// </remarks>
+        public float Radius
+        {
+            get => this.radius;
+            set
+            {
+                this.radius = value;
+                ReCreateCheckpoint();
+            }
+        }
 
         /// <summary>
         /// Some <see cref="CheckpointType"/>s can display an icon or number. The number or icon can be set via this Reserved property. 
         /// </summary>
-        public Int32 Reserved { get; }
+        /// <remarks>
+        /// A set operation on this property will recreate the checkpoint.
+        /// </remarks>
+        public int Reserved
+        {
+            get => this.reserved;
+            set
+            {
+                this.reserved = value;
+                ReCreateCheckpoint();
+            }
+        }
 
-        public static implicit operator Boolean(Checkpoint checkpoint)
+        public static implicit operator bool(Checkpoint checkpoint)
         {
             return checkpoint != null && checkpoint.IsValid;
         }
@@ -126,38 +173,38 @@ namespace RageCommunity.Library.Graphics
         {
             if (IsValid)
             {
-                NativeFunction.CallByName<UInt32>("DELETE_CHECKPOINT", Handle);
+                NativeFunction.CallByName<uint>("DELETE_CHECKPOINT", Handle);
             }
 
             IsValid = false;
         }
 
-        public Single DistanceTo(ISpatial target)
+        public float DistanceTo(ISpatial target)
         {
             return Position.DistanceTo(target);
         }
 
-        public Single DistanceTo(Vector3 target)
+        public float DistanceTo(Vector3 target)
         {
             return Position.DistanceTo(target);
         }
 
-        public Single DistanceTo2D(Vector3 target)
+        public float DistanceTo2D(Vector3 target)
         {
             return Position.DistanceTo2D(target);
         }
 
-        public Single DistanceTo2D(ISpatial target)
+        public float DistanceTo2D(ISpatial target)
         {
             return Position.DistanceTo2D(target);
         }
 
-        public Single TravelDistanceTo(Vector3 target)
+        public float TravelDistanceTo(Vector3 target)
         {
             return Position.TravelDistanceTo(target);
         }
 
-        public Single TravelDistanceTo(ISpatial target)
+        public float TravelDistanceTo(ISpatial target)
         {
             return Position.TravelDistanceTo(target);
         }
@@ -172,7 +219,7 @@ namespace RageCommunity.Library.Graphics
 
             try
             {
-                Handle = NativeFunction.CallByName<Int32>("CREATE_CHECKPOINT",
+                Handle = NativeFunction.CallByName<int>("CREATE_CHECKPOINT",
                                                           CheckpointType,
                                                           checkpointPosition.X,
                                                           checkpointPosition.Y,
@@ -204,11 +251,11 @@ namespace RageCommunity.Library.Graphics
             CreateCheckpoint();
         }
 
-        private void SetHeight(Single near, Single far, Single radius)
+        private void SetHeight(float near, float far, float radius)
         {
             if (IsValid)
             {
-                NativeFunction.CallByName<UInt32>("SET_CHECKPOINT_CYLINDER_HEIGHT", Handle, near, far, radius);
+                NativeFunction.CallByName<uint>("SET_CHECKPOINT_CYLINDER_HEIGHT", Handle, near, far, radius);
             }
         }
 
@@ -216,7 +263,7 @@ namespace RageCommunity.Library.Graphics
         {
             if (IsValid)
             {
-                NativeFunction.CallByName<UInt32>("SET_CHECKPOINT_RGBA", newColor.R, newColor.G, newColor.B, newColor.A);
+                NativeFunction.CallByName<uint>("SET_CHECKPOINT_RGBA", newColor.R, newColor.G, newColor.B, newColor.A);
             }
         }
     }
