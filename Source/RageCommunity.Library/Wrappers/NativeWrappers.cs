@@ -3,7 +3,7 @@ using Rage.Native;
 
 namespace RageCommunity.Library.Wrappers
 {
-    public static class NativeWrappers
+    public static partial class NativeWrappers
     {
         /// <summary>
         /// Gets the roadside position of a given road node.

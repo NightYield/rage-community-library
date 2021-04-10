@@ -3,6 +3,7 @@ using System.Drawing;
 using Rage;
 using Rage.Native;
 using RageCommunity.Library.Extensions;
+using RageCommunity.Library.Wrappers;
 
 namespace RageCommunity.Library.Graphics
 {
@@ -219,22 +220,9 @@ namespace RageCommunity.Library.Graphics
 
             try
             {
-                Handle = NativeFunction.CallByName<int>("CREATE_CHECKPOINT",
-                                                          CheckpointType,
-                                                          checkpointPosition.X,
-                                                          checkpointPosition.Y,
-                                                          checkpointPosition.Z,
-                                                          NextPosition.X,
-                                                          NextPosition.Y,
-                                                          NextPosition.Z,
-                                                          Radius,
-                                                          this.color.R,
-                                                          this.color.G,
-                                                          this.color.B,
-                                                          this.color.A,
-                                                          Reserved);
-                IsValid = true;
+                Handle = NativeWrappers.CreateCheckpoint(CheckpointType, checkpointPosition, NextPosition, Radius, Color, Reserved);
                 SetHeight(Height, Height, Radius);
+                IsValid = true;
                 Game.LogTrivialDebug("Created checkpoint, handle = " + Handle);
             }
             catch (Exception e)
@@ -255,7 +243,7 @@ namespace RageCommunity.Library.Graphics
         {
             if (IsValid)
             {
-                NativeFunction.CallByName<uint>("SET_CHECKPOINT_CYLINDER_HEIGHT", Handle, near, far, radius);
+                NativeWrappers.SetCheckpointCylinderHeight(Handle, near, far, radius);
             }
         }
 
@@ -263,7 +251,7 @@ namespace RageCommunity.Library.Graphics
         {
             if (IsValid)
             {
-                NativeFunction.CallByName<uint>("SET_CHECKPOINT_RGBA", newColor.R, newColor.G, newColor.B, newColor.A);
+                NativeWrappers.SetCheckpointColor(Handle, newColor);
             }
         }
     }
