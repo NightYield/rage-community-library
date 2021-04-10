@@ -14,5 +14,16 @@ namespace RageCommunity.Library.Extensions
 
             return new VehicleNode(nodePosition, nodeHeading, density, flags, roadSidePosition);
         }
+
+        public static Vector3 HeightToGround(this Vector3 position)
+        {
+            var groundValue = World.GetGroundZ(position, false, false);
+            if (groundValue.HasValue)
+            {
+                return new Vector3(position.X, position.Y, groundValue.Value);
+            }
+
+            return position;
+        }
     }
 }

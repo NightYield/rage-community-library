@@ -4,7 +4,7 @@ using Rage.Native;
 
 namespace RageCommunity.Library.Graphics
 {
-    public static class CheckpointHelper
+    public static class SimpleCheckpointHelper
     {
         /// <summary>
         /// Creates a simple, circular checkpoint.
