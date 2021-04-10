@@ -1,4 +1,5 @@
-﻿using Rage;
+﻿using System;
+using Rage;
 using Rage.Native;
 
 namespace RageCommunity.Library.Wrappers
@@ -35,6 +36,17 @@ namespace RageCommunity.Library.Wrappers
             nodePosition = closestNodePosition;
             nodeHeading = closestNodeHeading;
             return getClosestPointOnRoadWithHeading;
+        }
+
+        /// <summary>
+        /// Gets the nth closest vehicle node with a heading.
+        /// </summary>
+        public static bool GetNthClosestVehicleNodeFavorDirection(Vector3 position, Vector3 desiredPosition, int nthClosest, out Vector3 nthClosestPointOnRoad, out float nthClosestPointHeading)
+        {
+            bool getNthClosestPoint = NativeFunction.Natives.x45905BE8654AE067<bool>(position, desiredPosition, nthClosest, out Vector3 outPosition, out float outHeading, 1, 3f, 0);
+            nthClosestPointOnRoad = outPosition;
+            nthClosestPointHeading = outHeading;
+            return getNthClosestPoint;
         }
     }
 }
