@@ -13,7 +13,7 @@ namespace RageCommunity.Library.Wrappers
         public static void StartVehicleHorn(Vehicle vehicle, int duration, bool heldDown, bool forever)
         {
             string mode = !heldDown ? "NORMAL" : "HELDDOWN";
-            NativeFunction.Natives.START_VEHICLE_HORN(vehicle, duration, heldDown, forever);
+            NativeFunction.Natives.START_VEHICLE_HORN(vehicle, duration, mode, forever);
         }
     }
 }
