@@ -17,6 +17,7 @@ namespace RageCommunity.Library.Wrappers
         /// <summary>
         /// Causes the given ped to face the specified entity for a duration (in ms).
         /// </summary>
+        /// <param name="duration">In miliseconds (-1 is infinite)</param>
         public static void TaskTurnPedToFaceEntity(Ped ped, Entity entity, int duration)
         {
             NativeFunction.Natives.TASK_TURN_PED_TO_FACE_ENTITY(ped, entity, duration);
