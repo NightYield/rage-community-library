@@ -9,10 +9,11 @@ namespace RageCommunity.Library.Wrappers
         /// <summary>
         /// Causes the given vehicle to honk it's horn for a specified duration in seconds.
         /// </summary>
-        /// /// <param name="mode">"NORMAL" or "HELDDOWN"</param>
-        public static void StartVehicleHorn(Vehicle vehicle, int duration, string mode, bool forever)
+        /// /// <param name="heldDown">Whether the horn will be held down or honked normally</param>
+        public static void StartVehicleHorn(Vehicle vehicle, int duration, bool heldDown, bool forever)
         {
-            NativeFunction.Natives.START_VEHICLE_HORN(vehicle, duration, mode, forever);
+            string mode = !heldDown ? "NORMAL" : "HELDDOWN";
+            NativeFunction.Natives.START_VEHICLE_HORN(vehicle, duration, heldDown, forever);
         }
     }
 }

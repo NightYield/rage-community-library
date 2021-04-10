@@ -11,7 +11,7 @@ namespace RageCommunity.Library.Wrappers
         /// </summary>
         public static void TaskStartScenarioInPlace(Ped ped, string scenarioName, int unkDelay = 0, bool playEnterAnimation = true)
         {
-            NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(ped, scenarioName, 0, playEnterAnimation);
+            NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(ped, scenarioName, unkDelay, playEnterAnimation);
         }
 
         /// <summary>
