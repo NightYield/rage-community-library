@@ -28,7 +28,12 @@ namespace RageCommunity.Library.Wrappers
 
         public static int CreateCheckpoint(Int32 checkpointType, Vector3 position, Vector3 nextPosition, Single radius, Color color, Int32 reserved)
         {
-            return NativeFunction.Natives.CREATE_CHECKPOINT<Int32>(checkpointType, position.X, position.Y, position.Z, nextPosition.X, nextPosition.Y, nextPosition.Z, radius, color.R, color.G, color.B, color.A, reserved);
+            return CreateCheckpoint(checkpointType, position, nextPosition, radius, color.R, color.G, color.B, color.A, reserved); 
+        }
+
+        public static int CreateCheckpoint(Int32 checkpointType, Vector3 position, Vector3 nextPosition, Single radius, Byte red, Byte green, Byte blue, Byte alpha, Int32 reserved)
+        {
+            return NativeFunction.Natives.CREATE_CHECKPOINT<Int32>(checkpointType, position.X, position.Y, position.Z, nextPosition.X, nextPosition.Y, nextPosition.Z, radius, red, green, blue, alpha, reserved);
         }
 
         public static void DeleteCheckpoint(Int32 handle)

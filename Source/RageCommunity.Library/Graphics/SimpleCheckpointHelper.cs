@@ -22,7 +22,7 @@ namespace RageCommunity.Library.Graphics
         /// <returns>Returns the ID for the created checkpoint. The ID can be used to delete the checkpoint later on.</returns>
         public static Int32 Create(Vector3 position, Single radius, Byte red, Byte green, Byte blue, Byte alpha, Single height)
         {
-            var id = NativeWrappers.CreateCheckpoint(47, position, position, radius, red, green, blue, alpha, height);
+            var id = NativeWrappers.CreateCheckpoint(47, position, position, radius, red, green, blue, alpha, 0);
             NativeWrappers.SetCheckpointCylinderHeight(id, height, height, radius);
             return id;
         }
