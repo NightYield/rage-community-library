@@ -6,7 +6,7 @@ namespace RageCommunity.Library.Pathfinding
 {
     public class VehicleNode
     {
-        public VehicleNode(Vector3 position, Single heading, UInt32 density, Int32 nodeFlagsNativeValue)
+        public VehicleNode(Vector3 position, float heading, uint density, int nodeFlagsNativeValue, Vector3 roadSidePosition)
         {
             Position = position;
             Density = density;
@@ -14,6 +14,8 @@ namespace RageCommunity.Library.Pathfinding
             
             NodeFlagsNativeValue = nodeFlagsNativeValue;
             NodeFlags = (VehicleNodeFlags)NodeFlagsNativeValue;
+
+            RoadSidePosition = roadSidePosition;
         }
 
         /// <summary>
@@ -40,6 +42,11 @@ namespace RageCommunity.Library.Pathfinding
         /// Position of the this node.
         /// </summary>
         public Vector3 Position { get; set; }
+
+        /// <summary>
+        /// The roadside position of the this node.
+        /// </summary>
+        public Vector3 RoadSidePosition { get; set; }
 
         /// <summary>
         /// Returns a boolean indicating if the node flag for the given index is true. 
