@@ -14,7 +14,7 @@ namespace RageCommunity.Library.Wrappers
         /// </returns>
         public static Boolean GetClosestFirePosition(out Vector3 foundFirePosition, Vector3 searchPosition)
         {
-            return NativeFunction.Natives.x352A9F6BCF90081F<Boolean>(out foundFirePosition, searchPosition.X, searchPosition.Y, searchPosition.Z); 
+            return NativeFunction.Natives.x352A9F6BCF90081F<Boolean>(out foundFirePosition, searchPosition); 
         }
     }
 }
