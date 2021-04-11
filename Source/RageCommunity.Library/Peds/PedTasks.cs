@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RageCommunity.Library.Peds
+﻿namespace RageCommunity.Library.Peds
 {
 	/// <summary>
 	/// Courtesy of <a href="https://alloc8or.re/gta5/doc/enums/eTaskTypeIndex.txt">Alloc8or.re</a>
