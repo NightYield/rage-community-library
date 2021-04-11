@@ -22,5 +22,14 @@ namespace RageCommunity.Library.Wrappers
         {
             NativeFunction.Natives.TASK_TURN_PED_TO_FACE_ENTITY(ped, entity, duration);
         }
+
+        /// <summary>
+        /// Causes the given ped to shoot at the specified target ped.
+        /// </summary>
+        /// <param name="unknown">Unknown parameter, default 0</param>
+        public static void TaskVehicleShootAtPed(Ped ped, Ped target, float unknown = 0)
+        {
+            NativeFunction.Natives.x10AB107B887214D8(ped, target, unknown);
+        }
     }
 }
