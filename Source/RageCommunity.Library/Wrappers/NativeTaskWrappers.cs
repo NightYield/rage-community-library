@@ -24,7 +24,7 @@ namespace RageCommunity.Library.Wrappers
         }
 
         /// <summary>
-        /// Causes this ped to shoot from a vehicle at the specified <paramref name="target"/> ped.
+        /// Causes this ped to shoot from a vehicle at the specified <paramref name="target"/> ped. (e.g. drive-bys)
         /// </summary>
         /// <param name="unknown">Unknown parameter, default 0</param>
         public static void TaskVehicleShootAtPed(Ped ped, Ped target, float unknown = 0)
