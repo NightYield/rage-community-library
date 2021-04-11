@@ -9,6 +9,6 @@ namespace RageCommunity.Library.Extensions
         /// <summary>
         /// Makes this vehicle honk it's horn for the given <paramref name="duration"/> (in ms).
         /// </summary>
-        internal static void HonkHorn(this Vehicle vehicle, int duration, bool heldDown = false, bool forever = false) => NativeWrappers.StartVehicleHorn(vehicle, duration, heldDown, forever);
+        public static void HonkHorn(this Vehicle vehicle, int duration, bool heldDown = false, bool forever = false) => NativeWrappers.StartVehicleHorn(vehicle, duration, heldDown, forever);
     }
 }
