@@ -13,5 +13,16 @@ namespace RageCommunity.Library.Wrappers
         {
             return NativeFunction.Natives.IS_ENTITY_PLAYING_ANIM<bool>(entity, animationDictionary, animationName, 3);
         }
+
+        /// <summary>
+        /// Sets the max speed of the given entity.
+        /// </summary>
+        /// <remarks>
+        /// Animations may become out of sync if speed is adjusted too much (e.g., running)
+        /// </remarks>
+        public static void SetEntityMaxSpeed(Entity entity, float speed)
+        {
+            NativeFunction.Natives.SET_ENTITY_MAX_SPEED(entity, speed);
+        }
     }
 }

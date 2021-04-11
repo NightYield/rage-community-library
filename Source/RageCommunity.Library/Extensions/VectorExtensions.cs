@@ -8,7 +8,7 @@ namespace RageCommunity.Library.Extensions
     public static class VectorExtensions
     {
         /// <summary>
-        /// Gets the vehicle node closest to a given position and creates a new VehicleNode object.
+        /// Gets the vehicle node closest to this position and creates a new VehicleNode object.
         /// </summary>
         public static VehicleNode GetClosestVehicleNode(this Vector3 position)
         {
@@ -20,7 +20,7 @@ namespace RageCommunity.Library.Extensions
         }
 
         /// <summary>
-        /// Gets the height to the ground from a given position.
+        /// Gets the height to the ground from this position.
         /// </summary>
         public static Vector3 HeightToGround(this Vector3 position)
         {
@@ -34,7 +34,7 @@ namespace RageCommunity.Library.Extensions
         }
 
         /// <summary>
-        /// Gets an offset position from the current position in the given heading direction by a given offset amount.
+        /// Gets an offset position from this position in the given <paramref name="heading"/> direction by a given <paramref name="offset"/> amount.
         /// </summary>
         /// <remarks>
         /// Written by alexguirre. 
