@@ -33,8 +33,8 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RagePluginHookSDK">
-      <HintPath>..\..\..\..\..\Desktop\Mod Stuff\Mod Development\Modding Resources\References\RagePluginHookSDK.dll</HintPath>
+    <Reference Include="RagePluginHook, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\RagePluginHook.1.86.1\lib\net472\RagePluginHook.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -99,6 +99,8 @@
     <Compile Include="Wrappers\NativeMiscWrappers.cs" />
     <Compile Include="Wrappers\NativeGraphicsWrappers.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
