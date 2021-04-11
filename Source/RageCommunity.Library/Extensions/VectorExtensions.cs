@@ -34,12 +34,12 @@ namespace RageCommunity.Library.Extensions
         }
 
         /// <summary>
-        /// Gets an offset position from the current position by a given heading.
+        /// Gets an offset position from the current position in the given heading direction by a given offset amount.
         /// </summary>
         /// <remarks>
         /// Written by alexguirre. 
         /// </remarks>
-        internal static Vector3 GetOffset(this Vector3 from, float heading, Vector3 offset)
+        public static Vector3 GetOffset(this Vector3 from, float heading, Vector3 offset)
         {
             float radians = MathHelper.ConvertDegreesToRadians(heading);
 
