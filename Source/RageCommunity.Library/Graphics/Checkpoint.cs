@@ -173,7 +173,7 @@ namespace RageCommunity.Library.Graphics
         {
             if (IsValid)
             {
-                NativeFunction.CallByName<uint>("DELETE_CHECKPOINT", Handle);
+                NativeWrappers.DeleteCheckpoint(Handle);
             }
 
             IsValid = false;
