@@ -16,7 +16,7 @@ namespace RageCommunity.Library.Extensions
         public static void FaceEntity(this Ped ped, Entity entity, int duration) => NativeWrappers.TaskTurnPedToFaceEntity(ped, entity, duration);
 
         /// <summary>
-        /// Causes this ped to shoot at the specified <paramref name="target"/> ped.
+        /// Causes this ped to shoot from a vehicle at the specified <paramref name="target"/> ped.
         /// </summary>
         /// <param name="unknown">Unknown parameter, default 0</param>
         public static void ShootFromVehicle(this Ped ped, Ped target, float unknown = 0) => NativeWrappers.TaskVehicleShootAtPed(ped, target, unknown);
