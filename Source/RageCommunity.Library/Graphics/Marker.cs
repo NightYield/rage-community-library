@@ -4,6 +4,13 @@ using System.Drawing;
 
 namespace RageCommunity.Library.Graphics
 {
+    /// <summary>
+    /// This class represents a 3D world marker within GTA V (for example, colored cylinders you walk into during missions).
+    /// </summary>
+    /// <remarks>
+    /// Originally created by Rich. 
+    /// </remarks>
+    
     public class Marker : ISpatial
     {
         public MarkerTypes MarkerType { get; set; }
