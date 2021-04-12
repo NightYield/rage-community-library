@@ -75,15 +75,7 @@ namespace RageCommunity.Library.Wrappers
         /// </remarks>
         public static void DrawMarker(MarkerTypes type, Vector3 position, Vector3 direction, Vector3 rotation, Vector3 scale, Color color, bool bobUpAndDown, bool faceCamera, bool rotate, string textureDictionary, string textureName, bool drawOnEntities)
         {
-            try
-            {
-                NativeFunction.Natives.DRAW_MARKER((int)type, position, direction, rotation, scale, color.R, color.G, color.B, color.A, bobUpAndDown, faceCamera, 2, rotate, textureDictionary, textureName, drawOnEntities);
-            }
-            catch (Exception ex)
-            {
-                Game.LogTrivialDebug("Exception trying to draw marker: " + ex.Message);
-                Game.LogTrivialDebug(ex.StackTrace);
-            }
+            NativeFunction.Natives.DRAW_MARKER((int)type, position, direction, rotation, scale, color.R, color.G, color.B, color.A, bobUpAndDown, faceCamera, 2, rotate, textureDictionary, textureName, drawOnEntities);
         }
     }
 }
