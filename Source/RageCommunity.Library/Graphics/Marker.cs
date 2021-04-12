@@ -73,7 +73,15 @@ namespace RageCommunity.Library.Graphics
         {
             if(!string.IsNullOrWhiteSpace(TextureName) && !string.IsNullOrWhiteSpace(TextureDictionary))
             {
-                NativeWrappers.DrawMarker(MarkerType, Position, Direction, Rotation, Scale, MarkerColor, BobUpAndDown, FaceCamera, Rotate, TextureDictionary, TextureName, DrawOnEntities);
+                try
+                {
+                    NativeWrappers.DrawMarker(MarkerType, Position, Direction, Rotation, Scale, MarkerColor, BobUpAndDown, FaceCamera, Rotate, TextureDictionary, TextureName, DrawOnEntities);
+                }
+                catch (Exception ex)
+                {
+                    Game.LogTrivialDebug("Exception trying to draw marker: " + ex.Message);
+                    Game.LogTrivialDebug(ex.StackTrace);
+                }
             }
             else
             {
