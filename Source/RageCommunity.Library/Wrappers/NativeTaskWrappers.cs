@@ -1,6 +1,7 @@
 ﻿using System;
 using Rage;
 using Rage.Native;
+using RageCommunity.Library.Task;
 
 namespace RageCommunity.Library.Wrappers
 {
@@ -9,7 +10,7 @@ namespace RageCommunity.Library.Wrappers
         /// <summary>
         /// Causes the given ped to start playing the specified scenario.  A list of scenarios can be found <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/scenariosCompact.json">here</a>.
         /// </summary>
-        public static void TaskStartScenarioInPlace(Ped ped, string scenarioName, int unkDelay = 0, bool playEnterAnimation = true)
+        public static void TaskStartScenarioInPlace(Ped ped, Scenarios scenarioName, int unkDelay = 0, bool playEnterAnimation = true)
         {
             NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(ped, scenarioName, unkDelay, playEnterAnimation);
         }
