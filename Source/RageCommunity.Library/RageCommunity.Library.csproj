@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Graphics\Marker.cs" />
+    <Compile Include="Graphics\MarkerTypes.cs" />
     <Compile Include="Peds\PedTasks.cs" />
     <Compile Include="Extensions\EntityExtensions.cs" />
     <Compile Include="Extensions\PedExtensions.cs" />
