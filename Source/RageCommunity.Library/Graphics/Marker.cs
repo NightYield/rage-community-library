@@ -1,9 +1,16 @@
 ﻿using Rage;
 using RageCommunity.Library.Wrappers;
+using System;
 using System.Drawing;
 
 namespace RageCommunity.Library.Graphics
 {
+    /// <summary>
+    /// This class represents a 3D world marker within GTA V (for example, colored cylinders you walk into during missions).
+    /// </summary>
+    /// <remarks>
+    /// Originally created by Rich. 
+    /// </remarks>
     public class Marker : ISpatial
     {
         public MarkerTypes MarkerType { get; set; }
@@ -73,7 +80,15 @@ namespace RageCommunity.Library.Graphics
         {
             if(!string.IsNullOrWhiteSpace(TextureName) && !string.IsNullOrWhiteSpace(TextureDictionary))
             {
-                NativeWrappers.DrawMarker(MarkerType, Position, Direction, Rotation, Scale, MarkerColor, BobUpAndDown, FaceCamera, Rotate, TextureDictionary, TextureName, DrawOnEntities);
+                try
+                {
+                    NativeWrappers.DrawMarker(MarkerType, Position, Direction, Rotation, Scale, MarkerColor, BobUpAndDown, FaceCamera, Rotate, TextureDictionary, TextureName, DrawOnEntities);
+                }
+                catch (Exception ex)
+                {
+                    Game.LogTrivialDebug("Exception trying to draw marker: " + ex.Message);
+                    Game.LogTrivialDebug(ex.StackTrace);
+                }
             }
             else
             {
