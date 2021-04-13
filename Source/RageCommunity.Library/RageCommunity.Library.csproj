@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\DefectNativeAttribute.cs" />
     <Compile Include="Peds\PedTasks.cs" />
     <Compile Include="Extensions\EntityExtensions.cs" />
     <Compile Include="Extensions\PedExtensions.cs" />
