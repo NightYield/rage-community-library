@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Rage;
 
-[assembly: Rage.Attributes.Plugin("Rage Community Library Test", Description = "A plugin to test the contents of the Rage Community Library.", Author = "NightYield and Contributors")]
+[assembly: Rage.Attributes.Plugin("Rage Community Library Test", Description = "A plugin to test the contents of the Rage Community Library.", Author = "NightYield and Contributors", PrefersSingleInstance = true)]
 namespace RageCommunity.Library.TestPlugin
 {
     public class EntryPoint
