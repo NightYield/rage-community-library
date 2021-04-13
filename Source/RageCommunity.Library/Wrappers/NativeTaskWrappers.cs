@@ -22,5 +22,25 @@ namespace RageCommunity.Library.Wrappers
         {
             NativeFunction.Natives.TASK_TURN_PED_TO_FACE_ENTITY(ped, entity, duration);
         }
+
+        /// <summary>
+        /// Causes this ped to shoot from a vehicle at the specified <paramref name="target"/> ped. (e.g. drive-bys)
+        /// </summary>
+        /// <param name="unknown">Unknown parameter, default 0</param>
+        public static void TaskVehicleShootAtPed(Ped ped, Ped target, float unknown = 0)
+        {
+            NativeFunction.Natives.x10AB107B887214D8(ped, target, unknown);
+        }
+
+        /// <summary>
+        /// Returns true if the specified task is active for the given ped.
+        /// </summary>
+        /// <remarks>
+        /// A list of task indexes can be found <a href="https://alloc8or.re/gta5/doc/enums/eTaskTypeIndex.txt">here</a>.
+        /// </remarks>
+        public static bool GetIsTaskActive(Ped ped, int taskIndex)
+        {
+            return NativeFunction.Natives.GET_IS_TASK_ACTIVE<bool>(ped, taskIndex);
+        }
     }
 }
