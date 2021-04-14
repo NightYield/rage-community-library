@@ -22,8 +22,6 @@ namespace RageCommunity.Library.Graphics
         public bool BobUpAndDown { get; set; }
         public bool FaceCamera { get; set; }
         public bool Rotate { get; set; }
-        public string TextureDictionary { get; set; }
-        public string TextureName { get; set; }
         public bool DrawOnEntities { get; set; }
 
         public Marker(MarkerType type, 
@@ -49,51 +47,9 @@ namespace RageCommunity.Library.Graphics
             DrawOnEntities = drawOnEntities;
         }
 
-        public Marker(MarkerType type,
-                    Vector3 position,
-                    Vector3 direction,
-                    Vector3 rotation,
-                    Vector3 scale,
-                    Color color,
-                    bool bobUpAndDown,
-                    bool faceCamera,
-                    bool rotate,
-                    string textureDictionary,
-                    string textureName,
-                    bool drawOnEntities)
-        {
-            MarkerType = type;
-            Position = position;
-            Direction = direction;
-            Rotation = rotation;
-            Scale = scale;
-            MarkerColor = color;
-            BobUpAndDown = bobUpAndDown;
-            FaceCamera = faceCamera;
-            Rotate = rotate;
-            TextureDictionary = textureDictionary;
-            TextureName = textureName;
-            DrawOnEntities = drawOnEntities;
-        }
-
         public void Draw()
         {
-            if(!string.IsNullOrWhiteSpace(TextureName) && !string.IsNullOrWhiteSpace(TextureDictionary))
-            {
-                try
-                {
-                    NativeWrappers.DrawMarker(MarkerType, Position, Direction, Rotation, Scale, MarkerColor, BobUpAndDown, FaceCamera, Rotate, TextureDictionary, TextureName, DrawOnEntities);
-                }
-                catch (Exception ex)
-                {
-                    Game.LogTrivialDebug("Exception trying to draw marker: " + ex.Message);
-                    Game.LogTrivialDebug(ex.StackTrace);
-                }
-            }
-            else
-            {
-                NativeWrappers.DrawMarker(MarkerType, Position, Direction, Rotation, Scale, MarkerColor, BobUpAndDown, FaceCamera, Rotate, DrawOnEntities);
-            }
+            NativeWrappers.DrawMarker(MarkerType, Position, Direction, Rotation, Scale, MarkerColor, BobUpAndDown, FaceCamera, Rotate, DrawOnEntities);
         }
 
         public float DistanceTo(ISpatial target)
