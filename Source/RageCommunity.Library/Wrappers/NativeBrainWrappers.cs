@@ -6,6 +6,6 @@ namespace RageCommunity.Library.Wrappers
 {
     public static partial class NativeWrappers
     {
-        
+
     }
 }
