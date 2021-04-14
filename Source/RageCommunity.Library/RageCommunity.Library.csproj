@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\DefectNativeAttribute.cs" />
     <Compile Include="Graphics\Marker.cs" />
     <Compile Include="Graphics\MarkerTypes.cs" />
     <Compile Include="Peds\PedTasks.cs" />
