@@ -25,17 +25,11 @@ namespace RageCommunity.Library.Extensions
         /// <summary>
         /// Causes this ped to start playing the specified scenario.
         /// </summary>
-        /// <remarks>
-        /// A list of scenarios can be found <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/scenariosCompact.json">here</a>.
-        /// </remarks>
         public static void StartScenarioInPlace(this Ped ped, Scenario scenario, int unkDelay = 0, bool playEnterAnimation = true) => NativeWrappers.TaskStartScenarioInPlace(ped, scenario, unkDelay, playEnterAnimation);
 
         /// <summary>
         /// Returns true if the specified task is active for this ped.
         /// </summary>
-        /// <remarks>
-        /// A list of task indexes can be found <a href="https://alloc8or.re/gta5/doc/enums/eTaskTypeIndex.txt">here</a>.
-        /// </remarks>
         public static bool IsTaskActive(this Ped ped, PedTask task) => NativeWrappers.GetIsTaskActive(ped, (int)task);
 
         /// <summary>
