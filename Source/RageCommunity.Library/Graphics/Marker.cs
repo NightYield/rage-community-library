@@ -11,7 +11,6 @@ namespace RageCommunity.Library.Graphics
     /// <remarks>
     /// Originally created by Rich. 
     /// </remarks>
-    
     public class Marker : ISpatial
     {
         public MarkerType MarkerType { get; set; }
