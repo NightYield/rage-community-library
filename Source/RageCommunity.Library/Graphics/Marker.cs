@@ -1,5 +1,6 @@
 ﻿using Rage;
 using RageCommunity.Library.Wrappers;
+using System;
 using System.Drawing;
 
 namespace RageCommunity.Library.Graphics
@@ -13,7 +14,7 @@ namespace RageCommunity.Library.Graphics
     
     public class Marker : ISpatial
     {
-        public MarkerTypes MarkerType { get; set; }
+        public MarkerType MarkerType { get; set; }
         public Vector3 Position { get; set; }
         public Vector3 Direction { get; set; }
         public Vector3 Rotation { get; set; }
@@ -26,7 +27,7 @@ namespace RageCommunity.Library.Graphics
         public string TextureName { get; set; }
         public bool DrawOnEntities { get; set; }
 
-        public Marker(MarkerTypes type, 
+        public Marker(MarkerType type, 
                     Vector3 position, 
                     Vector3 direction,
                     Vector3 rotation,
@@ -49,7 +50,7 @@ namespace RageCommunity.Library.Graphics
             DrawOnEntities = drawOnEntities;
         }
 
-        public Marker(MarkerTypes type,
+        public Marker(MarkerType type,
                     Vector3 position,
                     Vector3 direction,
                     Vector3 rotation,

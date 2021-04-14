@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RageCommunity.Library.Task
+﻿namespace RageCommunity.Library.Task
 {
-    public enum Scenarios
+    public enum Scenario
     { 
         Standing = 0,
         WORLD_HUMAN_AA_COFFEE = 1,
@@ -254,5 +248,4 @@ namespace RageCommunity.Library.Task
         EAR_TO_TEXT_FAT = 243,
         WORLD_LOOKAT_POINT = 244
     }
-
 }

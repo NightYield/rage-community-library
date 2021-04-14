@@ -28,7 +28,7 @@ namespace RageCommunity.Library.Extensions
         /// <remarks>
         /// A list of scenarios can be found <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/scenariosCompact.json">here</a>.
         /// </remarks>
-        public static void StartScenarioInPlace(this Ped ped, Scenarios scenarioName, int unkDelay = 0, bool playEnterAnimation = true) => NativeWrappers.TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnimation);
+        public static void StartScenarioInPlace(this Ped ped, Scenario scenario, int unkDelay = 0, bool playEnterAnimation = true) => NativeWrappers.TaskStartScenarioInPlace(ped, scenario, unkDelay, playEnterAnimation);
 
         /// <summary>
         /// Returns true if the specified task is active for this ped.
