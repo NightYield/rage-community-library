@@ -8,8 +8,11 @@ namespace RageCommunity.Library.Wrappers
     public static partial class NativeWrappers
     {
         /// <summary>
-        /// Causes the given ped to start playing the specified scenario.  A list of scenarios can be found <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/scenariosCompact.json">here</a>.
+        /// Causes the given ped to start playing the specified scenario.
         /// </summary>
+        /// <remarks>
+        /// A list of scenarios can be found <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/scenariosCompact.json">here</a>.
+        /// </remarks>
         public static void TaskStartScenarioInPlace(Ped ped, Scenario scenario, int unkDelay = 0, bool playEnterAnimation = true)
         {
             NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(ped, scenario, unkDelay, playEnterAnimation);

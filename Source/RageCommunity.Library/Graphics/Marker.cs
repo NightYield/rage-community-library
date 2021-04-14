@@ -24,7 +24,7 @@ namespace RageCommunity.Library.Graphics
         public bool Rotate { get; set; }
         public bool DrawOnEntities { get; set; }
 
-        public Marker(MarkerType type, 
+        public Marker(MarkerType markerType, 
                     Vector3 position, 
                     Vector3 direction,
                     Vector3 rotation,
@@ -35,7 +35,7 @@ namespace RageCommunity.Library.Graphics
                     bool rotate, 
                     bool drawOnEntities)
         {
-            MarkerType = type;
+            MarkerType = markerType;
             Position = position;
             Direction = direction;
             Rotation = rotation;
