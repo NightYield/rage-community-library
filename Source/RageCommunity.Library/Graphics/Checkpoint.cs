@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using Rage;
-using Rage.Native;
 using RageCommunity.Library.Extensions;
 using RageCommunity.Library.Wrappers;
 

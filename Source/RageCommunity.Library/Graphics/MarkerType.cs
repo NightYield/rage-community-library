@@ -1,6 +1,6 @@
 ﻿namespace RageCommunity.Library.Graphics
 {
-    public enum MarkerTypes
+    public enum MarkerType
     {
         UpsideDownCone = 0,
         VerticalCylinder = 1,

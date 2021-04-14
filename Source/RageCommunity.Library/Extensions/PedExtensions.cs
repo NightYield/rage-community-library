@@ -4,6 +4,7 @@ using RageCommunity.Library.Wrappers;
 using RageCommunity.Library.Peds;
 using System.Linq;
 using System.Collections.Generic;
+using RageCommunity.Library.Task;
 
 namespace RageCommunity.Library.Extensions
 {
@@ -27,7 +28,7 @@ namespace RageCommunity.Library.Extensions
         /// <remarks>
         /// A list of scenarios can be found <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/scenariosCompact.json">here</a>.
         /// </remarks>
-        public static void StartScenarioInPlace(this Ped ped, string scenarioName, int unkDelay = 0, bool playEnterAnimation = true) => NativeWrappers.TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnimation);
+        public static void StartScenarioInPlace(this Ped ped, Scenario scenario, int unkDelay = 0, bool playEnterAnimation = true) => NativeWrappers.TaskStartScenarioInPlace(ped, scenario, unkDelay, playEnterAnimation);
 
         /// <summary>
         /// Returns true if the specified task is active for this ped.
