@@ -26,7 +26,7 @@ namespace RageCommunity.Library.Graphics
         public string TextureName { get; set; }
         public bool DrawOnEntities { get; set; }
 
-        public Marker(MarkerType type, 
+        public Marker(MarkerType markerType, 
                     Vector3 position, 
                     Vector3 direction,
                     Vector3 rotation,
@@ -37,7 +37,7 @@ namespace RageCommunity.Library.Graphics
                     bool rotate, 
                     bool drawOnEntities)
         {
-            MarkerType = type;
+            MarkerType = markerType;
             Position = position;
             Direction = direction;
             Rotation = rotation;
@@ -49,7 +49,7 @@ namespace RageCommunity.Library.Graphics
             DrawOnEntities = drawOnEntities;
         }
 
-        public Marker(MarkerType type,
+        public Marker(MarkerType markerType,
                     Vector3 position,
                     Vector3 direction,
                     Vector3 rotation,
@@ -62,7 +62,7 @@ namespace RageCommunity.Library.Graphics
                     string textureName,
                     bool drawOnEntities)
         {
-            MarkerType = type;
+            MarkerType = markerType;
             Position = position;
             Direction = direction;
             Rotation = rotation;
