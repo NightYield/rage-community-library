@@ -2,6 +2,7 @@
 using System.Drawing;
 using Rage;
 using Rage.Native;
+using RageCommunity.Library.Graphics;
 
 namespace RageCommunity.Library.Wrappers
 {
@@ -56,11 +57,25 @@ namespace RageCommunity.Library.Wrappers
         }
 
         /// <summary>
-        /// When called in a loop, draws a marker with a <a href="https://nativedb.dotindustries.dev/natives?search=draw_mark">given type</a> at the specified position.
+        /// When called in a loop, draws a marker with a given marker type with the specified parameters.
         /// </summary>
-        public static void DrawMarker(int type, Vector3 position, float directionX, float directionY, float directionZ, float rotationX, float rotationY, float rotationZ, float scaleX, float scaleY, float scaleZ, int colorR, int colorG, int colorB, int alpha, bool bobUpAndDown, bool faceCamera, bool rotate, bool drawOnEntities)
+        /// <remarks>
+        /// A list of marker types can be found <a href="https://nativedb.dotindustries.dev/natives?search=draw_marker">on NativeDB</a>
+        /// </remarks>
+        public static void DrawMarker(MarkerType type, Vector3 position, Vector3 direction, Vector3 rotation, Vector3 scale, Color color, bool bobUpAndDown, bool faceCamera, bool rotate, bool drawOnEntities)
         {
-            NativeFunction.Natives.DRAW_MARKER(type, position, directionX, directionY, directionZ, rotationX, rotationY, rotationZ, scaleX, scaleY, scaleZ, colorR, colorG, colorB, alpha, bobUpAndDown, faceCamera, 2, rotate, 0, 0, drawOnEntities);
+            NativeFunction.Natives.DRAW_MARKER((int)type, position, direction, rotation, scale, color.R, color.G, color.B, color.A, bobUpAndDown, faceCamera, 2, rotate, 0, 0, drawOnEntities);
+        }
+
+        /// <summary>
+        /// When called in a loop, draws a marker with a given marker type with the specified parameters.
+        /// </summary>
+        /// <remarks>
+        /// A list of marker types can be found <a href="https://nativedb.dotindustries.dev/natives?search=draw_marker">on NativeDB</a>
+        /// </remarks>
+        public static void DrawMarker(MarkerType type, Vector3 position, Vector3 direction, Vector3 rotation, Vector3 scale, Color color, bool bobUpAndDown, bool faceCamera, bool rotate, string textureDictionary, string textureName, bool drawOnEntities)
+        {
+            NativeFunction.Natives.DRAW_MARKER((int)type, position, direction, rotation, scale, color.R, color.G, color.B, color.A, bobUpAndDown, faceCamera, 2, rotate, textureDictionary, textureName, drawOnEntities);
         }
     }
 }
