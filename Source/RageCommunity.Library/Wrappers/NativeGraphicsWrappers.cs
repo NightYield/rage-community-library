@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using Rage;
 using Rage.Native;
 using RageCommunity.Library.Graphics;
@@ -59,23 +58,9 @@ namespace RageCommunity.Library.Wrappers
         /// <summary>
         /// When called in a loop, draws a marker with a given marker type with the specified parameters.
         /// </summary>
-        /// <remarks>
-        /// A list of marker types can be found <a href="https://nativedb.dotindustries.dev/natives?search=draw_marker">on NativeDB</a>
-        /// </remarks>
         public static void DrawMarker(MarkerType type, Vector3 position, Vector3 direction, Vector3 rotation, Vector3 scale, Color color, bool bobUpAndDown, bool faceCamera, bool rotate, bool drawOnEntities)
         {
             NativeFunction.Natives.DRAW_MARKER((int)type, position, direction, rotation, scale, color.R, color.G, color.B, color.A, bobUpAndDown, faceCamera, 2, rotate, 0, 0, drawOnEntities);
-        }
-
-        /// <summary>
-        /// When called in a loop, draws a marker with a given marker type with the specified parameters.
-        /// </summary>
-        /// <remarks>
-        /// A list of marker types can be found <a href="https://nativedb.dotindustries.dev/natives?search=draw_marker">on NativeDB</a>
-        /// </remarks>
-        public static void DrawMarker(MarkerType type, Vector3 position, Vector3 direction, Vector3 rotation, Vector3 scale, Color color, bool bobUpAndDown, bool faceCamera, bool rotate, string textureDictionary, string textureName, bool drawOnEntities)
-        {
-            NativeFunction.Natives.DRAW_MARKER((int)type, position, direction, rotation, scale, color.R, color.G, color.B, color.A, bobUpAndDown, faceCamera, 2, rotate, textureDictionary, textureName, drawOnEntities);
         }
     }
 }
