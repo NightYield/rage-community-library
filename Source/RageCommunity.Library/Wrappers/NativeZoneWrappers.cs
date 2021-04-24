@@ -14,7 +14,7 @@ namespace RageCommunity.Library.Wrappers
         /// </remarks>
         public static String GetNameOfZone(Vector3 position)
         {
-            return NativeFunction.Natives.xCD90657D4C30E1CA<bool>(position);
+            return NativeFunction.Natives.xCD90657D4C30E1CA<String>(position);
         }
     }
 }

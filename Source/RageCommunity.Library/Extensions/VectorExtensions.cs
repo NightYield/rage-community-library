@@ -39,7 +39,8 @@ namespace RageCommunity.Library.Extensions
         /// </summary>
         public static String GetZoneName(this Vector3 position)
         {
-            var shortName = NativeWrappers.GetNameOfZone(position); 
+            var shortName = NativeWrappers.GetNameOfZone(position);
+            Game.LogTrivial(shortName); 
             return ZoneNameProvider.GetFullname(shortName);
         }
 

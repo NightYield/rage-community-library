@@ -12,7 +12,7 @@ namespace RageCommunity.Library.Zone
         /// Special thanks to DurtyFree for providing these names.
         /// https://github.com/DurtyFree/gta-v-data-dumps/blob/master/zones.json
         /// </remarks>
-        public static Dictionary<String, String> ZoneNameDictionary = new Dictionary<String, String>
+        public static Dictionary<String, String> ZoneNameDictionary = new Dictionary<String, String> (StringComparer.InvariantCultureIgnoreCase)
         {
             {"AirP", "Los Santos International Airport"},
             {"Alamo", "Alamo Sea"},
@@ -36,7 +36,6 @@ namespace RageCommunity.Library.Zone
             {"Cypre", "Cypress Flats"},
             {"Davis", "Davis"},
             {"Delbe", "Del Perro Beach"},
-            {"DeLBe", "Del Perro Beach"},
             {"DelPe", "Del Perro"},
             {"DelSol", "La Puerta"},
             {"Desrt", "Grand Senora Desert"},
@@ -60,7 +59,6 @@ namespace RageCommunity.Library.Zone
             {"Koreat", "Little Seoul"},
             {"LAct", "Land Act Reservoir"},
             {"Lago", "Lago Zancudo"},
-            {"LAGO", "Lago Zancudo"},
             {"LDam", "Land Act Dam"},
             {"LegSqu", "Legion Square"},
             {"LMesa", "La Mesa"},
@@ -76,7 +74,6 @@ namespace RageCommunity.Library.Zone
             {"Noose", "N.O.O.S.E"},
             {"Observ", "Galileo Observatory"},
             {"Oceana", "Pacific Ocean"},
-            {"OCEANA", "Pacific Ocean"},
             {"PalCov", "Paleto Cove"},
             {"Paleto", "Paleto Bay"},
             {"PalFor", "Paleto Forest"},
@@ -101,7 +98,6 @@ namespace RageCommunity.Library.Zone
             {"Termina", "Terminal"},
             {"TEXTI", "Textile City"},
             {"TongvaH", "Tongva Hills"},
-            {"TongVaH", "Tongva Hills"},
             {"TongvaV", "Tongva Valley"},
             {"VCana", "Vespucci Canals"},
             {"Vesp", "Vespucci"},

@@ -7,7 +7,7 @@ namespace RageCommunity.Library.TestPlugin
 {
     public static class Commands
     {
-        [ConsoleCommand("Test the native wrappers for vehicle horns.")]
+        [ConsoleCommand("Rage Community Library vehicle horn test")]
         public static void Command_RageLibraryHornTest()
         {
             if (!Game.LocalPlayer.Character.CurrentVehicle)
@@ -17,13 +17,10 @@ namespace RageCommunity.Library.TestPlugin
             }
         }
 
-        [ConsoleCommand("Test the native wrappers for vehicle horns.")]
+        [ConsoleCommand("Rage Community Library zone name test")]
         public static void Command_GetZoneNameForCurrentLocation()
         {
-            if (!Game.LocalPlayer.Character)
-            {
-                Game.LogTrivial($"The name of the current zone is: {Game.LocalPlayer.Character.Position.GetZoneName()}");
-            }
+            Game.LogTrivial($"The name of the current zone is: {Game.LocalPlayer.Character.Position.GetZoneName()}");
         }
     }
 }
