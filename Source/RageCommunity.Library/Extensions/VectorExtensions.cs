@@ -2,6 +2,7 @@
 using Rage;
 using RageCommunity.Library.Pathfinding;
 using RageCommunity.Library.Wrappers;
+using RageCommunity.Library.Zone;
 
 namespace RageCommunity.Library.Extensions
 {
@@ -31,6 +32,15 @@ namespace RageCommunity.Library.Extensions
             }
 
             return position;
+        }
+
+        /// <summary>
+        /// Gets the fullname for the zone on this position.
+        /// </summary>
+        public static String GetZoneName(this Vector3 position)
+        {
+            var shortName = NativeWrappers.GetNameOfZone(position); 
+            return ZoneNameProvider.GetFullname(shortName);
         }
 
         /// <summary>

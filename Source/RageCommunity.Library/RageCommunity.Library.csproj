@@ -104,6 +104,7 @@
     <Compile Include="Wrappers\NativeMobileWrappers.cs" />
     <Compile Include="Wrappers\NativeMiscWrappers.cs" />
     <Compile Include="Wrappers\NativeGraphicsWrappers.cs" />
+    <Compile Include="Zone\ZoneNameProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
