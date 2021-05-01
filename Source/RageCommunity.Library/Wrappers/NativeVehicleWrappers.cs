@@ -15,5 +15,24 @@ namespace RageCommunity.Library.Wrappers
             string mode = !heldDown ? "NORMAL" : "HELDDOWN";
             NativeFunction.Natives.START_VEHICLE_HORN(vehicle, duration, mode, forever);
         }
+        /// <summary>
+        /// get the label of model's display name label
+        /// use <see cref="GetLabelText(string)"/> to get the localized name
+        /// </summary>
+        /// <param name="modelHash"></param>
+        /// <returns>
+        /// Returns model name of vehicle in all caps. Returns "CARNOTFOUND" if the hash doesn't match a vehicle hash.
+        /// </returns>
+        public static string GetDisplayNameFromVehicleModel(uint modelHash) => NativeFunction.Natives.GET_DISPLAY_NAME_FROM_VEHICLE_MODEL<string>(modelHash);
+        /// <summary>
+        /// get the vehicle's manufacturer display label.
+        /// use <see cref="GetLabelText(string)"/> to get the localized name
+        /// </summary>
+        /// <param name="modelHash"></param>
+        /// <returns>
+        /// Will return a vehicle's manufacturer display label.
+        /// Returns "CARNOTFOUND" if the hash doesn't match a vehicle hash.
+        /// </returns>
+        public static string GetMakeNameFromVehicleModel(uint modelHash) => NativeFunction.Natives.xF7AF4F159FF99F97<string>(modelHash);
     }
 }

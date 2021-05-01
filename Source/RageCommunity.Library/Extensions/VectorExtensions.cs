@@ -62,5 +62,17 @@ namespace RageCommunity.Library.Extensions
 
             return new Vector3(from.X + resultX, from.Y + resultY, from.Z + offset.Z);
         }
+        /// <summary>
+        /// get a heading between two position
+        /// </summary>
+        /// <returns>return the heading</returns>
+        /// <remarks>
+        /// Source: <a href="http://answers.unity.com/answers/697834/view.html"></a>
+        /// </remarks>
+        public static float GetHeadingBetweenTwoVector(this Vector3 from, Vector3 to)
+        {
+            var direction = from - to;
+            return MathHelper.ConvertDirectionToHeading(direction.ToNormalized());
+        }
     }
 }

@@ -14,5 +14,9 @@ namespace RageCommunity.Library.Wrappers
         {
             NativeFunction.Natives.xA6294919E56FF02A(toggle);
         }
+        /// <summary>
+        /// Gets a string literal from a label name.
+        /// </summary>
+        public static string GetLabelText(string labelName) => NativeFunction.Natives.x7B5280EBA9840C72<string>(labelName);
     }
 }
