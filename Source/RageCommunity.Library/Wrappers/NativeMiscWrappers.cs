@@ -16,7 +16,7 @@ namespace RageCommunity.Library.Wrappers
         /// <param name="checkPeds">Check for any <see cref="Ped"/> in that area.</param>
         /// <param name="p7">unknown</param>
         /// <param name="p8">unknown</param>
-        /// <param name="ignoreEntity">This <see cref="Entity"/> will be ignored if it's in the area. Set to <c>0</c> if you don't want to exclude any <see cref="Entity"/>.</param>
+        /// <param name="ignoreEntity">This <see cref="Entity"/> will be ignored if it's in the area. Set to <c>null</c> if you don't want to exclude any <see cref="Entity"/>.</param>
         /// <param name="p10">unknown</param>
         /// <returns><c>true</c> if the <paramref name="position"/> given is empty, otherwise <c>false</c></returns>
         public static bool IsPositionOccupied(Vector3 position, float range, bool p4, bool checkVehicles, bool checkPeds, bool p7, bool p8, Entity ignoreEntity, bool p10)
