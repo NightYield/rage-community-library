@@ -34,5 +34,25 @@ namespace RageCommunity.Library.Extensions
         /// get the <see cref="Vehicle"/> manufacturer name
         /// </summary>
         public static string GetMakeName(this Vehicle vehicle) => GetMakeName(vehicle.Model);
+        /// <summary>
+        /// randomise the given <paramref name="vehicle"/> license plate
+        /// </summary>
+        /// <remarks>
+        /// Source: <a href="https://github.com/Albo1125/Albo1125-Common/blob/master/Albo1125.Common/CommonLibrary/ExtensionMethods.cs#L454"></a>
+        /// </remarks>
+        public static void RandomiseLicensePlate(this Vehicle vehicle)
+        {
+            if (vehicle)
+            {
+                vehicle.LicensePlate = MathHelper.GetRandomInteger(9).ToString() +
+                                       MathHelper.GetRandomInteger(9).ToString() +
+                                       Convert.ToChar(MathHelper.GetRandomInteger(0, 25) + 65) +
+                                       Convert.ToChar(MathHelper.GetRandomInteger(0, 25) + 65) +
+                                       Convert.ToChar(MathHelper.GetRandomInteger(0, 25) + 65) +
+                                       MathHelper.GetRandomInteger(9).ToString() +
+                                       MathHelper.GetRandomInteger(9).ToString() +
+                                       MathHelper.GetRandomInteger(9).ToString();
+            }
+        }
     }
 }
