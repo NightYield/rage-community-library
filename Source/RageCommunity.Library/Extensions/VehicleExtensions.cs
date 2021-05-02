@@ -7,24 +7,32 @@ namespace RageCommunity.Library.Extensions
     public static class VehicleExtensions
     {
         /// <summary>
-        /// Makes this vehicle honk it's horn for the given <paramref name="duration"/> (in ms).
+        /// Makes this <see cref="Vehicle"/> honk it's horn for the given <paramref name="duration"/> (in ms).
         /// </summary>
         public static void HonkHorn(this Vehicle vehicle, int duration, bool heldDown = false, bool forever = false) => NativeWrappers.StartVehicleHorn(vehicle, duration, heldDown, forever);
         /// <summary>
-        /// get the vehicle display name
+        /// get the <see cref="Vehicle"/> display name or the <see cref="Game"/> name
         /// </summary>
-        public static string GetDisplayName(this Vehicle vehicle)
+        public static string GetDisplayName(this Model vehicleModel)
         {
-            string labelName = NativeWrappers.GetDisplayNameFromVehicleModel(vehicle.Model.Hash);
+            string labelName = NativeWrappers.GetDisplayNameFromVehicleModel(vehicleModel.Hash);
             return NativeWrappers.GetLabelText(labelName);
         }
         /// <summary>
-        /// get the vehicle manufacturer name
+        /// get the <see cref="Vehicle"/> manufacturer name
         /// </summary>
-        public static string GetMakeName(this Vehicle vehicle)
+        public static string GetMakeName(this Model vehicleModel)
         {
-            string labelName = NativeWrappers.GetMakeNameFromVehicleModel(vehicle.Model.Hash);
+            string labelName = NativeWrappers.GetMakeNameFromVehicleModel(vehicleModel.Hash);
             return NativeWrappers.GetLabelText(labelName);
         }
+        /// <summary>
+        /// get the <see cref="Vehicle"/> display name or the <see cref="Game"/> name
+        /// </summary>
+        public static string GetDisplayName(this Vehicle vehicle) => GetDisplayName(vehicle.Model);
+        /// <summary>
+        /// get the <see cref="Vehicle"/> manufacturer name
+        /// </summary>
+        public static string GetMakeName(this Vehicle vehicle) => GetMakeName(vehicle.Model);
     }
 }

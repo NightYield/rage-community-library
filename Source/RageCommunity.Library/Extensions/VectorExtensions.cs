@@ -74,5 +74,23 @@ namespace RageCommunity.Library.Extensions
             var direction = from - to;
             return MathHelper.ConvertDirectionToHeading(direction.ToNormalized());
         }
+        /// <summary>
+        /// Determine whether the given <paramref name="position"/> is on screen, or visible by a rendering <see cref="Camera"/>
+        /// </summary>
+        /// <param name="position">The position to checks</param>
+        /// <param name="range">The range</param>
+        public static bool IsOccupied(this Vector3 position, float range) => IsOccupied(position, range, true, true, null);
+        /// <summary>
+        /// Determine whether the given <paramref name="position"/> is on screen, or visible by a rendering <see cref="Camera"/>
+        /// </summary>
+        /// <param name="position">The position to checks</param>
+        /// <param name="range">The range</param>
+        /// <param name="checkVehicles">Check for any <see cref="Vehicle"/> in that area.</param>
+        /// <param name="checkPeds">Check for any <see cref="Ped"/> in that area.</param>
+        /// <param name="ignoredEntity">This <see cref="Entity"/> will be ignored if it's in the area. Set to <c>null</c> if you don't want to exclude any <see cref="Entity"/>.</param>
+        public static bool IsOccupied(this Vector3 position, float range, bool checkVehicles, bool checkPeds, Entity ignoredEntity)
+        {
+            return NativeWrappers.IsPositionOccupied(position, range, false, checkVehicles, checkPeds, false, false, ignoredEntity, false);
+        }
     }
 }

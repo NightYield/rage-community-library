@@ -40,5 +40,12 @@ namespace RageCommunity.Library.Extensions
             var tasks = (PedTask[])Enum.GetValues(typeof(PedTask));
             return tasks.Where(t => ped.IsTaskActive(t)).ToList();
         }
+        /// <summary>
+        /// indicates whether this <paramref name="ped"/> can see the <paramref name="target"/> <see cref="Ped"/>
+        /// </summary>
+        public static bool CanSee(this Ped ped, Ped target)
+        {
+            return NativeWrappers.CanPedSeeHatedPed(ped, target);
+        }
     }
 }
