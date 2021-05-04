@@ -63,17 +63,26 @@ namespace RageCommunity.Library.Extensions
             return new Vector3(from.X + resultX, from.Y + resultY, from.Z + offset.Z);
         }
         /// <summary>
-        /// get a heading between two position
+        /// get heading toward a position
         /// </summary>
-        /// <returns>return the heading</returns>
+        /// <param name="from"></param>
+        /// <param name="otherVector">the <see cref="Vector3"/> to face to</param>
+        /// <returns>the heading toward a position</returns>
         /// <remarks>
         /// Source: <a href="http://answers.unity.com/answers/697834/view.html"></a>
         /// </remarks>
-        public static float GetHeadingBetweenTwoVector(this Vector3 from, Vector3 to)
+        public static float GetHeadingTowardsVector(this Vector3 from, Vector3 otherVector)
         {
-            var direction = from - to;
+            var direction = from - otherVector;
             return MathHelper.ConvertDirectionToHeading(direction.ToNormalized());
         }
+        /// <summary>
+        /// get heading towards an entity
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="entity">the <see cref="Entity"/> to face to</param>
+        /// <returns>the heading towards the given <paramref name="entity"/></returns>
+        public static float GetHeadingTowardsEntity(this Vector3 from, Entity entity) => GetHeadingTowardsVector(from, entity.Position);
         /// <summary>
         /// Determine whether the given <paramref name="position"/> is on screen, or visible by a rendering <see cref="Camera"/>
         /// </summary>
