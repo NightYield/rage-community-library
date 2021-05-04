@@ -1,6 +1,6 @@
-﻿using System;
-using Rage;
+﻿using Rage;
 using Rage.Native;
+using RageCommunity.Library.Vehicles;
 
 namespace RageCommunity.Library.Wrappers
 {
@@ -15,5 +15,41 @@ namespace RageCommunity.Library.Wrappers
             string mode = !heldDown ? "NORMAL" : "HELDDOWN";
             NativeFunction.Natives.START_VEHICLE_HORN(vehicle, duration, mode, forever);
         }
+
+        /// <summary>
+        /// Sets the state of the given vehicle's lights
+        /// </summary>
+        public static void SetVehicleLights(Vehicle vehicle, VehicleLightsState vehicleLightsState) => NativeFunction.Natives.SET_VEHICLE_LIGHTS(vehicle, (int)vehicleLightsState);
+
+        /// <summary>
+        /// Toggle's the given vehicle's brake lights on or off
+        /// </summary>
+        public static void SetVehicleBrakeLights(Vehicle vehicle, bool enabled) => NativeFunction.Natives.SET_VEHICLE_BRAKE_LIGHTS(vehicle, enabled);
+
+        /// <summary>
+        /// Applies an amount of <paramref name="damage"/> across a specified <paramref name="radius"/> to a <paramref name="position"/> relative to the vehicle's model.
+        /// </summary>
+        /// <remarks>
+        /// When <paramref name="focusOnModel"/> is set to `true`, the damage sphere will travel towards the vehicle from the given <paramref name="position"/>, thus guaranteeing an impact.
+        /// </remarks>
+        public static void SetVehicleDamage(Vehicle vehicle, Vector3 position, float damage, float radius, bool focusOnModel) => NativeFunction.Natives.SET_VEHICLE_DAMAGE(vehicle, position, damage, radius, focusOnModel);
+
+        /// <summary>
+        /// Fixes the specified window of a given vehicle.
+        /// </summary>
+        public static void FixVehicleWindow(Vehicle vehicle, Vehicles.VehicleWindow vehicleWindow) => NativeFunction.Natives.FIX_VEHICLE_WINDOW(vehicle, (int)vehicleWindow);
+
+        /// <summary>
+        /// Returns true if the given vehicle is damaged.
+        /// </summary>
+        public static bool IsVehicleDamaged(Vehicle vehicle) => NativeFunction.Natives.xBCDC5017D3CE1E9E<bool>(vehicle);
+
+        /// <summary>
+        /// Copies the damage from <paramref name="vehicle"/> to <paramref name="targetVehicle"/>
+        /// </summary>
+        /// <remarks>
+        /// Unlike SetVehicleDamage, there is no audio when the damage is applied.
+        /// </remarks>
+        public static void CopyVehicleDamages(Vehicle vehicle, Vehicle targetVehicle) => NativeFunction.Natives.xE44A982368A4AF23(vehicle, targetVehicle);
     }
 }
