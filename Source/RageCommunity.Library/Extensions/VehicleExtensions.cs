@@ -58,18 +58,20 @@ namespace RageCommunity.Library.Extensions
         /// Unlike SetVehicleDamage, there is no audio when the damage is applied.
         /// </remarks>
         public static void CopyVehicleDamages(this Vehicle vehicle, Vehicle targetVehicle) => NativeWrappers.CopyVehicleDamages(vehicle, targetVehicle);
-      
+
         /// <summary>
-        /// get the <see cref="Vehicle"/> display name or the <see cref="Game"/> name
+        /// get the vehicle <see cref="Model"/> display name or the <see cref="Game"/> name
         /// </summary>
+        /// <param name="vehicleModel">the <see cref="Model"/>. (must be a vehicle model)</param>
         public static string GetDisplayName(this Model vehicleModel)
         {
             string labelName = NativeWrappers.GetDisplayNameFromVehicleModel(vehicleModel.Hash);
             return NativeWrappers.GetLabelText(labelName);
         }
         /// <summary>
-        /// get the <see cref="Vehicle"/> manufacturer name
+        /// get the vehicle <see cref="Model"/> manufacturer name
         /// </summary>
+        /// <param name="vehicleModel">the <see cref="Model"/>. (must be a vehicle model)</param>
         public static string GetMakeName(this Model vehicleModel)
         {
             string labelName = NativeWrappers.GetMakeNameFromVehicleModel(vehicleModel.Hash);
@@ -78,10 +80,12 @@ namespace RageCommunity.Library.Extensions
         /// <summary>
         /// get the <see cref="Vehicle"/> display name or the <see cref="Game"/> name
         /// </summary>
+        /// <exception cref="Rage.Exceptions.InvalidHandleableException"></exception>
         public static string GetDisplayName(this Vehicle vehicle) => GetDisplayName(vehicle.Model);
         /// <summary>
         /// get the <see cref="Vehicle"/> manufacturer name
         /// </summary>
+        /// <exception cref="Rage.Exceptions.InvalidHandleableException"></exception>
         public static string GetMakeName(this Vehicle vehicle) => GetMakeName(vehicle.Model);
         /// <summary>
         /// randomise the given <paramref name="vehicle"/> license plate
