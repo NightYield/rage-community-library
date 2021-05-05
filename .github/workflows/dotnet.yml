@@ -15,7 +15,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     
-    - name: Setup MSBuild Path
+    - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.2
        
     - name: Setup NuGet
@@ -24,5 +24,5 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore Source/RageCommunity.sln
  
-    - name: Build and Publish Web App
+    - name: Build our Library
       run: msbuild Source/RageCommunity.sln /p:Configuration=Release
