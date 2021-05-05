@@ -43,7 +43,7 @@ namespace RageCommunity.Library.Extensions
         /// <summary>
         /// indicates whether this <paramref name="ped"/> can see the <paramref name="target"/> <see cref="Ped"/>
         /// </summary>
-        public static bool CanSee(this Ped ped, Ped target)
+        public static bool CanSeePed(this Ped ped, Ped target)
         {
             return NativeWrappers.CanPedSeeHatedPed(ped, target);
         }
