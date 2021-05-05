@@ -99,9 +99,9 @@ namespace RageCommunity.Library.Extensions
             {
                 vehicle.LicensePlate = MathHelper.GetRandomInteger(9).ToString() +
                                        MathHelper.GetRandomInteger(9).ToString() +
-                                       Convert.ToChar(MathHelper.GetRandomInteger(0, 25) + 65) +
-                                       Convert.ToChar(MathHelper.GetRandomInteger(0, 25) + 65) +
-                                       Convert.ToChar(MathHelper.GetRandomInteger(0, 25) + 65) +
+                                       Convert.ToChar(MathHelper.GetRandomInteger(65, 91)) +
+                                       Convert.ToChar(MathHelper.GetRandomInteger(65, 91)) +
+                                       Convert.ToChar(MathHelper.GetRandomInteger(65, 91)) +
                                        MathHelper.GetRandomInteger(9).ToString() +
                                        MathHelper.GetRandomInteger(9).ToString() +
                                        MathHelper.GetRandomInteger(9).ToString();
