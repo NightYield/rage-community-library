@@ -1,0 +1,28 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+       
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+     
+    - name: Restore NuGet Packages
+      run: nuget restore Source/RageCommunity.sln
+ 
+    - name: Build our Library
+      run: msbuild Source/RageCommunity.sln /p:Configuration=Release
