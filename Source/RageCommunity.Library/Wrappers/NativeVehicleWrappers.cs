@@ -51,5 +51,32 @@ namespace RageCommunity.Library.Wrappers
         /// Unlike SetVehicleDamage, there is no audio when the damage is applied.
         /// </remarks>
         public static void CopyVehicleDamages(Vehicle vehicle, Vehicle targetVehicle) => NativeFunction.Natives.xE44A982368A4AF23(vehicle, targetVehicle);
+      
+       /// <summary>
+        /// get the label of model's display name label
+        /// use <see cref="GetLabelText(string)"/> to get the localized name
+        /// </summary>
+        /// <param name="modelHash">the hash of the model (must be a vehicle model)</param>
+        /// <returns>
+        /// Returns model name of vehicle in all caps. Returns "CARNOTFOUND" if the hash doesn't match a vehicle hash.
+        /// </returns>
+        public static string GetDisplayNameFromVehicleModel(uint modelHash)
+        {
+            return NativeFunction.Natives.GET_DISPLAY_NAME_FROM_VEHICLE_MODEL<string>(modelHash);
+        }
+
+        /// <summary>
+        /// get the vehicle's manufacturer display label.
+        /// use <see cref="GetLabelText(string)"/> to get the localized name
+        /// </summary>
+        /// <param name="modelHash">the hash of the model (must be a vehicle model)</param>
+        /// <returns>
+        /// Will return a vehicle's manufacturer display label.
+        /// Returns "CARNOTFOUND" if the hash doesn't match a vehicle hash.
+        /// </returns>
+        public static string GetMakeNameFromVehicleModel(uint modelHash)
+        {
+            return NativeFunction.Natives.xF7AF4F159FF99F97<string>(modelHash);
+        }
     }
 }
