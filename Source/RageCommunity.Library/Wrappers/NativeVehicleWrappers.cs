@@ -53,7 +53,7 @@ namespace RageCommunity.Library.Wrappers
         public static void CopyVehicleDamages(Vehicle vehicle, Vehicle targetVehicle) => NativeFunction.Natives.xE44A982368A4AF23(vehicle, targetVehicle);
       
        /// <summary>
-        /// get the label of model's display name label
+        /// Get the label of model's display name label
         /// use <see cref="GetLabelText(string)"/> to get the localized name
         /// </summary>
         /// <param name="modelHash">the hash of the model (must be a vehicle model)</param>
@@ -66,10 +66,10 @@ namespace RageCommunity.Library.Wrappers
         }
 
         /// <summary>
-        /// get the vehicle's manufacturer display label.
+        /// Get the vehicle's manufacturer display label.
         /// use <see cref="GetLabelText(string)"/> to get the localized name
         /// </summary>
-        /// <param name="modelHash">the hash of the model (must be a vehicle model)</param>
+        /// <param name="modelHash">The hash of the model (must be a vehicle model)</param>
         /// <returns>
         /// Will return a vehicle's manufacturer display label.
         /// Returns "CARNOTFOUND" if the hash doesn't match a vehicle hash.
@@ -78,5 +78,19 @@ namespace RageCommunity.Library.Wrappers
         {
             return NativeFunction.Natives.xF7AF4F159FF99F97<string>(modelHash);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="vehicle"></param>
+        /// <param name="modKit"></param>
+        /// <returns></returns>
+        public static int GetNumVehicleMods(Vehicle vehicle, int modKit)
+        {
+            return NativeFunction.Natives.GET_NUM_VEHICLE_MODS<int>(vehicle, modKit);
+        }
+        /// <summary>
+        /// Sets the given <paramref name="vehicle"/> mod
+        /// </summary>
+        public static void SetVehicleMod(Vehicle vehicle, int modType, int modIndex, bool customTires) => NativeFunction.Natives.SET_VEHICLE_MOD(vehicle, modType, modIndex, customTires);
     }
 }
