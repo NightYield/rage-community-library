@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 
-namespace RageCommunity.Library.Vehicles
+namespace RageCommunity.Library.Vehicles.Models
 {
     [Description("This classification also includes some pickup trucks.")]
-    public enum VanModel
+    public enum Van
     {
         Bison = -16948145,
         Bison2 = 2072156101,

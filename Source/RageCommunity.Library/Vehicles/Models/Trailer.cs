@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum TrailerModel
+    public enum Trailer
     {
         ArmyTanker = -1207431159,
         ArmyTrailer = -1476447243,

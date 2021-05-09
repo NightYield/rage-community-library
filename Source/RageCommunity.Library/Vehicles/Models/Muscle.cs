@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum MuscleModel
+    public enum Muscle
     {
         Blade = -1205801634,
         Buccaneer = -682211828,

@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum BoatModel
+    public enum Boat
     {
         Avisa = 6192928,
         Dinghy = 1033245328,
