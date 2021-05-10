@@ -1,4 +1,4 @@
-name: .NET
+name: Build Main .NET
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout Code
       uses: actions/checkout@v2
     
     - name: Setup MSBuild
@@ -26,3 +26,9 @@ jobs:
  
     - name: Build our Library
       run: msbuild Source/RageCommunity.sln /p:Configuration=Release
+      
+    - name: Upload Build Output 
+      uses: actions/upload-artifact@v2
+      with:
+        name: Compiled Library
+        path: Deployment/Release/
