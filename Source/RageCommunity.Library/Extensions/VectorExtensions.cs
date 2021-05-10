@@ -116,5 +116,26 @@ namespace RageCommunity.Library.Extensions
         {
             return NativeWrappers.GetHudScreenPositionFromWorldPosition(position, out float _, out float _);
         }
+        /// <summary>
+        /// Gets the nearest safe position to place a <see cref="Ped"/>
+        /// </summary>
+        /// <param name="positon">The position to check around</param>
+        /// <returns>If successfull, returns the <see cref="Vector3"/> result, otherwise returns <see cref="Vector3.Zero"/></returns>
+        public static Vector3 GetSafeCoordinateForPed(this Vector3 positon)
+        {
+            int[] flags = { 17, 1, 16 };
+            foreach (int flag in flags)
+            {
+                if (NativeWrappers.GetSafeCoordForPed(positon, true, out Vector3 pos, flag))
+                {
+                    return pos;
+                }
+                if (NativeWrappers.GetSafeCoordForPed(positon, false, out Vector3 pos2, flag))
+                {
+                    return pos2;
+                }
+            }
+            return Vector3.Zero;
+        }
     }
 }
