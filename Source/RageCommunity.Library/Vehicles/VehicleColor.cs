@@ -55,6 +55,9 @@ namespace RageCommunity.Library.Vehicles
         /// <summary>
         /// Gets the RGBA <see cref="Color"/> value of the specified <see cref="VehiclePaint"/>
         /// </summary>
+        /// <returns>The <see cref="Color"/> representation of the given <paramref name="vehiclePaint"/>, 
+        /// if the given <paramref name="vehiclePaint"/> is <c><see cref="VehiclePaint.Unknown"/></c> returns <c><see cref="Color.Empty"/></c></returns>
+        /// <remarks>Data is taken from: <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicleColors.json">DurtyFree</a></remarks>
         public static Color GetColor(VehiclePaint vehiclePaint) => vehiclePaint switch
         {
             VehiclePaint.Unknown => Color.Empty,

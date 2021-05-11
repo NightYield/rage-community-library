@@ -49,10 +49,6 @@ namespace RageCommunity.Library.TestPlugin
         }
         [ConsoleCommand("Rage Community Library Vehicle Color Test")]
         public static void Command_SetVehicleColor([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterVehicleAliveOnly))] Vehicle vehicle,
-                                                  [ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandParameterAutoCompleterEnum))] VehiclePaint primary) 
-            => Command_SetVehicleColor(vehicle, primary, primary);
-        [ConsoleCommand("Rage Community Library Vehicle Color Test")]
-        public static void Command_SetVehicleColor([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterVehicleAliveOnly))] Vehicle vehicle,
                                                   [ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandParameterAutoCompleterEnum))] VehiclePaint primary,
                                                   [ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandParameterAutoCompleterEnum))] VehiclePaint secondary)
         {
@@ -74,6 +70,31 @@ namespace RageCommunity.Library.TestPlugin
                 log.ForEach(Game.LogTrivial);
             }
             else Game.LogTrivial("Vehicle doesn't exist");
+        }
+        [ConsoleCommand("Rage Community Library vehicle color test")]
+        public static void Command_GetAllVehicleColor()
+        {
+            GameFiber fiber=  new GameFiber(() =>
+            {
+                GameFiber.Wait(20);
+                var vehicles = World.GetAllVehicles();
+                foreach (Vehicle vehicle in vehicles)
+                {
+                    if (vehicle)
+                    {
+                        VehicleColor vehicleColor = vehicle.GetColor();
+                        System.Collections.Generic.List<string> log = new System.Collections.Generic.List<string>()
+                        {
+                            $"Vehicle: {vehicle.GetMakeName()} - {vehicle.GetDisplayName()}",
+                            $"Primary: {vehicleColor.PrimaryColorName}",
+                            $"Secondary: {vehicleColor.SecondaryColorName}",
+                        };
+                        Game.LogTrivial(string.Join(", ", log));
+                        if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown) Game.LogTrivial("================UNKNOWN COLOR===============");
+                    }
+                }
+            });
+            fiber.Start();
         }
     }
 }
