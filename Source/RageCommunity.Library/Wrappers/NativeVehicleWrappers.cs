@@ -52,8 +52,8 @@ namespace RageCommunity.Library.Wrappers
         /// </remarks>
         public static void CopyVehicleDamages(Vehicle vehicle, Vehicle targetVehicle) => NativeFunction.Natives.xE44A982368A4AF23(vehicle, targetVehicle);
       
-       /// <summary>
-        /// Get the label of model's display name label
+        /// <summary>
+        /// Gets the label of model's display name label
         /// use <see cref="GetLabelText(string)"/> to get the localized name
         /// </summary>
         /// <param name="modelHash">the hash of the model (must be a vehicle model)</param>
@@ -66,7 +66,7 @@ namespace RageCommunity.Library.Wrappers
         }
 
         /// <summary>
-        /// Get the vehicle's manufacturer display label.
+        /// Gets the vehicle's manufacturer display label.
         /// use <see cref="GetLabelText(string)"/> to get the localized name
         /// </summary>
         /// <param name="modelHash">The hash of the model (must be a vehicle model)</param>
@@ -79,11 +79,8 @@ namespace RageCommunity.Library.Wrappers
             return NativeFunction.Natives.xF7AF4F159FF99F97<string>(modelHash);
         }
         /// <summary>
-        /// 
+        /// Gets how many possible mods a vehicle has for a given mod type
         /// </summary>
-        /// <param name="vehicle"></param>
-        /// <param name="modKit"></param>
-        /// <returns></returns>
         public static int GetNumVehicleMods(Vehicle vehicle, int modKit)
         {
             return NativeFunction.Natives.GET_NUM_VEHICLE_MODS<int>(vehicle, modKit);
@@ -92,5 +89,9 @@ namespace RageCommunity.Library.Wrappers
         /// Sets the given <paramref name="vehicle"/> mod
         /// </summary>
         public static void SetVehicleMod(Vehicle vehicle, int modType, int modIndex, bool customTires) => NativeFunction.Natives.SET_VEHICLE_MOD(vehicle, modType, modIndex, customTires);
+        /// <summary>
+        /// Checks if the given <paramref name="vehicle"/> is stuck on roof
+        /// </summary>
+        public static bool IsVehicleStuckOnRoof(Vehicle vehicle) => NativeFunction.Natives.IS_VEHICLE_STUCK_ON_ROOF<bool>(vehicle);
     }
 }

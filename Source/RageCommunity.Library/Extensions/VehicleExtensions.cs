@@ -78,17 +78,17 @@ namespace RageCommunity.Library.Extensions
             return NativeWrappers.GetLabelText(labelName);
         }
         /// <summary>
-        /// get the <see cref="Vehicle"/> display name or the <see cref="Game"/> name
+        /// Gets this <see cref="Vehicle"/> display name or the <see cref="Game"/> name
         /// </summary>
         /// <exception cref="Rage.Exceptions.InvalidHandleableException"></exception>
         public static string GetDisplayName(this Vehicle vehicle) => GetDisplayName(vehicle.Model);
         /// <summary>
-        /// get the <see cref="Vehicle"/> manufacturer name
+        /// Gets this <see cref="Vehicle"/> manufacturer name
         /// </summary>
         /// <exception cref="Rage.Exceptions.InvalidHandleableException"></exception>
         public static string GetMakeName(this Vehicle vehicle) => GetMakeName(vehicle.Model);
         /// <summary>
-        /// randomise the given <paramref name="vehicle"/> license plate
+        /// Randomise this <see cref="Vehicle"/> license plate
         /// </summary>
         /// <remarks>
         /// Source: <a href="https://github.com/Albo1125/Albo1125-Common/blob/master/Albo1125.Common/CommonLibrary/ExtensionMethods.cs#L454"></a>
@@ -106,6 +106,27 @@ namespace RageCommunity.Library.Extensions
                                        MathHelper.GetRandomInteger(9).ToString() +
                                        MathHelper.GetRandomInteger(9).ToString();
             }
+        }
+        /// <summary>
+        /// Checks whether this <see cref="Vehicle"/> is stuck on roof
+        /// </summary>
+        /// <param name="vehicle">The <see cref="Vehicle"/> to check</param>
+        /// <returns><c>true</c> if this <see cref="Vehicle"/> is stuck on roof</returns>
+        public static bool IsStuckOnRoof(this Vehicle vehicle)
+        {
+            return NativeWrappers.IsVehicleStuckOnRoof(vehicle);
+        }
+        /// <summary>
+        /// Gets the <see cref="VehicleColor"/> of this <see cref="Vehicle"/>
+        /// </summary>
+        public static VehicleColor GetColor(this Vehicle vehicle)
+        {
+            //TODO
+            return null;
+        }
+        public static void SetColor(this Vehicle vehicle, VehicleColor vehicleColor)
+        {
+
         }
     }
 }
