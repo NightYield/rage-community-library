@@ -75,6 +75,7 @@ namespace RageCommunity.Library.Extensions
         public static string GetMakeName(this Model vehicleModel)
         {
             string labelName = NativeWrappers.GetMakeNameFromVehicleModel(vehicleModel.Hash);
+            if (string.IsNullOrWhiteSpace(labelName)) return string.Empty;
             return NativeWrappers.GetLabelText(labelName);
         }
         /// <summary>

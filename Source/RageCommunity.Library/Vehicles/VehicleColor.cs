@@ -198,7 +198,7 @@ namespace RageCommunity.Library.Vehicles
             VehiclePaint.Metallic_Vermillion_Pink => Color.FromArgb(255, 143, 47, 85),
             VehiclePaint.Orange => Color.FromArgb(255, 194, 102, 16),
             VehiclePaint.Green => Color.FromArgb(255, 105, 189, 69),
-            VehiclePaint.Blue => Color.FromArgb(0, 0, 174, 239),
+            VehiclePaint.Blue => Color.FromArgb(255, 0, 174, 239),
             VehiclePaint.Mettalic_Black_Blue => Color.FromArgb(255, 0, 1, 8),
             VehiclePaint.Metallic_Black_Purple => Color.FromArgb(255, 5, 0, 8),
             VehiclePaint.Metallic_Black_Red => Color.FromArgb(255, 8, 0, 0),

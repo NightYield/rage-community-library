@@ -17,6 +17,7 @@ namespace RageCommunity.Library.Extensions
         /// <para>Source:</para>
         /// <para><a href="https://stackoverflow.com/questions/273313/randomize-a-listt">Stack Overflow</a></para>
         /// <para><a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher–Yates shuffle</a></para>
+        /// </remarks>
         public static void Shuffle<T>(this IList<T> list)
         {
             int n = list.Count;
@@ -29,7 +30,7 @@ namespace RageCommunity.Library.Extensions
             }
         }
         /// <summary>
-        /// Get random element of this list
+        /// Gets random element of this list
         /// </summary>
         /// <param name="list">The list to get the element of</param>
         /// <param name="shuffle">If set to <c>true</c>, this <paramref name="list"/> will be shuffled</param>
@@ -45,7 +46,7 @@ namespace RageCommunity.Library.Extensions
         }
 
         /// <summary>
-        /// Get random element of this enumerable
+        /// Gets random element of this enumerable
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="enumarable"></param>
@@ -62,7 +63,7 @@ namespace RageCommunity.Library.Extensions
         }
 
         /// <summary>
-        /// Get a number of random element of this list
+        /// Gets a number of random element of this list
         /// </summary>
         /// <param name="list"></param>
         /// <param name="numberOfElements">The number of element that will be given</param>
@@ -83,7 +84,7 @@ namespace RageCommunity.Library.Extensions
         }
 
         /// <summary>
-        /// Get a number of random element of this enumerable
+        /// Gets a number of random element of this enumerable
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="enumarable"></param>
