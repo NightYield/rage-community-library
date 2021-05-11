@@ -121,12 +121,18 @@ namespace RageCommunity.Library.Extensions
         /// </summary>
         public static VehicleColor GetColor(this Vehicle vehicle)
         {
-            //TODO
-            return null;
+            NativeWrappers.GetVehicleColours(vehicle, out int primary, out int secondary);
+            VehiclePaint primaryColor = primary >= 0 && primary <= 160 ? (VehiclePaint)primary : VehiclePaint.Unknown;
+            VehiclePaint secondaryColor = secondary >= 0 && secondary <= 160 ? (VehiclePaint)secondary : VehiclePaint.Unknown;
+            return new VehicleColor(primaryColor, secondaryColor);
         }
+        /// <summary>
+        /// Sets this <see cref="Vehicle"/> colors
+        /// </summary>
         public static void SetColor(this Vehicle vehicle, VehicleColor vehicleColor)
         {
-
+            if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown) throw new NotSupportedException();
+            NativeWrappers.SetVehicleColours(vehicle, (int)vehicleColor.PrimaryColor, (int)vehicleColor.SecondaryColor);
         }
     }
 }

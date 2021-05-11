@@ -93,5 +93,23 @@ namespace RageCommunity.Library.Wrappers
         /// Checks if the given <paramref name="vehicle"/> is stuck on roof
         /// </summary>
         public static bool IsVehicleStuckOnRoof(Vehicle vehicle) => NativeFunction.Natives.IS_VEHICLE_STUCK_ON_ROOF<bool>(vehicle);
+        /// <summary>
+        /// Gets the given <paramref name="vehicle"/> colours
+        /// </summary>
+        /// <param name="vehicle">The vehicle to check</param>
+        /// <param name="primaryColor">The <paramref name="vehicle"/> primary color index</param>
+        /// <param name="secondaryColor">The <paramref name="vehicle"/> secondary color index</param>
+        public static void GetVehicleColours(Vehicle vehicle, out int primaryColor, out int secondaryColor) => NativeFunction.Natives.GET_VEHICLE_COLOURS(vehicle, out primaryColor, out secondaryColor);
+        /// <summary>
+        /// Sets the given <paramref name="vehicle"/> primary and secondary color
+        /// </summary>
+        /// <param name="vehicle">The vehicle to set the color of</param>
+        /// <param name="colorPrimary">The primary color index</param>
+        /// <param name="colorSecondary">The secondary color index</param>
+        /// <remarks>Full list of vehicle colors: <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/vehicleColors.json">DurtyFree</a></remarks>
+        public static void SetVehicleColours(Vehicle vehicle, int colorPrimary, int colorSecondary)
+        {
+            NativeFunction.Natives.SET_VEHICLE_COLOURS(vehicle, colorPrimary, colorSecondary);
+        }
     }
 }
