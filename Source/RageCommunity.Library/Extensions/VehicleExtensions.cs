@@ -135,5 +135,16 @@ namespace RageCommunity.Library.Extensions
             if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown) throw new NotSupportedException();
             NativeWrappers.SetVehicleColours(vehicle, (int)vehicleColor.PrimaryColor, (int)vehicleColor.SecondaryColor);
         }
+        /// <summary>
+        /// Sets this <see cref="Vehicle"/> primary and secondary colors
+        /// </summary>
+        /// <param name="primaryColor">The primary color to be sets</param>
+        /// <param name="secondaryColor">The secondary color to be sets</param>
+        public static void SetColor(this Vehicle vehicle, VehiclePaint primaryColor, VehiclePaint secondaryColor) => vehicle.SetColor(new VehicleColor(primaryColor, secondaryColor));
+        /// <summary>
+        /// Sets this <see cref="Vehicle"/> primary color only
+        /// </summary>
+        /// <param name="primaryColor">The primary color to be sets</param>
+        public static void SetColor(this Vehicle vehicle, VehiclePaint primaryColor) => vehicle.SetColor(new VehicleColor(primaryColor, vehicle.GetColor().SecondaryColor));
     }
 }
