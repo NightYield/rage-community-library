@@ -76,6 +76,7 @@ namespace RageCommunity.Library.TestPlugin
         {
             GameFiber fiber=  new GameFiber(() =>
             {
+                Game.LogTrivial("close the console and open it again after 1 second to see the result");
                 GameFiber.Wait(20);
                 var vehicles = World.GetAllVehicles();
                 foreach (Vehicle vehicle in vehicles)
