@@ -146,5 +146,14 @@ namespace RageCommunity.Library.Extensions
         /// </summary>
         /// <param name="primaryColor">The primary color to be sets</param>
         public static void SetColor(this Vehicle vehicle, VehiclePaint primaryColor) => vehicle.SetColor(new VehicleColor(primaryColor, vehicle.GetColor().SecondaryColor));
+        /// <summary>
+        /// Sets this <see cref="Vehicle"/> forward speed
+        /// </summary>
+        /// <param name="forwardSpeed">The forward speed in m/s.</param>
+        /// <remarks>
+        /// <para>Setting the speed to 30 would result in a speed of roughly 60mph, according to speedometer.</para>
+        /// <para>To convert m/s to mph use <see cref="MathHelper.ConvertMetersPerSecondToMilesPerHour(float)"/></para>
+        /// </remarks>
+        public static void SetForwardSpeed(this Vehicle vehicle, float forwardSpeed) => NativeWrappers.SetVehicleForwardSpeed(vehicle, forwardSpeed);
     }
 }

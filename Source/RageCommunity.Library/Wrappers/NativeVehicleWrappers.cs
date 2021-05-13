@@ -111,5 +111,12 @@ namespace RageCommunity.Library.Wrappers
         {
             NativeFunction.Natives.SET_VEHICLE_COLOURS(vehicle, colorPrimary, colorSecondary);
         }
+        /// <summary>
+        /// Sets the given <paramref name="vehicle"/> forward speed
+        /// </summary>
+        /// <remarks>SCALE: Setting the speed to 30 would result in a speed of roughly 60mph, according to speedometer.  
+        /// <para>Speed is in meters per second, See: <see cref="MathHelper.ConvertMetersPerSecondToMilesPerHour(float)"/></para>
+        /// </remarks>
+        public static void SetVehicleForwardSpeed(Vehicle vehicle, float forwardSpeed) => NativeFunction.Natives.SetVehicleForwardSpeed(vehicle, forwardSpeed);
     }
 }
