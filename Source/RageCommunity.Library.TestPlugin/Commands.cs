@@ -75,10 +75,8 @@ namespace RageCommunity.Library.TestPlugin
         [ConsoleCommand("Rage Community Library GetAllVehicleColors test")]
         public static void Command_GetAllVehicleColor()
         {
-            GameFiber fiber=  new GameFiber(() =>
+             GameFiber.StartNew(() =>
             {
-                Game.LogTrivial("close the console and open it again after 1 second to see the result");
-                GameFiber.Wait(20);
                 var vehicles = World.GetAllVehicles();
                 foreach (Vehicle vehicle in vehicles)
                 {
@@ -92,11 +90,13 @@ namespace RageCommunity.Library.TestPlugin
                             $"Secondary: {vehicleColor.SecondaryColorName}",
                         };
                         Game.LogTrivial(string.Join(", ", log));
-                        if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown) Game.LogTrivial("================UNKNOWN COLOR===============");
+                        if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown) 
+                        {
+                             Game.LogTrivial("================UNKNOWN COLOR===============");
+                        }
                     }
                 }
-            });
-            fiber.Start();
+            }, "GetAllVehicleColors Command Fiber");
         }
     }
 }
