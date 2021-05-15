@@ -120,7 +120,7 @@ namespace RageCommunity.Library.Extensions
         /// Gets the nearest safe position to place a <see cref="Ped"/>
         /// </summary>
         /// <param name="positon">The position to check around</param>
-        /// <returns>If successfull, returns the <see cref="Vector3"/> result, otherwise returns <see cref="Vector3.Zero"/></returns>
+        /// <returns>If successful, returns the <see cref="Vector3"/> result, otherwise returns <see cref="Vector3.Zero"/></returns>
         public static Vector3 GetSafeCoordinateForPed(this Vector3 positon)
         {
             int[] flags = { 17, 1, 16 };

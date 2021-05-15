@@ -75,7 +75,10 @@ namespace RageCommunity.Library.Extensions
         public static string GetMakeName(this Model vehicleModel)
         {
             string labelName = NativeWrappers.GetMakeNameFromVehicleModel(vehicleModel.Hash);
-            if (string.IsNullOrWhiteSpace(labelName)) return string.Empty;
+            if (string.IsNullOrWhiteSpace(labelName)) 
+            {
+                 return string.Empty;
+            }
             return NativeWrappers.GetLabelText(labelName);
         }
         /// <summary>
@@ -132,7 +135,10 @@ namespace RageCommunity.Library.Extensions
         /// </summary>
         public static void SetColor(this Vehicle vehicle, VehicleColor vehicleColor)
         {
-            if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown) throw new NotSupportedException();
+            if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown)
+            {
+                 throw new NotSupportedException();
+            }
             NativeWrappers.SetVehicleColours(vehicle, (int)vehicleColor.PrimaryColor, (int)vehicleColor.SecondaryColor);
         }
         /// <summary>

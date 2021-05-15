@@ -4,6 +4,7 @@ using Rage.ConsoleCommands.AutoCompleters;
 using RageCommunity.Library.Extensions;
 using RageCommunity.Library.Wrappers;
 using RageCommunity.Library.Vehicles;
+using System.Collections.Generic;
 
 namespace RageCommunity.Library.TestPlugin
 {
@@ -24,13 +25,13 @@ namespace RageCommunity.Library.TestPlugin
         {
             Game.LogTrivial($"The name of the current zone is: {Game.LocalPlayer.Character.Position.GetZoneName()}");
         }
-        [ConsoleCommand("Rage Community Library Vehicle Color Test")]
+        [ConsoleCommand("Rage Community Library GetVehicleColor Test")]
         public static void Command_GetVehicleColor([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterVehicleAliveOnly))] Vehicle vehicle)
         {
             if (vehicle)
             {
                 VehicleColor vehicleColor = vehicle.GetColor();
-                System.Collections.Generic.List<string> log = new System.Collections.Generic.List<string>()
+                List<string> log = new List<string>()
                 {
                     $"Vehicle: {vehicle.GetDisplayName()}",
                     $"Manufacturer: {vehicle.GetMakeName()}",
@@ -47,7 +48,7 @@ namespace RageCommunity.Library.TestPlugin
             }
             else Game.LogTrivial("Vehicle doesn't exist");
         }
-        [ConsoleCommand("Rage Community Library Vehicle Color Test")]
+        [ConsoleCommand("Rage Community Library SetVehicleColor Test")]
         public static void Command_SetVehicleColor([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterVehicleAliveOnly))] Vehicle vehicle,
                                                   [ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandParameterAutoCompleterEnum))] VehiclePaint primary,
                                                   [ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandParameterAutoCompleterEnum))] VehiclePaint secondary)
@@ -56,7 +57,7 @@ namespace RageCommunity.Library.TestPlugin
             {
                 VehicleColor vehicleColor = new VehicleColor(primary, secondary);
                 vehicle.SetColor(vehicleColor);
-                System.Collections.Generic.List<string> log = new System.Collections.Generic.List<string>()
+                List<string> log = new List<string>()
                 {
                     $"Vehicle: {vehicle.GetDisplayName()}",
                     $"Manufacturer: {vehicle.GetMakeName()}",
@@ -71,7 +72,7 @@ namespace RageCommunity.Library.TestPlugin
             }
             else Game.LogTrivial("Vehicle doesn't exist");
         }
-        [ConsoleCommand("Rage Community Library vehicle color test")]
+        [ConsoleCommand("Rage Community Library GetAllVehicleColors test")]
         public static void Command_GetAllVehicleColor()
         {
             GameFiber fiber=  new GameFiber(() =>
@@ -84,7 +85,7 @@ namespace RageCommunity.Library.TestPlugin
                     if (vehicle)
                     {
                         VehicleColor vehicleColor = vehicle.GetColor();
-                        System.Collections.Generic.List<string> log = new System.Collections.Generic.List<string>()
+                        List<string> log = new List<string>()
                         {
                             $"Vehicle: {vehicle.GetMakeName()} - {vehicle.GetDisplayName()}",
                             $"Primary: {vehicleColor.PrimaryColorName}",
