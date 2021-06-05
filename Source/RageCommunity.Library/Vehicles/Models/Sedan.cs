@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum SedanModel
+    public enum Sedan
     {
         Asea = -1809822327,
         Asea2 = -1807623979,

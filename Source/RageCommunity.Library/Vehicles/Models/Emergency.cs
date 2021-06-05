@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum EmergencyModel
+    public enum Emergency
     {
         Ambulance = 1171614426,
         FBI = 1127131465,

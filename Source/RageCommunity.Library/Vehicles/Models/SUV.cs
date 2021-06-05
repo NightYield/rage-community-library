@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum SUVModel
+    public enum SUV
     {
         BJXL = 850565707,
         Baller = -808831384,

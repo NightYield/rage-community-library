@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum TrainModel
+    public enum Train
     {
         Freight = 1030400667,
         FreightCar = 184361638,

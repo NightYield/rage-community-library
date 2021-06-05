@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum ServiceModel
+    public enum Service
     {
         Airbus = 1283517198,
         Brickade = -305727417,

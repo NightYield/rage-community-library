@@ -1,0 +1,38 @@
+﻿namespace RageCommunity.Library.Peds.Models
+{
+    public enum Animal
+    {
+        a_c_boar = -832573324,
+        a_c_cat_01 = 1462895032,
+        a_c_chickenhawk = -1430839454,
+        a_c_chimp = -1469565163,
+        a_c_chop = 351016938,
+        a_c_cormorant = 1457690978,
+        a_c_cow = -50684386,
+        a_c_coyote = 1682622302,
+        a_c_crow = 402729631,
+        a_c_deer = -664053099,
+        a_c_dolphin = -1950698411,
+        a_c_fish = 802685111,
+        a_c_hen = 1794449327,
+        a_c_humpback = 1193010354,
+        a_c_husky = 1318032802,
+        a_c_killerwhale = -1920284487,
+        a_c_mtlion = 307287994,
+        a_c_pig = -1323586730,
+        a_c_pigeon = 111281960,
+        a_c_poodle = 1125994524,
+        a_c_pug = 1832265812,
+        a_c_rabbit_01 = -541762431,
+        a_c_rat = -1011537562,
+        a_c_retriever = 882848737,
+        a_c_rhesus = -1026527405,
+        a_c_rottweiler = -1788665315,
+        a_c_seagull = -745300483,
+        a_c_sharkhammer = 1015224100,
+        a_c_sharktiger = 113504370,
+        a_c_shepherd = 1126154828,
+        a_c_stingray = -1589092019,
+        a_c_westy = -1384627013,
+    }
+}

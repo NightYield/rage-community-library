@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum SportModel
+    public enum Sport
     {
         Alpha = 767087018,
         Banshee = -1041692462,
