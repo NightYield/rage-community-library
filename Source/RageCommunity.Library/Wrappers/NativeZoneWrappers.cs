@@ -10,7 +10,7 @@ namespace RageCommunity.Library.Wrappers
         /// Returns the name of the zone for a given position.
         /// </summary>
         /// <remarks>
-        /// The name of this native is a little confusing. It returns the short name, not the fullname. For example: AIRP instead of Los Santos International Airport. 
+        /// The name of this native is a little confusing. It returns the short name, not the fullname. For example: AIRP instead of Los Santos International Airport. Use <see cref="GetLabelText(string)"/> to get the localized name
         /// </remarks>
         public static String GetNameOfZone(Vector3 position)
         {

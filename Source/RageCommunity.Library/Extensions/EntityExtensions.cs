@@ -16,5 +16,32 @@ namespace RageCommunity.Library.Extensions
         {
             NativeWrappers.SetEntityMaxSpeed(entity, speed);
         }
+        /// <summary>
+        /// Checks whether this <see cref="Entity"/> is a <see cref="Ped"/>
+        /// </summary>
+        /// <param name="entity">The <see cref="Entity"/> to check</param>
+        /// <returns><c>true</c> if this <see cref="Entity"/> is a <see cref="Ped"/>, otherwise <c>false</c></returns>
+        public static bool IsPed(this Entity entity)
+        {
+            return NativeWrappers.IsEntityAPed(entity);
+        }
+        /// <summary>
+        /// Checks whether this <see cref="Entity"/> is a <see cref="Vehicle"/>
+        /// </summary>
+        /// <param name="entity">The <see cref="Entity"/> to check</param>
+        /// <returns><c>true</c> if this <see cref="Entity"/> is a <see cref="Vehicle"/>, otherwise <c>false</c></returns>
+        public static bool IsVehicle(this Entity entity)
+        {
+            return NativeWrappers.IsEntityAVehicle(entity);
+        }
+        /// <summary>
+        /// Checks whether this <see cref="Entity"/> is an <see cref="Rage.Object"/>
+        /// </summary>
+        /// <param name="entity">The <see cref="Entity"/> to check</param>
+        /// <returns><c>true</c> if this <see cref="Entity"/> is an <see cref="Rage.Object"/>, otherwise <c>false</c></returns>
+        public static bool IsObject(this Entity entity)
+        {
+            return NativeWrappers.IsEntityAnObject(entity);
+        }
     }
 }
