@@ -66,6 +66,7 @@
     <Compile Include="Extensions\PedExtensions.cs" />
     <Compile Include="Extensions\VectorExtensions.cs" />
     <Compile Include="Extensions\VehicleExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Graphics\Checkpoint.cs" />
     <Compile Include="Graphics\SimpleCheckpointHelper.cs" />
     <Compile Include="Pathfinding\VehicleNode.cs" />
@@ -102,6 +103,8 @@
     <Compile Include="Vehicles\VehicleLightsState.cs" />
     <Compile Include="Vehicles\VehicleWindow.cs" />
     <Compile Include="Vehicles\VehicleBone.cs" />
+    <Compile Include="Vehicles\VehiclePaint.cs" />
+    <Compile Include="Vehicles\VehicleColor.cs" />
     <Compile Include="Weapons\WeaponBone.cs" />
     <Compile Include="Wrappers\NativeAppWrappers.cs" />
     <Compile Include="Wrappers\NativeAudioWrappers.cs" />

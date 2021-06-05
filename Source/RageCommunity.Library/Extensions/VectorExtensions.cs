@@ -116,5 +116,35 @@ namespace RageCommunity.Library.Extensions
         {
             return NativeWrappers.GetHudScreenPositionFromWorldPosition(position, out float _, out float _);
         }
+        /// <summary>
+        /// Gets the nearest safe position to place a <see cref="Ped"/>
+        /// </summary>
+        /// <param name="positon">The position to check around</param>
+        /// <returns>If successful, returns the <see cref="Vector3"/> result, otherwise returns <see cref="Vector3.Zero"/></returns>
+        public static Vector3 GetSafeCoordinateForPed(this Vector3 positon)
+        {
+            /* 
+             * Form: https://docs.fivem.net/natives/?_0xB61C8E878A4199CA
+             * Flags are:
+             *   1 = 1 = B02_IsFootpath
+             *   2 = 4 = !B15_InteractionUnk
+             *   4 = 0x20 = !B14_IsInterior
+             *   8 = 0x40 = !B07_IsWater
+             *   16 = 0x200 = B17_IsFlatGround
+             */
+            int[] flags = { 17, 1, 16 };
+            foreach (int flag in flags)
+            {
+                if (NativeWrappers.GetSafeCoordForPed(positon, true, out Vector3 pos, flag))
+                {
+                    return pos;
+                }
+                if (NativeWrappers.GetSafeCoordForPed(positon, false, out Vector3 pos2, flag))
+                {
+                    return pos2;
+                }
+            }
+            return Vector3.Zero;
+        }
     }
 }
