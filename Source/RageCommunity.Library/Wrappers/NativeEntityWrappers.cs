@@ -24,5 +24,21 @@ namespace RageCommunity.Library.Wrappers
         {
             NativeFunction.Natives.SET_ENTITY_MAX_SPEED(entity, speed);
         }
+        /// <summary>
+        /// Determines if the given <paramref name="entity"/> is a ped
+        /// </summary>
+        public static bool IsEntityAPed(Entity entity) => NativeFunction.Natives.IS_ENTITY_A_PED<bool>(entity);
+        /// <summary>
+        /// Determines if the given <paramref name="entity"/> is a vehicle
+        /// </summary>
+        public static bool IsEntityAVehicle(Entity entity) => NativeFunction.Natives.IS_ENTITY_A_VEHICLE<bool>(entity);
+        /// <summary>
+        /// Determines if the given <paramref name="entity"/> is an object
+        /// </summary>
+        public static bool IsEntityAnObject(Entity entity) => NativeFunction.Natives.IS_ENTITY_AN_OBJECT<bool>(entity);
+        /// <summary>
+        /// Determines if the given <paramref name="entity"/> is attached to any other <see cref="Entity"/>
+        /// </summary>
+        public static bool IsEntityAttached(Entity entity) => NativeFunction.Natives.IS_ENTITY_ATTACHED<bool>(entity);
     }
 }

@@ -48,5 +48,11 @@ namespace RageCommunity.Library.Wrappers
             nthClosestPointHeading = outHeading;
             return getNthClosestPoint;
         }
+        public static bool GetSafeCoordForPed(Vector3 position, bool onGround, out Vector3 safeCoord, int flags)
+        {
+            bool success = NativeFunction.Natives.GET_SAFE_COORD_FOR_PED<bool>(position, onGround, out Vector3 outPosition, flags);
+            safeCoord = outPosition;
+            return success;
+        }
     }
 }
