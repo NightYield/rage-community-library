@@ -53,6 +53,11 @@
     <Compile Include="Graphics\MarkerType.cs" />
     <Compile Include="Attributes\DefectNativeAttribute.cs" />
     <Compile Include="Objects\ObjectBone.cs" />
+    <Compile Include="Peds\Freemode\ComponentID.cs" />
+    <Compile Include="Peds\Freemode\EyeColor.cs" />
+    <Compile Include="Peds\Freemode\FaceFeature.cs" />
+    <Compile Include="Peds\Freemode\FreemodePed.cs" />
+    <Compile Include="Peds\Freemode\HeadBlendData.cs" />
     <Compile Include="Peds\Models\AmbientFemale.cs" />
     <Compile Include="Peds\Models\AmbientMale.cs" />
     <Compile Include="Peds\Models\Animal.cs" />
@@ -60,6 +65,7 @@
     <Compile Include="Peds\Models\GangFemale.cs" />
     <Compile Include="Peds\Models\GangMale.cs" />
     <Compile Include="Peds\Models\Multiplayer.cs" />
+    <Compile Include="Peds\Freemode\OverlayID.cs" />
     <Compile Include="Peds\PedBone.cs" />
     <Compile Include="Peds\PedTask.cs" />
     <Compile Include="Extensions\EntityExtensions.cs" />
@@ -78,6 +84,7 @@
     <Compile Include="Peds\Models\StoryScenarioMale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task\Scenario.cs" />
+    <Compile Include="Task\SynchronizedScene.cs" />
     <Compile Include="Vehicles\Models\Boat.cs" />
     <Compile Include="Vehicles\Models\Commercial.cs" />
     <Compile Include="Vehicles\Models\Compact.cs" />
