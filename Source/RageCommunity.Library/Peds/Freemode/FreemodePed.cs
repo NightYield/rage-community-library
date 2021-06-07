@@ -44,6 +44,10 @@ namespace RageCommunity.Library.Peds.Freemode
         /// Gets a value that indicates whether this <see cref="FreemodePed"/> is male
         /// </summary>
         public new bool IsMale => Model.Hash == 0x705E61F2;
+        /// <summary>
+        /// Gets a value that indicates whether this <see cref="FreemodePed"/> <see cref="HeadBlendData"/> is finished
+        /// </summary>
+        public bool HasHeadBlendFinished => NativeWrappers.HasPedHeadBlendFinished(this);
         public FreemodePed(bool isMale, Vector3 position, float heading) : base(isMale ? 0x705E61F2 : 0x9C9EFFD8, position, heading)
         {
         }
@@ -53,15 +57,11 @@ namespace RageCommunity.Library.Peds.Freemode
         /// <summary>
         /// Sets this ped component variation
         /// </summary>
-        /// <remarks>
-        /// <para>All values outside valid ranges are clamped</para>
-        /// <para></para>
-        /// </remarks>
-        public void SetComponentVariation(ComponentID componentID, int drawable, int texture)
+        public void SetComponentVariation(ComponentID componentID, int drawableID, int textureID)
         {
-            drawable = MathHelper.Clamp(drawable, 0, GetDrawableVariationCount((int)componentID));
-            texture = MathHelper.Clamp(texture, 0, GetTextureVariationCount((int)componentID, drawable));
-            NativeWrappers.SetPedComponentVariation(this, (int)componentID, drawable, texture, 0);
+            drawableID = MathHelper.Clamp(drawableID, 0, GetDrawableVariationCount((int)componentID));
+            textureID = MathHelper.Clamp(textureID, 0, GetTextureVariationCount((int)componentID, drawableID));
+            NativeWrappers.SetPedComponentVariation(this, (int)componentID, drawableID, textureID, 0);
         }
         /// <summary>
         /// Sets this ped head overlay
@@ -69,7 +69,7 @@ namespace RageCommunity.Library.Peds.Freemode
         /// <param name="overlayID">The overlay ID</param>
         /// <param name="index">the index value for the given <paramref name="overlayID"/>. Value outside valid ranges are clamped</param>
         /// <param name="opacity">a value between 0 and 1 to indicates how transparent the overlay is, a value outside the valid ranges are clamped</param>
-        /// <remarks>See: </remarks>
+        /// <remarks>See: <a href="https://docs.fivem.net/natives/?_0x48F44967FA05CC1E">FiveM</a></remarks>
         public void SetHeadOverlay(OverlayID overlayID, int index, float opacity)
         {
             //overlayID      Part                  Index,   to disable
@@ -110,6 +110,7 @@ namespace RageCommunity.Library.Peds.Freemode
             scale = MathHelper.Clamp(scale, -1.0f, 1.0f);
             NativeWrappers.SetPedFaceFeature(this, (int)faceFeature, scale);
         }
+
         public void RandomizeAppearance()
         {
             //TODO

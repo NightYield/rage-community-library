@@ -35,7 +35,18 @@ namespace RageCommunity.Library.Wrappers
         {
             NativeFunction.Natives.x10AB107B887214D8(ped, target, unknown);
         }
-
+        /// <summary>
+        /// Causes the given <paramref name="ped"/> to perform the given <paramref name="sceneID"/> synchronized scene
+        /// </summary>
+        /// <param name="ped">The target ped</param>
+        /// <param name="sceneID">The synchronized scene handle</param>
+        /// <param name="duration">in second</param>
+        /// <param name="flag">can be 0 or 16</param>
+        /// <param name="unk">Always 0</param>
+        public static void TaskSynchronizedScene(Ped ped, uint sceneID, string animDict, string animName, float speed, float speedMultiplier, int duration, int flag, float playbackRate, int unk)
+        {
+            NativeFunction.Natives.TaskSynchronizedScene(ped, sceneID, animDict, animName, speed, speedMultiplier, duration, flag, playbackRate, unk);
+        }
         /// <summary>
         /// Returns true if the specified task is active for the given ped.
         /// </summary>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Rage;
-using static Rage.Native.NativeFunction;
+using RageCommunity.Library.Wrappers;
 
 namespace RageCommunity.Library.Task
 {
@@ -13,25 +13,25 @@ namespace RageCommunity.Library.Task
         private uint HandleValue => Handle;
         public float Phase
         {
-            get => Natives.GET_SYNCHRONIZED_SCENE_PHASE<float>(HandleValue);
-            set => Natives.SET_SYNCHRONIZED_SCENE_PHASE(HandleValue, value);
+            get => NativeWrappers.GetSynchronizedScenePhase(HandleValue);
+            set => NativeWrappers.SetSynchronizedScenePhase(HandleValue, value);
         }
         public float Rate
         {
-            get => Natives.GET_SYNCHRONIZED_SCENE_RATE<float>(HandleValue);
-            set => Natives.SET_SYNCHRONIZED_SCENE_RATE(HandleValue, value);
+            get => NativeWrappers.GetSynchronizedSceneRate(HandleValue);
+            set => NativeWrappers.SetSynchronizedSceneRate(HandleValue, value);
         }
         public bool Looped
         {
-            get => this is not null && Natives.IS_SYNCHRONIZED_SCENE_LOOPED<bool>(HandleValue);
-            set => Natives.SET_SYNCHRONIZED_SCENE_LOOPED(HandleValue, value);
+            get => this is not null && NativeWrappers.IsSynchronizedSceneLooped(HandleValue);
+            set => NativeWrappers.SetSynchronizedSceneLooped(HandleValue, value);
         }
         public bool HoldLastFrame
         {
-            get => this is not null && Natives.IS_SYNCHRONIZED_SCENE_HOLD_LAST_FRAME<bool>(HandleValue);
-            set => Natives.SET_SYNCHRONIZED_SCENE_HOLD_LAST_FRAME(HandleValue, value);
+            get => this is not null && NativeWrappers.IsSynchronizedSceneHoldLastFrame(HandleValue);
+            set => NativeWrappers.SetSynchronizedSceneHoldLastFrame(HandleValue, value);
         }
-        public bool IsRunning => this is not null && Natives.IS_SYNCHRONIZED_SCENE_RUNNING<bool>(HandleValue);
+        public bool IsRunning => this is not null && NativeWrappers.IsSynchronizedSceneRunning(HandleValue);
         public bool IsAttached { get; private set; } = false;
 
         public Vector3 Position { get; set; }
@@ -45,9 +45,8 @@ namespace RageCommunity.Library.Task
         {
             Position = position;
             Rotation = rotator;
-            uint _handle = Natives.CREATE_SYNCHRONIZED_SCENE<uint>(Position.X, Position.Y, Position.Z, Rotation.Roll, Rotation.Pitch, Rotation.Yaw, 2);
+            uint _handle = NativeWrappers.CreateSynchronizedScene(Position, Rotation.Roll, Rotation.Pitch, Rotation.Yaw, 2);
             Handle = new PoolHandle(_handle);
-            InternalList.Add(this);
         }
         /// <summary>
         /// Initialize a new instance of <see cref="SynchronizedScene"/> class
@@ -56,20 +55,19 @@ namespace RageCommunity.Library.Task
         {
             Position = new Vector3(x, y, z);
             Rotation = new Rotator(pitch, roll, yaw);
-            uint _handle = Natives.CREATE_SYNCHRONIZED_SCENE<uint>(Position.X, Position.Y, Position.Z, Rotation.Roll, Rotation.Pitch, Rotation.Yaw, 2);
+            uint _handle = NativeWrappers.CreateSynchronizedScene(Position, Rotation.Roll, Rotation.Pitch, Rotation.Yaw, 2);
             Handle = new PoolHandle(_handle);
-            InternalList.Add(this);
         }
 
         public void AttachToEntity(Entity entity, int entityBoneIndex)
         {
-            Natives.ATTACH_SYNCHRONIZED_SCENE_TO_ENTITY(HandleValue, entity, entityBoneIndex);
+            NativeWrappers.AttachSynchronizedSceneToEntity(HandleValue, entity, entityBoneIndex);
             IsAttached = true;
         }
         public void Detach()
         {
             if (!IsAttached) return;
-            Natives.DETACH_SYNCHRONIZED_SCENE(HandleValue);
+            NativeWrappers.DetachSynchronizedScene(HandleValue);
             IsAttached = false;
         }
 
@@ -77,7 +75,7 @@ namespace RageCommunity.Library.Task
         {
             if (IsValid())
             {
-                Natives.xCD9CC7E200A52A6F(HandleValue);
+                NativeWrappers.DisposeSynchronizedScene(HandleValue);
             }
             else throw new Rage.Exceptions.InvalidHandleableException(this);
         }
@@ -91,7 +89,7 @@ namespace RageCommunity.Library.Task
             float playbackRate = 1.5f)
         {
             dictionary.LoadAndWait();
-            Natives.TASK_SYNCHRONIZED_SCENE(ped, HandleValue, dictionary.Name, animName, speed, multiplier, duration, flag, playbackRate, 0);
+            NativeWrappers.TaskSynchronizedScene(ped, HandleValue, dictionary.Name, animName, speed, multiplier, duration, flag, playbackRate, 0);
             return Rage.Task.GetTask(ped, "TASK_SYNCHRONIZED_SCENE");
         }
 
@@ -113,35 +111,11 @@ namespace RageCommunity.Library.Task
             return this is not null && !Handle.IsZero;
         }
 
-        public float TravelDistanceTo(Vector3 position) => Natives.CALCULATE_TRAVEL_DISTANCE_BETWEEN_POINTS<float>(Position.X, Position.Y, Position.Z, position.X, position.Y, position.Z);
+        public float TravelDistanceTo(Vector3 position) => NativeWrappers.CalculateTravelDistanceBetweenPoints(Position, position);
 
         public float TravelDistanceTo(ISpatial spatialObject)
-            => Natives.CALCULATE_TRAVEL_DISTANCE_BETWEEN_POINTS<float>(Position.X, Position.Y, Position.Z, spatialObject.Position.X, spatialObject.Position.Y, spatialObject.Position.Z);
-        internal static List<SynchronizedScene> InternalList = new List<SynchronizedScene>();
-        public static Vector3 GetAnimationInitialOffsettPosition(AnimationDictionary dictionary, string animName, Vector3 pos, Rotator rotator)
         {
-            dictionary.LoadAndWait();
-            Vector3 rotation = rotator.ToVector();
-            Vector3 ret = Natives.GET_ANIM_INITIAL_OFFSET_POSITION<Vector3>(dictionary.Name, animName, pos.X, pos.Y, pos.Z, rotation.X, rotation.Y, rotation.Z, 0, 2);
-            return ret;
-        }
-        public static Rotator GetAnimationInitialOffsettRotation(AnimationDictionary dictionary, string animName, Vector3 pos, Rotator rotator)
-        {
-            dictionary.LoadAndWait();
-            Vector3 rotation = rotator.ToVector();
-            Vector3 ret = Natives.GET_ANIM_INITIAL_OFFSET_ROTATION<Vector3>(dictionary.Name, animName, pos.X, pos.Y, pos.Z, rotation.X, rotation.Y, rotation.Z, 0, 2);
-            return ret.ToRotator();
-        }
-        internal static void DeleteAllSynchronizedScene()
-        {
-            if (!System.Linq.Enumerable.Any(InternalList)) return;
-            foreach (SynchronizedScene scene in InternalList)
-            {
-                if (scene is not null && scene.IsValid())
-                {
-                    scene.Delete();
-                }
-            }
+            return NativeWrappers.CalculateTravelDistanceBetweenPoints(Position, spatialObject.Position);
         }
     }
 }
