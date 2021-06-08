@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RageCommunity.Library.Peds.Freemode
+﻿namespace RageCommunity.Library.Peds.Freemode
 {
     using System.Runtime.InteropServices;
     /// <summary>
@@ -34,6 +28,9 @@ namespace RageCommunity.Library.Peds.Freemode
         [FieldOffset(75)]
         public bool isParent;
 
+        /// <summary>
+        /// Initializes a new instances of the <see cref="HeadBlendData"/> class
+        /// </summary>
         public HeadBlendData(int shapeFirstID, int shapeSecondID, int shapeThirdID, int skinFirstID, int skinSecondID, int skinThirdID, float shapeMix, float skinMix, float thirdMix, bool isParent)
         {
             this.shapeFirstID = shapeFirstID;

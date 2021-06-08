@@ -4,6 +4,7 @@ using Rage.ConsoleCommands.AutoCompleters;
 using RageCommunity.Library.Extensions;
 using RageCommunity.Library.Wrappers;
 using RageCommunity.Library.Vehicles;
+using RageCommunity.Library.Peds.Freemode;
 using System.Collections.Generic;
 using System;
 
@@ -217,6 +218,24 @@ namespace RageCommunity.Library.TestPlugin
             {
                 Game.LogTrivial($"Error spawning {model}");
             }
+        }
+        [ConsoleCommand("Rage Community Library spawn freemode ped and randomize his appearance")]
+        public static void Command_SpawnFreemodePed(bool isMale)
+        {
+            GameFiber.StartNew(() =>
+            {
+                try
+                {
+                    Vector3 pos = Game.LocalPlayer.Character.Position + Game.LocalPlayer.Character.ForwardVector * 5f;
+                    float heading = Game.LocalPlayer.Character.Heading + 180f;
+                    FreemodePed freemodePed = new FreemodePed(isMale, pos, heading);
+                    freemodePed.Dismiss();
+                }
+                catch (Exception e)
+                {
+                    Game.LogTrivial(e.ToString());
+                }
+            });
         }
     }
 }

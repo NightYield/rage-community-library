@@ -54,7 +54,9 @@ namespace RageCommunity.Library.Wrappers
         {
             Natives.FinalizeHeadBlend(ped);
         }
-
+        /// <summary>
+        /// Determines whether all the streaming request from the given <paramref name="ped"/> is completed 
+        /// </summary>
         public static bool HaveAllStreamingRequestsCompleted(Ped ped)
         {
             return Natives.HaveAllStreamingRequestsCompleted<bool>(ped);
@@ -67,10 +69,22 @@ namespace RageCommunity.Library.Wrappers
         /// <param name="componentID">The component that you want to set.</param>
         /// <param name="drawableID">The drawable id that is going to be set.</param>
         /// <param name="textureID">The texture id of the drawable.</param>
-        /// <param name="palleteID"><c>0</c> to <c>3</c></param>
+        /// <param name="palleteID"><c>0</c> to <c>3</c>, in most cases is 0</param>
         public static void SetPedComponentVariation(Ped ped, int componentID, int drawableID, int textureID, int palleteID)
         {
             Natives.SetPedComponentVariation(ped, componentID, drawableID, textureID, palleteID);
+        }
+        /// <summary>
+        /// This native is used to set prop variation on a ped. Components, drawables and textures IDs are related to the ped model.
+        /// </summary>
+        /// <param name="ped">The target ped</param>
+        /// <param name="propComponentId">The component that you want to set</param>
+        /// <param name="drawable">The drawable id that is going to be set</param>
+        /// <param name="texture">The texture of the <paramref name="drawable"/></param>
+        /// <param name="attach">Attached or not</param>
+        public static void SetPedPropIndex(Ped ped, int propComponentId, int drawable, int texture, bool attach)
+        {
+            Natives.SetPedPropIndex(ped, propComponentId, drawable, texture, attach);
         }
 
         /// <summary>
@@ -119,6 +133,14 @@ namespace RageCommunity.Library.Wrappers
             Natives.SET_PED_HEAD_OVERLAY(ped, overlayID, index, opacity);
         }
         /// <summary>
+        /// Used for freemode (online) characters. 
+        /// </summary>
+        /// <param name="colorType">ColorType is 1 for eyebrows, beards, and chest hair; 2 for blush and lipstick; and 0 otherwise</param>
+        public static void SetPedHeadOverlayColor(Ped ped, int overlayID, int colorType, int colorID, int secondColorID)
+        {
+            Natives.x497BF74A7B9CB952(ped, overlayID, colorType, colorID, secondColorID);
+        }
+        /// <summary>
         /// Gets the maximum index number for the specified <paramref name="overlayId"/> .Used with freemode (online) characters.
         /// </summary>
         /// <param name="overlayId">The overlayID</param>
@@ -137,11 +159,16 @@ namespace RageCommunity.Library.Wrappers
         {
             Natives.x71A5C1DBA060049E(ped, faceFeature, scale);
         }
-
+        /// <summary>
+        /// Gets te maximum number of the <paramref name="ped"/> drawable variation
+        /// </summary>
         public static int GetNumberOfPedDrawableVariations(Ped ped, int componentID)
         {
             return Natives.GetNumberOfPedDrawableVariations<int>(ped, componentID);
         }
+        /// <summary>
+        /// Gets the maximum number of the <paramref name="drawableID"/> texture variation
+        /// </summary>
 
         public static int GetNumberOfPedTextureVariations(Ped ped, int componentID, int drawableID)
         {
@@ -244,6 +271,9 @@ namespace RageCommunity.Library.Wrappers
         {
             Natives.SetSynchronizedSceneRate(sceneID, rate);
         }
+        /// <summary>
+        /// Attach this synchronized scene to the given <paramref name="entity"/>
+        /// </summary>
         public static void AttachSynchronizedSceneToEntity(uint sceneID, Entity entity, int entityBoneIndex)
         {
             Natives.AttachSynchronizedSceneToEntity(sceneID, entity, entityBoneIndex);
