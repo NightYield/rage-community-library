@@ -19,7 +19,8 @@ namespace RageCommunity.Library.Wrappers
         /// </summary>
         public static bool GetPedHeadBlendData(Ped ped, out Peds.Freemode.HeadBlendData headBlend)
         {
-            bool success = Natives.GetPedHeadBlendData<bool>(ped, out headBlend);
+            bool success = Natives.x2746BD9D88C5C5D0<bool>(ped, out Peds.Freemode.HeadBlendData headBlendData);
+            headBlend = headBlendData;
             return success;
         }
         /// <summary>
@@ -249,7 +250,7 @@ namespace RageCommunity.Library.Wrappers
             Natives.SetSynchronizedSceneHoldLastFrame(sceneID, toggle);
         }
         /// <summary>
-        /// A <c>setter</c> for <see cref="IsSynchronizedSceneLooped(iunt)"/>
+        /// A <c>setter</c> for <see cref="IsSynchronizedSceneLooped(uint)"/>
         /// </summary>
         public static void SetSynchronizedSceneLooped(uint sceneID, bool toggle)
         {
@@ -277,6 +278,13 @@ namespace RageCommunity.Library.Wrappers
         public static void AttachSynchronizedSceneToEntity(uint sceneID, Entity entity, int entityBoneIndex)
         {
             Natives.AttachSynchronizedSceneToEntity(sceneID, entity, entityBoneIndex);
+        }
+        /// <summary>
+        /// Determines whether the given <paramref name="ped"/> is playing the given <paramref name="scenario"/>
+        /// </summary>
+        public static bool IsPedUsingScenario(Ped ped, string scenario)
+        {
+            return Natives.IS_PED_USING_SCENARIO<bool>(ped, scenario);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace RageCommunity.Library.Peds.Freemode
 {
     using System.Runtime.InteropServices;
+    using System.Text;
     /// <summary>
     /// Source: <a href="https://gist.github.com/NoNameSet/20b7d1d75763b0678564eaedd4bed404">NoNameSet Github Gist</a>
     /// </summary>
@@ -43,6 +44,36 @@
             this.skinMix = skinMix;
             this.thirdMix = thirdMix;
             this.isParent = isParent;
-        }       
+        }
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Shape: (");
+            sb.Append(shapeFirstID);
+            sb.Append(',');
+            sb.Append(' ');
+            sb.Append(shapeSecondID);
+            sb.Append(',');
+            sb.Append(' ');
+            sb.Append(shapeThirdID);
+            sb.Append("). Skin: (");
+            sb.Append(skinFirstID);
+            sb.Append(',');
+            sb.Append(' ');
+            sb.Append(skinSecondID);
+            sb.Append(',');
+            sb.Append(' ');
+            sb.Append(skinThirdID);
+            sb.Append("). Mix: (Shape: ");
+            sb.Append(shapeMix);
+            sb.Append(", Skin: ");
+            sb.Append(skinMix);
+            sb.Append(", Third: ");
+            sb.Append(thirdMix);
+            sb.Append(") Parent: ");
+            sb.Append(isParent);
+            return sb.ToString();
+        }
     }
 }

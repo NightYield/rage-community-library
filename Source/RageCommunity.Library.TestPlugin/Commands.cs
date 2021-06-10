@@ -5,7 +5,9 @@ using RageCommunity.Library.Extensions;
 using RageCommunity.Library.Wrappers;
 using RageCommunity.Library.Vehicles;
 using RageCommunity.Library.Peds.Freemode;
+using RageCommunity.Library.Task;
 using System.Collections.Generic;
+using System.Linq;
 using System;
 
 namespace RageCommunity.Library.TestPlugin
@@ -199,7 +201,7 @@ namespace RageCommunity.Library.TestPlugin
         {
             SpawnPedModel(model);
         }
-
+        private static List<Entity> SpawnedEntities = new List<Entity>();
         private static void SpawnPedModel<T>(T model)
         {
             Type type = model.GetType();
@@ -212,15 +214,16 @@ namespace RageCommunity.Library.TestPlugin
             try
             {
                 Game.LogTrivial($"Spawning {model}");
-                new Ped(model.ToString(), Game.LocalPlayer.Character.GetOffsetPositionFront(5), Game.LocalPlayer.Character.Heading);
+                Ped ped =  new Ped(model.ToString(), Game.LocalPlayer.Character.GetOffsetPositionFront(5), Game.LocalPlayer.Character.Heading);
+                SpawnedEntities.Add(ped);
             }
             catch
             {
                 Game.LogTrivial($"Error spawning {model}");
             }
         }
-        [ConsoleCommand("Rage Community Library spawn freemode ped and randomize his appearance")]
-        public static void Command_SpawnFreemodePed(bool isMale)
+        [ConsoleCommand("Rage Community Library spawn freemode ped and randomize the appearance")]
+        public static void Command_SpawnFreemodePed(bool isMale, bool dissmiss)
         {
             GameFiber.StartNew(() =>
             {
@@ -229,11 +232,154 @@ namespace RageCommunity.Library.TestPlugin
                     Vector3 pos = Game.LocalPlayer.Character.Position + Game.LocalPlayer.Character.ForwardVector * 5f;
                     float heading = Game.LocalPlayer.Character.Heading + 180f;
                     FreemodePed freemodePed = new FreemodePed(isMale, pos, heading);
-                    freemodePed.Dismiss();
+                    SpawnedEntities.Add(freemodePed);
+                    GameFiber.Wait(1000);
+                    if (dissmiss) freemodePed.Dismiss();
                 }
                 catch (Exception e)
                 {
                     Game.LogTrivial(e.ToString());
+                }
+            });
+        }
+        [ConsoleCommand(Description = "Rage Community Library dispose all spawned entities")]
+        public static void Command_DisposeAllSpawnedEntities([ConsoleCommandParameter(Description = "if true, the entities will be deleted, otherwise will be dismissed ")] bool delete)
+        {
+            foreach (Entity entity in SpawnedEntities)
+            {
+                if (entity)
+                {
+                    if (delete) entity.Delete();
+                    else entity.Dismiss();
+                }
+            }
+            SpawnedEntities = new List<Entity>();
+        }
+        [ConsoleCommand(Description = "Rage Community Library get ped active tasks")]
+        public static void GetPedActiveTasks([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterPedAliveOnly))] Ped ped)
+        {
+            if (ped)
+            {
+                ped.GetAllActiveTasks().ForEach(x => Game.LogTrivial(x.ToString()));
+            }
+        }
+        private static List<SynchronizedScene> synchronizedScenes = new List<SynchronizedScene>();
+        private static bool BenchThreadActivated = false;
+        public static void SynchronizedSceneTest()
+        {
+            if (BenchThreadActivated)
+            {
+                Game.LogTrivial("This command has been run in this session");
+                return;
+            }
+            GameFiber.StartNew(() =>
+            {
+                BenchThreadActivated = true;
+                List<string> benchModels = new List<string>()
+                {
+                    "prop_bench_01a",
+                    "prop_bench_01b",
+                    "prop_bench_01c",
+                    "prop_bench_02",
+                    "prop_bench_03",
+                    "prop_bench_04",
+                    "prop_bench_05",
+                    "prop_bench_06",
+                    "prop_bench_08",
+                    "prop_bench_09",
+                    "prop_bench_10",
+                    "prop_bench_11",
+                    "prop_fib_3b_bench",
+                    "prop_ld_bench01",
+                    "prop_wait_bench_01",
+                    "v_res_fh_benchlong",
+                    "v_res_fh_benchshort",
+                    "v_ind_meatbench",
+                    "h4_int_05_bench_2",
+                    "h4_int_05_bench_3",
+                    "v_ind_rc_bench",
+                    "hei_heist_stn_benchshort",
+                    "dt1_03_benchirefm",
+                    "bh1_15_bench_posh",
+                    "hei_heist_bench01",
+                    "hei_heist_bench02",
+                    "hei_heist_bench03",
+                    "v_16_shitbench",
+                };
+                SynchronizedScene syncScene = null;
+                List<uint> benchHash = benchModels.Select(x => Game.GetHashKey(x)).ToList();
+                Rage.Object bench = null;
+                int sofaStatus = 0;
+                Vector3 benchInitialPos = Vector3.Zero;
+                Rotator benchInitialRot = Rotator.Zero;
+                Vector3 offsett = new Vector3(0f,1f,-0.5f);
+                Rage.Task closeTask = null;
+                string sitStr = Game.GetLocalizedString("MPTV_WALK"); //Press ~INPUT_CONTEXT~ to sit down.
+                string standUpStr = Game.GetLocalizedString("MPOFSEAT_PCEXIT");
+                string[] benchIdles = { "idle_a", "idle_b", "idle_c" };
+                AnimationDictionary seating = Game.LocalPlayer.Character.IsMale ? "anim@amb@office@seating@male@var_a@base@" : "anim@amb@office@seating@female@var_d@base@";
+                seating.LoadAndWait();              
+                while (true)
+                {
+                    GameFiber.Yield();
+                    switch (sofaStatus)
+                    {
+                        case 0:
+                            Rage.Object[] objs = World.GetEntities(Game.LocalPlayer.Character.Position, 2f, GetEntitiesFlags.ConsiderAllObjects).Where(x => x.IsObject()).Select(x => (Rage.Object)x).ToArray();
+                            bench = objs.Where(x => x && benchHash.Contains(x.Model.Hash)).OrderBy(x => Vector3.DistanceSquared(x.Position, Game.LocalPlayer.Character)).FirstOrDefault();
+                            if (!bench) break;
+                            Game.DisplayHelp(sitStr);
+                            if (Game.IsControlPressed(2, GameControl.Context)) sofaStatus = 1;
+                            break;
+                        case 1:
+                            benchInitialPos = bench.GetOffsetPositionFront(1f);
+                            benchInitialRot = bench.Rotation;
+                            closeTask = Game.LocalPlayer.Character.Tasks.FollowNavigationMeshToPosition(benchInitialPos, bench.Heading, 1f, 10000);
+                            sofaStatus = 2;
+                            break;
+                        case 2:
+                            if (closeTask.Status == Rage.TaskStatus.InProgress) break;
+                            syncScene = new SynchronizedScene(bench.Position, bench.Rotation);
+                            synchronizedScenes.Add(syncScene);
+                            syncScene.TaskToPed(Game.LocalPlayer.Character, seating, "enter", 13);
+                            sofaStatus = 3;
+                            break;
+                        case 3:
+                            if (syncScene.Phase != 1f) break;
+                            syncScene = new SynchronizedScene(bench.Position, bench.Rotation);
+                            synchronizedScenes.Add(syncScene);
+                            syncScene.TaskToPed(Game.LocalPlayer.Character, seating, "base", 13, playbackRate: 1148846080);
+                            sofaStatus = 4;
+                            break;
+                        case 4:
+                            Game.DisplayHelp(standUpStr);
+                            if (Game.IsControlPressed(2, GameControl.ScriptRRight))
+                            {
+                                sofaStatus = 5;
+                            }
+                            if (syncScene.Phase != 1f) break;
+                            syncScene = new SynchronizedScene(bench.Position, bench.Rotation);
+                            synchronizedScenes.Add(syncScene);
+                            syncScene.TaskToPed(Game.LocalPlayer.Character, seating, benchIdles.GetRandomElement(), 13, playbackRate: 1148846080);
+                            sofaStatus = 3;
+                            break;
+                        case 5:
+                            syncScene = new SynchronizedScene(bench.Position, bench.Rotation);
+                            synchronizedScenes.Add(syncScene);
+                            syncScene.TaskToPed(Game.LocalPlayer.Character, seating, "exit", 13, playbackRate: 1000f);
+                            sofaStatus = 6;
+                            break;
+                        case 6:
+                            if (syncScene.Phase != 1f) break;
+                            Game.LocalPlayer.Character.Tasks.Clear();
+                            synchronizedScenes.ForEach(x =>
+                            {
+                                if (x.IsValid()) x.Delete();
+                            });
+                            synchronizedScenes = new List<SynchronizedScene>();
+                            sofaStatus = 0;
+                            break;
+                    }
                 }
             });
         }

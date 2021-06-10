@@ -13,9 +13,23 @@ namespace RageCommunity.Library.Wrappers
         /// <remarks>
         /// A list of scenarios can be found <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/scenariosCompact.json">here</a>.
         /// </remarks>
-        public static void TaskStartScenarioInPlace(Ped ped, Scenario scenario, int unkDelay = 0, bool playEnterAnimation = true)
+        public static void TaskStartScenarioInPlace(Ped ped, string scenario, int unkDelay = 0, bool playEnterAnimation = true)
         {
             NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(ped, scenario, unkDelay, playEnterAnimation);
+        }
+        /// <summary>
+        /// Causes the given <paramref name="ped"/> to play the given <paramref name="scenario"/> at the given <paramref name="position"/>
+        /// </summary>
+        /// <param name="ped">The target <see cref="Ped"/></param>
+        /// <param name="scenario">The scenario to be played</param>
+        /// <param name="position">The position that the scenario will be playing at</param>
+        /// <param name="heading">The heading</param>
+        /// <param name="duration">in miliseconds, if <c>-1</c> the task will never timeout</param>
+        /// <param name="sittingScenario"><c>true</c> if the given <paramref name="scenario"/> is a sitting scenario, otherwise <c>false</c></param>
+        /// <param name="teleport">if set to <c>true</c> the <paramref name="ped"/> will be teleported at the given <paramref name="position"/></param>
+        public static void TaskStartScenarioAtPosition(Ped ped, string scenario, Vector3 position, float heading, int duration, bool sittingScenario, bool teleport)
+        {
+            NativeFunction.Natives.TASK_START_SCENARIO_AT_POSITION(ped, scenario, position, heading, duration, sittingScenario, teleport);
         }
 
         /// <summary>

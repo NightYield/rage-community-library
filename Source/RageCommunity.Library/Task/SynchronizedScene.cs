@@ -7,16 +7,25 @@ using RageCommunity.Library.Wrappers;
 
 namespace RageCommunity.Library.Task
 {
+    /// <summary>
+    /// Represent a synchronized scene in the game world
+    /// </summary>
     public sealed class SynchronizedScene : IHandleable, IDeletable, ISpatial
     {
         /// <inheritdoc/>
         public PoolHandle Handle { get; private set; }
         private uint HandleValue => Handle;
+        /// <summary>
+        /// Gets or sets this <see cref="SynchronizedScene"/> phase
+        /// </summary>
         public float Phase
         {
             get => NativeWrappers.GetSynchronizedScenePhase(HandleValue);
             set => NativeWrappers.SetSynchronizedScenePhase(HandleValue, value);
         }
+        /// <summary>
+        /// Gets or sets this <see cref="SynchronizedScene"/> rate
+        /// </summary>
         public float Rate
         {
             get => NativeWrappers.GetSynchronizedSceneRate(HandleValue);
@@ -110,6 +119,9 @@ namespace RageCommunity.Library.Task
             }
             else throw new Rage.Exceptions.InvalidHandleableException(this);
         }
+        /// <summary>
+        /// Makes the given <paramref name="ped"/> to perform this <see cref="SynchronizedScene"/>
+        /// </summary>        
         public Rage.Task TaskToPed(Ped ped,
             AnimationDictionary dictionary,
             string animName,

@@ -81,12 +81,23 @@ namespace RageCommunity.Library.Peds.Freemode
             NativeWrappers.SetPedComponentVariation(this, (int)pedComponent, drawableID, textureID, 0);
         }
         /// <summary>
+        /// Sets this <see cref="FreemodePed"/> property variation
+        /// </summary>
+        /// <param name="property"></param>
+        /// <param name="drawable"></param>
+        /// <param name="texture"></param>
+        /// <param name="attach">Attached or not</param>
+        public void SetPropertyVariation(PedProperty property, int drawable, int texture, bool attach)
+        {
+            NativeWrappers.SetPedPropIndex(this, (int)property, drawable, texture, attach);
+        }
+        /// <summary>
         /// Sets this ped head overlay
         /// </summary>
         /// <param name="headOverlay">The overlay ID</param>
         /// <param name="index">the index value for the given <paramref name="headOverlay"/>. Value outside valid ranges are clamped, to disable use <c>255</c></param>
         /// <param name="opacity">a floating-point between 0.0 and 1.0 to indicates how transparent the overlay is, a value outside the valid ranges are clamped</param>
-        /// <remarks>See: <a href="https://docs.fivem.net/natives/?_0x48F44967FA05CC1E">FiveM</a></remarks>
+        /// <remarks>See: <a href="https://docs.fivem.net/natives/?_0x48F44967FA05CC1E">FiveM</a> for <paramref name="index"/> references</remarks>
         public void SetHeadOverlay(HeadOverlay headOverlay, int index, float opacity)
         {
             //overlayID      Part                  Index,     to disable
@@ -108,10 +119,25 @@ namespace RageCommunity.Library.Peds.Freemode
             NativeWrappers.SetPedHeadOverlay(this, (int)headOverlay, index, opacity);
         }
         /// <summary>
+        /// Sets this <see cref="FreemodePed"/> head overlay color
+        /// </summary>
+        /// <param name="headOverlay">The head overlay</param>
+        /// <param name="colorType">1 for eyebrows, beards, and chest hair; 2 for blush and lipstick, otherwise 0</param>
+        /// <param name="colorID">The colorID</param>
+        /// <param name="secondColorID">The secondary color</param>
+        /// <remarks>
+        /// <para>See <a href="https://wiki.rage.mp/index.php?title=Hair_Colors">this</a> for hair-related color references</para>
+        /// <para>See <a href="https://wiki.rage.mp/index.php?title=Makeup_Colors">this</a> for lipstick, blush and makeup color references</para>
+        /// </remarks>
+        public void SetHeadOverlayColor(HeadOverlay headOverlay, int colorType, int colorID, int secondColorID = 0)
+        {
+            NativeWrappers.SetPedHeadOverlayColor(this, (int)headOverlay, colorType, colorID, secondColorID);
+        }
+        /// <summary>
         /// Sets this <see cref="FreemodePed"/> hair color
         /// </summary>
         /// <param name="hairColorIndex">The index from 0 to 63, outside this are clamped</param>
-        /// <remarks>See: <a href="https://wiki.gtanet.work/index.php?title=Hair_Colors">GTA Network</a></remarks>
+        /// <remarks>See: <a href="https://wiki.gtanet.work/index.php?title=Hair_Colors">GTA Network</a> for hair color references</remarks>
         public void SetHairColor(int hairColorIndex)
         {
             hairColorIndex = MathHelper.Clamp(hairColorIndex, 0, 63);
@@ -145,15 +171,15 @@ namespace RageCommunity.Library.Peds.Freemode
             int[] blushes = { 9, 11, 12, 13, 14, 15, 16 };
             int mother = mothers.GetRandomElement();
             int father = fathers.GetRandomElement();
-            SetHairColor(normalHairColor.GetRandomElement());
+            int hairColor = normalHairColor.GetRandomElement();
             HeadOverlay[] headOverlays = Enum.GetValues(typeof(HeadOverlay)).Cast<HeadOverlay>().ToArray();
             HeadOverlay[] selectedHeadOverlays = headOverlays.OrderBy(x => random.Next()).Take(random.Next(3, headOverlays.Length)).ToArray();
             HeadOverlay[] forbiddenForFemale = { HeadOverlay.FacialHair, HeadOverlay.ChestHair, HeadOverlay.SunDamage, HeadOverlay.Ageing, HeadOverlay.Freckles };
-            HeadOverlay[] forbiddenForMale = { HeadOverlay.Lipstick, HeadOverlay.Makeup, HeadOverlay.Blush, HeadOverlay.AddBodyBlemishes };
+            HeadOverlay[] forbiddenForMale = { HeadOverlay.Lipstick, HeadOverlay.Makeup, HeadOverlay.Blush, };
             FaceFeature[] faceFeatures = Enum.GetValues(typeof(FaceFeature)).Cast<FaceFeature>().ToArray();
             FaceFeature[] selectedFaceFeatures = faceFeatures.OrderBy(x => random.Next()).Take(random.Next(5, headOverlays.Length)).ToArray();
             EyeColor[] normalEyeColors = Enumerable.Range(0, 11).Cast<EyeColor>().ToArray();
-            Dictionary<HeadOverlay, float> opacityMultiplier = new Dictionary<HeadOverlay, float>()
+            Dictionary<HeadOverlay, float> opacityMultiplier = new()
             {
                 {HeadOverlay.Blemishes, 0.1f },
                 {HeadOverlay.FacialHair, 1f },
@@ -168,27 +194,33 @@ namespace RageCommunity.Library.Peds.Freemode
                 {HeadOverlay.ChestHair, 1f },
             };
             #endregion
+            GameFiber.Yield();
             HeadBlend = new HeadBlendData(mother, father, 0, mother, father, 0, (float)Math.Round(random.NextDouble(), 5), (float)Math.Round(random.NextDouble(), 5), 0.0f, false);
+            Game.LogTrivialDebug(HeadBlend.ToString());
             System.Diagnostics.Stopwatch stopwatch = System.Diagnostics.Stopwatch.StartNew();
             while (true)
             {
                 GameFiber.Yield();
                 if (NativeWrappers.HasPedHeadBlendFinished(this))
                 {
-                    Game.LogTrivial($"Time elapsed: {stopwatch.ElapsedMilliseconds}");
+                    Game.LogTrivialDebug($"Time elapsed: {stopwatch.ElapsedMilliseconds}");
                     break;
                 }
                 if (stopwatch.ElapsedMilliseconds > 1000)
                 {
-                    Game.LogTrivial("Abort wait, Timeout");
+                    Game.LogTrivialDebug("Abort wait, Timeout");
                     break;
                 }
             }
             EyeColor = normalEyeColors.GetRandomElement();
+            Game.LogTrivialDebug($"EyeColor: {EyeColor}");
+            SetHairColor(hairColor);
             NativeWrappers.FinalizeHeadBlend(this);
             foreach (FaceFeature faceFeature in selectedFaceFeatures)
             {
-                SetFaceFeature(faceFeature, (float)Math.Round(random.Next(2) == 1 ? random.NextDouble() : random.NextDouble() * -1, 3));
+                float scale = (float)Math.Round(random.Next(2) == 1 ? random.NextDouble() : random.NextDouble() * -1, 3, MidpointRounding.ToEven);
+                SetFaceFeature(faceFeature, scale);
+                Game.LogTrivialDebug($"FaceFeature: {faceFeature}, Scale: {scale}");
             }
             if (IsMale)
             {
@@ -203,11 +235,20 @@ namespace RageCommunity.Library.Peds.Freemode
                     float opacity = headOverlay switch
                     {
                         _ when forbiddenForMale.Contains(headOverlay) => 0.0f,
-                        _ when opacityMultiplier.ContainsKey(headOverlay) => (float)((random.NextDouble() * 2 * opacityMultiplier[headOverlay]) - 1f),
-                        _ => 0.0f,
+                        _ when opacityMultiplier.ContainsKey(headOverlay) => (float)(random.NextDouble() * 2 * opacityMultiplier[headOverlay]),
+                        _ => (float)Math.Round(random.NextDouble(), 5, MidpointRounding.ToEven),
                     };
-                    Game.LogTrivial($"Overlay: {headOverlay}, Index: {index}, Opacity: {opacity}");
+                    Game.LogTrivialDebug($"Overlay: {headOverlay}, Index: {index}, Opacity: {opacity}");
                     SetHeadOverlay(headOverlay, index, opacity);
+                    switch (headOverlay)
+                    {
+                        case HeadOverlay.FacialHair:
+                        case HeadOverlay.ChestHair:
+                        case HeadOverlay.Eyebrows:
+                            NativeWrappers.SetPedHeadOverlayColor(this, (int)headOverlay, 1, hairColor, 0);
+                            break;
+                        default: break;
+                    }
                 }
             }
             else
@@ -225,13 +266,24 @@ namespace RageCommunity.Library.Peds.Freemode
                     float opacity = headOverlay switch
                     {
                         _ when forbiddenForFemale.Contains(headOverlay) => 0.0f,
-                        _ when opacityMultiplier.ContainsKey(headOverlay) => (float)((random.NextDouble() * 2 * opacityMultiplier[headOverlay]) -1f),
-                        _ => 0.0f,
+                        _ when opacityMultiplier.ContainsKey(headOverlay) => (float)(random.NextDouble() * 2 * opacityMultiplier[headOverlay]),
+                        _ => (float)Math.Round(random.NextDouble(), 5, MidpointRounding.ToEven),
                     };
-                    Game.LogTrivial($"Overlay: {headOverlay}, Index: {index}, Opacity: {opacity}");
+                    Game.LogTrivialDebug($"Overlay: {headOverlay}, Index: {index}, Opacity: {opacity}");
                     SetHeadOverlay(headOverlay, index, opacity);
+                    switch (headOverlay)
+                    {
+                        case HeadOverlay.Eyebrows:
+                            NativeWrappers.SetPedHeadOverlayColor(this, (int)headOverlay, 1, hairColor, 0);
+                            break;
+                        case HeadOverlay.Blush:
+                        case HeadOverlay.Lipstick:
+                            NativeWrappers.SetPedHeadOverlayColor(this, (int)headOverlay, 2, random.Next(26), 0);
+                            break;
+                        default: break;
+                    }
                 }
-            }
+            }            
         }
     }
 }
