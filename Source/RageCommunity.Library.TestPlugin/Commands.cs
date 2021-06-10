@@ -256,16 +256,35 @@ namespace RageCommunity.Library.TestPlugin
             SpawnedEntities = new List<Entity>();
         }
         [ConsoleCommand(Description = "Rage Community Library get ped active tasks")]
-        public static void GetPedActiveTasks([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterPedAliveOnly))] Ped ped)
+        public static void Command_GetPedActiveTasks([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterPedAliveOnly))] Ped ped)
         {
             if (ped)
             {
-                ped.GetAllActiveTasks().ForEach(x => Game.LogTrivial(x.ToString()));
+                var tasks = ped.GetAllActiveTasks();
+                if (tasks.Any())
+                {
+                    tasks.ForEach(x => Game.LogTrivial(x.ToString()));
+                }
+                else Game.LogTrivial("No active task");
+            }
+        }
+        [ConsoleCommand(Description = "Rage Community Library get ped active scenarios")]
+        public static void Command_GetPedActiveScenarios([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterPedAliveOnly))] Ped ped)
+        {
+            if (ped)
+            {
+                var scenarios =  ped.GetActiveScenarios();
+                if (scenarios.Any())
+                {
+                    scenarios.ForEach(x => Game.LogTrivial(x.ToString()));
+                }
+                else Game.LogTrivial("No active scenarios");
             }
         }
         private static List<SynchronizedScene> synchronizedScenes = new List<SynchronizedScene>();
         private static bool BenchThreadActivated = false;
-        public static void SynchronizedSceneTest()
+        [ConsoleCommand(Description = "Rage Community Library synchronized scene test")]
+        public static void Command_SynchronizedSceneTest()
         {
             if (BenchThreadActivated)
             {
