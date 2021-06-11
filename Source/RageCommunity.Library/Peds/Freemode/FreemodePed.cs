@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using Rage;
@@ -76,16 +77,11 @@ namespace RageCommunity.Library.Peds.Freemode
         /// </summary>
         public void SetComponentVariation(PedComponent pedComponent, int drawableID, int textureID)
         {
-            drawableID = MathHelper.Clamp(drawableID, 0, GetDrawableVariationCount((int)pedComponent));
-            textureID = MathHelper.Clamp(textureID, 0, GetTextureVariationCount((int)pedComponent, drawableID));
             NativeWrappers.SetPedComponentVariation(this, (int)pedComponent, drawableID, textureID, 0);
         }
         /// <summary>
         /// Sets this <see cref="FreemodePed"/> property variation
         /// </summary>
-        /// <param name="property"></param>
-        /// <param name="drawable"></param>
-        /// <param name="texture"></param>
         /// <param name="attach">Attached or not</param>
         public void SetPropertyVariation(PedProperty property, int drawable, int texture, bool attach)
         {
@@ -95,26 +91,11 @@ namespace RageCommunity.Library.Peds.Freemode
         /// Sets this ped head overlay
         /// </summary>
         /// <param name="headOverlay">The overlay ID</param>
-        /// <param name="index">the index value for the given <paramref name="headOverlay"/>. Value outside valid ranges are clamped, to disable use <c>255</c></param>
-        /// <param name="opacity">a floating-point between 0.0 and 1.0 to indicates how transparent the overlay is, a value outside the valid ranges are clamped</param>
-        /// <remarks>See: <a href="https://docs.fivem.net/natives/?_0x48F44967FA05CC1E">FiveM</a> for <paramref name="index"/> references</remarks>
+        /// <param name="index">the index value for the given <paramref name="headOverlay"/>. to disable the overlay, use <c>255</c></param>
+        /// <param name="opacity">a floating-point between 0.0 and 1.0 to indicates how transparent the overlay is, values outside the valid ranges are clamped</param>
+        /// <remarks>See <a href="https://docs.fivem.net/natives/?_0x48F44967FA05CC1E">this</a> for <paramref name="index"/> references, or use <see cref="NativeWrappers.GetPedHeadOverlayNum(int)"/></remarks>
         public void SetHeadOverlay(HeadOverlay headOverlay, int index, float opacity)
-        {
-            //overlayID      Part                  Index,     to disable
-            //0               Blemishes             0 - 23,     255
-            //1               Facial Hair           0 - 28,     255
-            //2               Eyebrows              0 - 33,     255
-            //3               Ageing                0 - 14,     255
-            //4               Makeup                0 - 74,     255
-            //5               Blush                 0 - 6,      255
-            //6               Complexion            0 - 11,     255
-            //7               Sun Damage            0 - 10,     255
-            //8               Lipstick              0 - 9,      255
-            //9               Moles / Freckles      0 - 17,     255
-            //10              Chest Hair            0 - 16,     255
-            //11              Body Blemishes        0 - 11,     255
-            //12              Add Body Blemishes    0 - 1,      255
-            index = MathHelper.Clamp(index, 0, NativeWrappers.GetPedHeadOverlayNum((int)headOverlay));
+        {           
             opacity = MathHelper.Clamp(opacity, 0.0f, 1.0f);
             NativeWrappers.SetPedHeadOverlay(this, (int)headOverlay, index, opacity);
         }
@@ -163,21 +144,24 @@ namespace RageCommunity.Library.Peds.Freemode
             #region local variable
             int[] mothers = { 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 45 };
             int[] fathers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 42, 43, 44 };
-            int[] maleHairModel = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 30, 31, 
-                35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 65, 66, 68, 70, 71, 72, 73, 74 };
-            int[] femaleHairModel = { 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 28, 30, 31, 
-                32, 36, 37, 38, 39, 40, 41, 42, 45, 46, 47, 48, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 65, 73, 78, 74, 77, 76 };
+            int[] maleHairModel = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 30, 31, 32, 33, 
+                35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 65, 66, 67, 68, 70, 71, 73 };
+            int[] femaleHairModel = { 1, 2, 3, 4, 5, 7, 9, 10, 11, 14, 15, 17, 18, 20, 21, 22, 37, 38, 39, 40, 41, 45, 47, 48, 49, 52, 53, 
+                54, 55, 56, 58, 59, 60, 65, 74, 75, 76 };
             int[] normalHairColor = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 28, 29, 55, 56, 57, 58, 59, 60, 61, 62, 63 };
-            int[] blushes = { 9, 11, 12, 13, 14, 15, 16 };
             int mother = mothers.GetRandomElement();
             int father = fathers.GetRandomElement();
+            int thirdID = random.Next(10) == 0 ? random.Next(46) : 0;
+            float thirdMix = (float)(thirdID == 0 ? 0.0f : random.NextDouble());
+            float resemblance = (float)(IsMale ? random.NextDouble() * 2 * 0.5f : random.NextDouble() * 2 * 0.95f);
+            resemblance = MathHelper.Clamp(resemblance, IsMale ? 0.0f : 0.57725f, 1.0f);
             int hairColor = normalHairColor.GetRandomElement();
             HeadOverlay[] headOverlays = Enum.GetValues(typeof(HeadOverlay)).Cast<HeadOverlay>().ToArray();
-            HeadOverlay[] selectedHeadOverlays = headOverlays.OrderBy(x => random.Next()).Take(random.Next(3, headOverlays.Length)).ToArray();
+            HeadOverlay[] selectedHeadOverlays = headOverlays.OrderBy(x => random.Next(25)).Take(random.Next(3, headOverlays.Length)).ToArray();
             HeadOverlay[] forbiddenForFemale = { HeadOverlay.FacialHair, HeadOverlay.ChestHair, HeadOverlay.SunDamage, HeadOverlay.Ageing, HeadOverlay.Freckles };
             HeadOverlay[] forbiddenForMale = { HeadOverlay.Lipstick, HeadOverlay.Makeup, HeadOverlay.Blush, };
             FaceFeature[] faceFeatures = Enum.GetValues(typeof(FaceFeature)).Cast<FaceFeature>().ToArray();
-            FaceFeature[] selectedFaceFeatures = faceFeatures.OrderBy(x => random.Next()).Take(random.Next(5, headOverlays.Length)).ToArray();
+            FaceFeature[] selectedFaceFeatures = faceFeatures.OrderBy(x => random.Next(25)).Take(random.Next(5, headOverlays.Length)).ToArray();
             EyeColor[] normalEyeColors = Enumerable.Range(0, 11).Cast<EyeColor>().ToArray();
             Dictionary<HeadOverlay, float> opacityMultiplier = new()
             {
@@ -195,9 +179,9 @@ namespace RageCommunity.Library.Peds.Freemode
             };
             #endregion
             GameFiber.Yield();
-            HeadBlend = new HeadBlendData(mother, father, 0, mother, father, 0, (float)Math.Round(random.NextDouble(), 5), (float)Math.Round(random.NextDouble(), 5), 0.0f, false);
+            HeadBlend = new HeadBlendData(mother, father, thirdID, mother, father, thirdID, (float)Math.Round(resemblance, 5), (float)Math.Round(random.NextDouble(), 5), (float)Math.Round(thirdMix, 5), false);
             Game.LogTrivialDebug(HeadBlend.ToString());
-            System.Diagnostics.Stopwatch stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            Stopwatch stopwatch = Stopwatch.StartNew();
             while (true)
             {
                 GameFiber.Yield();
@@ -258,8 +242,8 @@ namespace RageCommunity.Library.Peds.Freemode
                 {
                     int index = headOverlay switch
                     {
-                        HeadOverlay.Blush => blushes.GetRandomElement(),
-                        HeadOverlay.Makeup => random.Next(4) == 1 ? random.Next(17) : 255,
+                        HeadOverlay.Blush => random.Next(10) == 0 ? random.Next(1, 6) : 255,
+                        HeadOverlay.Makeup => random.Next(4) == 1 ? random.Next(1, 16) : 255,
                         _ when forbiddenForFemale.Contains(headOverlay) => 255,
                         _ => random.Next(NativeWrappers.GetPedHeadOverlayNum((int)headOverlay)),
                     };
