@@ -73,6 +73,7 @@
             sb.Append(thirdMix);
             sb.Append(") Parent: ");
             sb.Append(isParent);
+            //Shape: (38, 11, 0). Skin: (38, 11, 0). Mix: (Shape: 0.57725, Skin: 1, Third: 0) Parent: False
             return sb.ToString();
         }
     }

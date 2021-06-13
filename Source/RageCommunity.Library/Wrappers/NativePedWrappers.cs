@@ -114,11 +114,12 @@ namespace RageCommunity.Library.Wrappers
         /// Sets the given <paramref name="ped"/> hair color
         /// </summary>
         /// <param name="ped">The target <see cref="Ped"/></param>
-        /// <param name="hairColorIndex">The hair color index, valid values are from 0 to 63</param>
+        /// <param name="colorID">The hair color index, valid values are from 0 to 63</param>
+        /// <param name="highlightColorId"></param>
         /// <remarks>See: <a href="https://wiki.gtanet.work/index.php?title=Hair_Colors">GTA Network</a></remarks>
-        public static void SetPedHairColor(Ped ped, int hairColorIndex)
+        public static void SetPedHairColor(Ped ped, int colorID, int highlightColorId)
         {
-            Natives.x4CFFC65454C93A49(ped, hairColorIndex);
+            Natives.x4CFFC65454C93A49(ped, colorID, highlightColorId);
         }
 
         /// <summary>
@@ -174,6 +175,20 @@ namespace RageCommunity.Library.Wrappers
         public static int GetNumberOfPedTextureVariations(Ped ped, int componentID, int drawableID)
         {
             return Natives.GetNumberOfPedTextureVariations<int>(ped, componentID, drawableID);
+        }
+        /// <summary>
+        /// Gets the drawable variation count of the specified <paramref name="ped"/>
+        /// </summary>
+        public static int GetNumberOfPedPropDrawableVariations(Ped ped, int pedPropID)
+        {
+            return Natives.GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS<int>(ped, pedPropID);
+        }
+        /// <summary>
+        /// Gets the texture variation count of the specified <paramref name="drawable"/>
+        /// </summary>
+        public static int GetNumberOfPedPropTextureVariations(Ped ped, int pedPropID, int drawable)
+        {
+            return Natives.GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS<int>(ped, pedPropID, drawable);
         }
         /// <summary>
         /// Creates a new synchronized scene

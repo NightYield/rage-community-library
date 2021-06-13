@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Rage;
+﻿using Rage;
 using RageCommunity.Library.Wrappers;
 
 namespace RageCommunity.Library.Task
@@ -84,12 +80,8 @@ namespace RageCommunity.Library.Task
         /// <summary>
         /// Initialize a new instance of <see cref="SynchronizedScene"/> class
         /// </summary>
-        public SynchronizedScene(float x, float y, float z, float roll, float pitch, float yaw)
+        public SynchronizedScene(float x, float y, float z, float roll, float pitch, float yaw) : this(new Vector3(x, y, z), new Rotator(pitch, roll, yaw))
         {
-            Position = new Vector3(x, y, z);
-            Rotation = new Rotator(pitch, roll, yaw);
-            uint _handle = NativeWrappers.CreateSynchronizedScene(Position, Rotation.Roll, Rotation.Pitch, Rotation.Yaw, 2);
-            Handle = new PoolHandle(_handle);
         }
         /// <summary>
         /// Attach this <see cref="SynchronizedScene"/> to the given <paramref name="entity"/>
