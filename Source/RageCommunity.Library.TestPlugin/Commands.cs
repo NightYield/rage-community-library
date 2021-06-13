@@ -293,7 +293,7 @@ namespace RageCommunity.Library.TestPlugin
                 }
                 else
                 {
-                    Game.LogTrivial("No active scenarios");
+                    Game.LogTrivial("No active scenario");
                 }
             }
         }
@@ -320,6 +320,7 @@ namespace RageCommunity.Library.TestPlugin
                     0xd2786f70, //prop_bench_04
                     0x9ec80810, //prop_bench_05
                     0xb17ead7d, //prop_bench_06
+                    0xfbbe41fb, //prop_bench_07
                     0xe7ed1a59, //prop_bench_08
                     0xfa11bea2, //prop_bench_09
                     0x1a117fd1, //prop_bench_10
@@ -328,23 +329,10 @@ namespace RageCommunity.Library.TestPlugin
                     0x723e2ae0, //prop_ld_bench01
                     0x0ff3a92b, //prop_wait_bench_01
                     0x5515a05a, //v_res_fh_benchlong
-                    0x883cb2e8, //v_res_fh_benchshort
-                    389157600,   //v_ind_meatbench
-                    2737814756, //h4_int_05_bench_2
-                    2420217608, //h4_int_05_bench_3
+                    0x883cb2e8, //v_res_fh_benchshort                   
                     0xbac3f7a8, //v_ind_rc_bench
                     0x90aa8a87, //hei_heist_stn_benchshort
-                    1904795184, //dt1_03_benchirefm
-                    2023660193, //bh1_15_bench_posh
-                    4063422016, //hei_heist_bench01
-                    3783804139, //hei_heist_bench02
-                    3550619935, //hei_heist_bench03
-                    3873021634, //v_16_shitbench
                 };
-                benchHash.Select(x=> new Model(x)).ToList().ForEach(x =>
-                {
-                    if (!x.IsValid || !x.IsInCdImage) Game.LogTrivial($"0x{x.Hash:X} is invalid"); 
-                });
                 Rage.Object bench = null;
                 int benchStatus = 0;
                 Vector3 benchInitialPos = Vector3.Zero;
@@ -359,6 +347,10 @@ namespace RageCommunity.Library.TestPlugin
                 while (true)
                 {
                     GameFiber.Yield();
+                    if (Game.LocalPlayer.Character.IsInAnyVehicle(false) || Game.LocalPlayer.Character.IsDead || Game.IsPaused || Game.Console.IsOpen || Game.IsScreenFadingOut)
+                    {
+                        continue;
+                    }
                     switch (benchStatus)
                     {
                         case 0:
@@ -372,11 +364,10 @@ namespace RageCommunity.Library.TestPlugin
                             if (Game.IsControlPressed(2, GameControl.Context))
                             {
                                 benchStatus = 1;
-                                Game.LogTrivial("Context Key Pressed");
                             }
                             break;
                         case 1:
-                            benchInitialPos = bench.GetOffsetPositionFront(1f);
+                            benchInitialPos = bench.Position + new Vector3(1.5f, -1f, 0f);
                             closeTask = Game.LocalPlayer.Character.Tasks.FollowNavigationMeshToPosition(benchInitialPos, bench.Heading, 1f, 10000);
                             benchStatus = 2;
                             break;
