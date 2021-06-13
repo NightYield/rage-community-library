@@ -9,7 +9,7 @@ using RageCommunity.Library.Extensions;
 namespace RageCommunity.Library.Peds.Freemode
 {
     /// <summary>
-    /// Represent a freemode character in game world
+    /// Represent a freemode character in the game world
     /// </summary>
     public class FreemodePed : Ped
     {
@@ -164,7 +164,7 @@ namespace RageCommunity.Library.Peds.Freemode
             int[] fathers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 42, 43, 44 };
             int[] maleHairModel = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 30, 31, 32, 33, 
                 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 65, 66, 67, 68, 70, 71, 73 };
-            int[] femaleHairModel = { 1, 2, 3, 4, 5, 7, 9, 10, 11, 14, 15, 17, 18, 20, 21, 22, 37, 38, 39, 40, 41, 45, 47, 48, 49, 52, 53, 
+            int[] femaleHairModel = { 1, 2, 3, 4, 5, 7, 9, 10, 11, 14, 15, 17, 18, 20, 21, 22, 38, 39, 40, 41, 45, 47, 48, 49, 52, 53, 
                 54, 55, 56, 58, 59, 60, 65, 74, 75, 76 };
             int[] normalHairColor = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 28, 29, 55, 56, 57, 58, 59, 60, 61, 62, 63 };
             int[] hairHighlightColor = { 0, 1, 2, 11, 12, 20, 21, 22, 33, 34, 29, 36, 35, 40, 41, 53, 52, 51, 47, 45, 62, 63 };

@@ -3,7 +3,9 @@
     using System.Runtime.InteropServices;
     using System.Text;
     /// <summary>
+    /// <para>Represent a freemode character head blend data</para>
     /// Source: <a href="https://gist.github.com/NoNameSet/20b7d1d75763b0678564eaedd4bed404">NoNameSet Github Gist</a>
+    /// <para>See: <a href="https://gtaforums.com/topic/858970-all-gtao-face-ids-pedset_ped_head_blend_data-explained/">GTA Forums</a></para>
     /// </summary>
     [StructLayout(LayoutKind.Explicit, Size = 80)]
     public struct HeadBlendData

@@ -55,12 +55,12 @@
     <Compile Include="Graphics\MarkerType.cs" />
     <Compile Include="Attributes\DefectNativeAttribute.cs" />
     <Compile Include="Objects\ObjectBone.cs" />
-    <Compile Include="Peds\Freemode\PedComponent.cs" />
+    <Compile Include="Peds\PedComponent.cs" />
     <Compile Include="Peds\Freemode\EyeColor.cs" />
     <Compile Include="Peds\Freemode\FaceFeature.cs" />
     <Compile Include="Peds\Freemode\FreemodePed.cs" />
     <Compile Include="Peds\Freemode\HeadBlendData.cs" />
-    <Compile Include="Peds\Freemode\PedProperty.cs" />
+    <Compile Include="Peds\PedProperty.cs" />
     <Compile Include="Peds\Models\AmbientFemale.cs" />
     <Compile Include="Peds\Models\AmbientMale.cs" />
     <Compile Include="Peds\Models\Animal.cs" />

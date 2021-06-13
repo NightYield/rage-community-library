@@ -25,6 +25,9 @@
         /// </summary>
         Atomic,
         Warp,
+        /// <summary>
+        /// Sharingan
+        /// </summary>
         ECola,
         SpaceRanger,
         /// <summary>
@@ -42,11 +45,17 @@
         /// Goat eyes
         /// </summary>
         Goat,
+        /// <summary>
+        /// Yellow and black
+        /// </summary>
         Smiley,
         /// <summary>
         /// Full black
         /// </summary>
         Possessed,
+        /// <summary>
+        /// Red with black pupil
+        /// </summary>
         Demon,
         /// <summary>
         /// Red and blue

@@ -40,7 +40,13 @@
         /// </summary>
         Freckles,
         ChestHair,
+        /// <summary>
+        /// Chest blemishes
+        /// </summary>
         BodyBlemishes,
+        /// <summary>
+        /// More chest blemishes
+        /// </summary>
         AddBodyBlemishes
     }
 }
