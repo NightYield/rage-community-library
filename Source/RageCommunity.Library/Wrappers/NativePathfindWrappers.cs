@@ -54,5 +54,12 @@ namespace RageCommunity.Library.Wrappers
             safeCoord = outPosition;
             return success;
         }
+        /// <summary>
+        /// Same with <see cref="Vector3.TravelDistance(Vector3, Vector3)"/>
+        /// </summary>
+        public static float CalculateTravelDistanceBetweenPoints(Vector3 from, Vector3 to)
+        {
+            return NativeFunction.Natives.CALCULATE_TRAVEL_DISTANCE_BETWEEN_POINTS<float>(from, to);
+        }
     }
 }

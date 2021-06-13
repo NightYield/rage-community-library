@@ -167,7 +167,7 @@ namespace RageCommunity.Library.Graphics
         {
             return checkpoint != null && checkpoint.IsValid;
         }
-
+        /// <inheritdoc/>
         public void Delete()
         {
             if (IsValid)
@@ -177,32 +177,32 @@ namespace RageCommunity.Library.Graphics
 
             IsValid = false;
         }
-
+        /// <inheritdoc/>
         public float DistanceTo(ISpatial target)
         {
             return Position.DistanceTo(target);
         }
-
+        /// <inheritdoc/>
         public float DistanceTo(Vector3 target)
         {
             return Position.DistanceTo(target);
         }
-
+        /// <inheritdoc/>
         public float DistanceTo2D(Vector3 target)
         {
             return Position.DistanceTo2D(target);
         }
-
+        /// <inheritdoc/>
         public float DistanceTo2D(ISpatial target)
         {
             return Position.DistanceTo2D(target);
         }
-
+        /// <inheritdoc/>
         public float TravelDistanceTo(Vector3 target)
         {
             return Position.TravelDistanceTo(target);
         }
-
+        /// <inheritdoc/>
         public float TravelDistanceTo(ISpatial target)
         {
             return Position.TravelDistanceTo(target);
