@@ -336,14 +336,13 @@ namespace RageCommunity.Library.TestPlugin
                 Rage.Object bench = null;
                 int benchStatus = 0;
                 Vector3 benchInitialPos = Vector3.Zero;
+                Vector3 sitPos = Vector3.Zero;
                 Rage.Task closeTask = null;
                 string sitStr = Game.GetLocalizedString("MPTV_WALK"); //Press ~INPUT_CONTEXT~ to sit down.
                 string standUpStr = Game.GetLocalizedString("MPOFSEAT_PCEXIT");
-                Game.LogTrivial("After localized string");
                 string[] benchIdles = { "idle_a", "idle_b", "idle_c" };
                 AnimationDictionary seating = Game.LocalPlayer.Character.IsMale ? "anim@amb@office@seating@male@var_a@base@" : "anim@amb@office@seating@female@var_d@base@";
                 seating.LoadAndWait();
-                Game.LogTrivial("Starting the loop");
                 while (true)
                 {
                     GameFiber.Yield();
@@ -367,8 +366,9 @@ namespace RageCommunity.Library.TestPlugin
                             }
                             break;
                         case 1:
-                            benchInitialPos = bench.Position + new Vector3(1.5f, -1f, 0f);
-                            closeTask = Game.LocalPlayer.Character.Tasks.FollowNavigationMeshToPosition(benchInitialPos, bench.Heading, 1f, 10000);
+                            sitPos = bench.Position + bench.RightVector * 0.85f;
+                            benchInitialPos = sitPos + bench.ForwardVector * -1;
+                            closeTask = Game.LocalPlayer.Character.Tasks.FollowNavigationMeshToPosition(benchInitialPos, bench.Heading - 180, 1f, 10000);
                             benchStatus = 2;
                             break;
                         case 2:
@@ -376,7 +376,7 @@ namespace RageCommunity.Library.TestPlugin
                             {
                                 break;
                             }
-                            syncScene = new SynchronizedScene(bench.Position, bench.Rotation);
+                            syncScene = new SynchronizedScene(sitPos, bench.Rotation);
                             synchronizedScenes.Add(syncScene);
                             syncScene.TaskToPed(Game.LocalPlayer.Character, seating, "enter", 13);
                             benchStatus = 3;
@@ -386,7 +386,7 @@ namespace RageCommunity.Library.TestPlugin
                             {
                                 break;
                             }
-                            syncScene = new SynchronizedScene(bench.Position, bench.Rotation);
+                            syncScene = new SynchronizedScene(sitPos, bench.Rotation);
                             synchronizedScenes.Add(syncScene);
                             syncScene.TaskToPed(Game.LocalPlayer.Character, seating, "base", 13, playbackRate: 1148846080);
                             benchStatus = 4;
@@ -401,13 +401,13 @@ namespace RageCommunity.Library.TestPlugin
                             {
                                 break;
                             }
-                            syncScene = new SynchronizedScene(bench.Position, bench.Rotation);
+                            syncScene = new SynchronizedScene(sitPos, bench.Rotation);
                             synchronizedScenes.Add(syncScene);
                             syncScene.TaskToPed(Game.LocalPlayer.Character, seating, benchIdles.GetRandomElement(), 13, playbackRate: 1148846080);
                             benchStatus = 3;
                             break;
                         case 5:
-                            syncScene = new SynchronizedScene(bench.Position, bench.Rotation);
+                            syncScene = new SynchronizedScene(sitPos, bench.Rotation);
                             synchronizedScenes.Add(syncScene);
                             syncScene.TaskToPed(Game.LocalPlayer.Character, seating, "exit", 13, playbackRate: 1000f);
                             benchStatus = 6;
@@ -431,6 +431,6 @@ namespace RageCommunity.Library.TestPlugin
                     }
                 }
             });
-        }
+        }      
     }
 }

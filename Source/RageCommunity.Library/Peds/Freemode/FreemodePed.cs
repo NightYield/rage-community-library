@@ -172,8 +172,8 @@ namespace RageCommunity.Library.Peds.Freemode
             int secondID = fathers.GetRandomElement();
             int thirdID = random.Next(10) == 0 ? IsMale ? fathers.GetRandomElement() : mothers.GetRandomElement() : 0;
             float thirdMix = (float)(thirdID == 0 ? 0.0f : random.NextDouble());
-            float resemblance = (float)(IsFemale ? random.NextDouble() * 2 * 0.077 : random.NextDouble());
-            resemblance = MathHelper.Clamp(resemblance, 0.0f, IsFemale ? 0.15422f : 1.0f);
+            float resemblance = (float)(IsFemale ? random.NextDouble() * 2 * 0.077 : random.NextDouble() * 2 * 0.785);
+            resemblance = MathHelper.Clamp(resemblance, 0.0f, 1.0f);
             float skinTone = (float)random.NextDouble();
             int hairColor = normalHairColor.GetRandomElement();
             HeadOverlay[] headOverlays = Enum.GetValues(typeof(HeadOverlay)).Cast<HeadOverlay>().ToArray();
@@ -201,31 +201,26 @@ namespace RageCommunity.Library.Peds.Freemode
 #endregion
             GameFiber.Yield();
             HeadBlend = new HeadBlendData(firstID, secondID, thirdID, firstID, secondID, thirdID, (float)Math.Round(resemblance, 5), (float)Math.Round(skinTone, 5), (float)Math.Round(thirdMix, 5), false);
-            Game.LogTrivialDebug(HeadBlend.ToString());
             Stopwatch stopwatch = Stopwatch.StartNew();
             while (true)
             {
                 GameFiber.Yield();
                 if (NativeWrappers.HasPedHeadBlendFinished(this))
                 {
-                    Game.LogTrivialDebug($"Time elapsed: {stopwatch.ElapsedMilliseconds}");
                     break;
                 }
                 if (stopwatch.ElapsedMilliseconds > 1000)
                 {
-                    Game.LogTrivialDebug("Abort wait, Timeout");
                     break;
                 }
             }
             EyeColor = normalEyeColors.GetRandomElement();
-            Game.LogTrivialDebug($"EyeColor: {EyeColor}");
             SetHairColor(hairColor, random.Next(10) == 0 ? hairHighlightColor.GetRandomElement() : hairColor);
             NativeWrappers.FinalizeHeadBlend(this);
             foreach (FaceFeature faceFeature in selectedFaceFeatures)
             {
                 float scale = (float)Math.Round(random.Next(2) == 1 ? random.NextDouble() : random.NextDouble() * -1, 3, MidpointRounding.ToEven);
                 SetFaceFeature(faceFeature, scale);
-                Game.LogTrivialDebug($"Face Feature: {faceFeature}, Scale: {scale}");
             }
             if (IsMale)
             {
@@ -243,7 +238,6 @@ namespace RageCommunity.Library.Peds.Freemode
                         _ when opacityMultiplier.ContainsKey(headOverlay) => (float)(random.NextDouble() * 2 * opacityMultiplier[headOverlay]),
                         _ => (float)Math.Round(random.NextDouble(), 5, MidpointRounding.ToEven),
                     };
-                    Game.LogTrivialDebug($"Overlay: {headOverlay}, Index: {index}, Opacity: {opacity}");
                     SetHeadOverlay(headOverlay, index, opacity);
                     switch (headOverlay)
                     {
@@ -256,7 +250,7 @@ namespace RageCommunity.Library.Peds.Freemode
                     }
                 }
             }
-            else
+            else if (IsFemale)
             {
                 SetComponentVariation(PedComponent.HairStyle, femaleHairModel.GetRandomElement(), 0);
                 foreach (HeadOverlay headOverlay in selectedHeadOverlays)
@@ -274,7 +268,6 @@ namespace RageCommunity.Library.Peds.Freemode
                         _ when opacityMultiplier.ContainsKey(headOverlay) => (float)(random.NextDouble() * 2 * opacityMultiplier[headOverlay]),
                         _ => (float)Math.Round(random.NextDouble(), 5, MidpointRounding.ToEven),
                     };
-                    Game.LogTrivialDebug($"Overlay: {headOverlay}, Index: {index}, Opacity: {opacity}");
                     SetHeadOverlay(headOverlay, index, opacity);
                     switch (headOverlay)
                     {
