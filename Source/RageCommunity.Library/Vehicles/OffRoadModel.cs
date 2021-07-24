@@ -7,9 +7,18 @@
         Blazer = -2128233223,
         Blazer2 = -48031959,
         Blazer3 = -1269889662,
+        Blazer4 = 14219250,
         Blazer5 = -1590337689,
         Bodhi2 = -1435919434,
         Brawler = -1479664699,
+        Bruiser = 28316538,
+        Bruiser2 = 20458105,
+        Bruiser3 = 51680334,
+        Brutus = 50966950,
+        Brutus2 = 21493759,
+        Brutus3 = 13185320,
+        Caracara = 17288894,
+        Caracara2 = 1913262,
         DLoader = 1770332643,
         Dune = -1661854193,
         Dune2 = 534258863,
@@ -22,6 +31,7 @@
         Kalahari = 92612664,
         Lguard = 469291905,
         Marshall = 1233534620,
+        Menacer = 55625145,
         Mesa = 914654722,
         Mesa2 = -748008636,
         Mesa3 = -2064372143,
@@ -29,6 +39,7 @@
         Nightshark = 433954513,
         RancherXL = 1645267888,
         RancherXL2 = 1933662059,
+        RCBandito = 26661098,
         Rebel = -1207771834,
         Rebel2 = -2045594037,
         Sandking = -1189015600,
@@ -39,6 +50,7 @@
         TrophyTruck = 101905590,
         TrophyTruck2 = -663299102,
         Verus = 62334643,
-        Winky = 21627011
+        Winky = 21627011,
+        Yosemite3 = 53588770
     }
 }

@@ -3,12 +3,15 @@
     public enum SuperModel
     {
         Adder = -1216765807,
+        Autarch = 31432682,
         Bullet = -1696146015,
         Cheetah = -1311154784,
         EntityXF = -1291952903,
         FMJ = 1426219628,
         GP1 = 1234311532,
         Infernus = 418536135,
+        Italigtb = -2048333973,
+        Italigtb2 = -482719877,
         RE7B = -1232836011,
         Nero = 1034187331,
         Nero2 = 1093792632,
@@ -17,6 +20,7 @@
         Pfister811 = -1829802492,
         Prototipo = 2123327359,
         Reaper = 234062309,
+        Scramjet = 4392025,
         Sheava = 819197656,
         SultanRS = -295689028,
         Superd = 1123216662,
@@ -27,11 +31,10 @@
         Tyrus = 2067820283,
         Vacca = 338562499,
         Vagner = 1939284556,
+        Vigilante = 26839093,
         Voltic = -1622444098,
         Voltic2 = 989294410,
+        XA21 = 917809321,
         Zentorno = -1403128555,
-        Italigtb = -2048333973,
-        Italigtb2 = -482719877,
-        XA21 = 917809321
     }
 }

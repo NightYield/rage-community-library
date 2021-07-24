@@ -14,6 +14,7 @@
         Emperor3 = -1241712818,
         Fugitive = 1909141499,
         Glendale = 75131841,
+        Glendale2 = 23566941,
         Ingot = -1289722222,
         Intruder = 886934177,
         Limo2 = -114627507,
@@ -27,7 +28,9 @@
         Stretch = -1961627517,
         Surge = -1894894188,
         Tailgater = -1008861746,
+        Tailgater2 = 13667095,
         Warrener = 1373123368,
+        Warrener2 = 13114902,
         Washington = 1777363799,
     }
 }
