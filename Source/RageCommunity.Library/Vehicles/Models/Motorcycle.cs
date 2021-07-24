@@ -48,6 +48,7 @@
         Sanctus = 1491277511,
         Shotaro = -405626514,
         Sovereign = 743478836,
+        Stryder = 47847823,
         Thrust = 1836027715,
         Vader = -140902153,
         Vindicator = -1353081087,

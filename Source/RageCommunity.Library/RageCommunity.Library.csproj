@@ -79,6 +79,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task\Scenario.cs" />
     <Compile Include="Vehicles\Models\Boat.cs" />
+    <Compile Include="Vehicles\Models\OpenWheel.cs" />
     <Compile Include="Vehicles\Models\Commercial.cs" />
     <Compile Include="Vehicles\Models\Compact.cs" />
     <Compile Include="Vehicles\Models\Coupe.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Vehicles\Models\Plane.cs" />
     <Compile Include="Vehicles\Models\Sedan.cs" />
     <Compile Include="Vehicles\Models\Service.cs" />
+    <Compile Include="Vehicles\Models\SportClassic.cs" />
     <Compile Include="Vehicles\Models\Sport.cs" />
     <Compile Include="Vehicles\Models\Super.cs" />
     <Compile Include="Vehicles\Models\SUV.cs" />
