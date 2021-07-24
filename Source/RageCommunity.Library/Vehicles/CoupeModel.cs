@@ -10,6 +10,7 @@
         Jackal = -624529134,
         Oracle = 1348744438,
         Oracle2 = -511601230,
+        Previon = 42588421,
         Sentinel = 1349725314,
         Sentinel2 = 873639469,
         Windsor = 1581459400,
