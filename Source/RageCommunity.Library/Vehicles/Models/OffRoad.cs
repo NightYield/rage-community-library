@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum OffRoadModel
+    public enum OffRoad
     {
         BfInjection = 1126868326,
         Bifta = -349601129,

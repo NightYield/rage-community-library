@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum UtilityModel
+    public enum Utility
     {
         Airtug = 1560980623,
         Caddy = 1147287684,

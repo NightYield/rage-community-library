@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum CoupeModel
+    public enum Coupe
     {
         CogCabrio = 330661258,
         Exemplar = -5153954,

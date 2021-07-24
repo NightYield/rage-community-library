@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum MotorcycleModel
+    public enum Motorcycle
     {
         Akuma = 1672195559,
         Avarus = -2115793025,

@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum CompactModel
+    public enum Compact
     {
         Asbo = 45238743,
         Blista = -344943009,

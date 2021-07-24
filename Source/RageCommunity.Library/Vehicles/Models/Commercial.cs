@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum CommercialModel
+    public enum Commercial
     {
         Benson = 2053223216,
         Biff = 850991848,

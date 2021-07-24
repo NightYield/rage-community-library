@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum IndustrialModel
+    public enum Industrial
     {
         Bulldozer = 1886712733,
         Cutter = -1006919392,

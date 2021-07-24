@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum PlaneModel
+    public enum Plane
     {
         Alkonost = 48539321,
         AlphaZ1 = 47418981,

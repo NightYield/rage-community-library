@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum CycleModel
+    public enum Cycle
     {
         Bmx = 1131912276,
         Cruiser = 448402357,

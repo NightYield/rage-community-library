@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum MilitaryModel
+    public enum Military
     {
         APC = 562680400,
         Barracks = -823509173,

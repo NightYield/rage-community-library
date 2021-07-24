@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum HelicopterModel
+    public enum Helicopter
     {
         Annihilator = 837858166,
         Annihilator2 = 2111324,

@@ -1,6 +1,6 @@
-﻿namespace RageCommunity.Library.Vehicles
+﻿namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum SuperModel
+    public enum Super
     {
         Adder = -1216765807,
         Autarch = 31432682,
