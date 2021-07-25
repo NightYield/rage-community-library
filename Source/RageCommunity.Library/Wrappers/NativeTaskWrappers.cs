@@ -15,7 +15,7 @@ namespace RageCommunity.Library.Wrappers
         /// </remarks>
         public static void TaskStartScenarioInPlace(Ped ped, Scenario scenario, int unkDelay = 0, bool playEnterAnimation = true)
         {
-            NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(ped, scenario, unkDelay, playEnterAnimation);
+            NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(ped, scenario.ToString(), unkDelay, playEnterAnimation);
         }
         /// <summary>
         /// Causes the given <paramref name="ped"/> to play the given <paramref name="scenario"/> at the given <paramref name="position"/>
