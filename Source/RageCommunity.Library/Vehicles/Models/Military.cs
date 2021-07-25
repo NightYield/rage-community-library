@@ -11,12 +11,13 @@
         Crusader = 321739290,
         Halftrack = -32236122,
         Khanjali = 29187653,
+        MiniTank = 35833700,
         Rhino = 782665360,
         Scarab = 47068346,
         Scarab2 = 15902130,
         Scarab3 = 11245314,
         Thruster = 53178769,
-        Trailersmall2 = -1881846085,
+        TrailerSmall2 = 28620912,
         Vetir = 29536455
     }
 }

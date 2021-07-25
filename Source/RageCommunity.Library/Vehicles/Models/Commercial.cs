@@ -20,6 +20,7 @@
         Pounder = 2112052861,
         Pounder2 = 49449836,
         Stockade = 1747439474,
-        Stockade3 = -214455498
+        Stockade3 = -214455498,
+        Terbyte = 23388212,
     }
 }

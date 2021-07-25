@@ -5,7 +5,7 @@
         Asea = -1809822327,
         Asea2 = -1807623979,
         Asterope = -1903012613,
-        Cog55 = 906642318, Sedans,
+        Cog55 = 906642318,
         Cog552 = 704435172,
         Cognoscenti = -2030171296,
         Cognoscenti2 = -604842630,

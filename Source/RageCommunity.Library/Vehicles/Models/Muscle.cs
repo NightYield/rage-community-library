@@ -52,6 +52,7 @@
         RatLoader2 = -589178377,
         Ruiner = -227741703,
         Ruiner2 = 941494461,
+        Ruiner3 = 65761211,
         SabreGT = -1685021548,
         SabreGT2 = 223258115,
         Sadler2 = 734217681,

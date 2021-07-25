@@ -3,6 +3,9 @@
     public enum SportClassic
     {
         Ardent = 159274291,
+        BType = 62677815,
+        BType2 = 6426732,
+        BType3 = 19389666,
         Casco = 941800958,
         Cheburek = 33562175,
         Cheetah2 = 223240013,
@@ -40,6 +43,7 @@
         Tornado6 = -1558399629,
         Turismo2 = 54788197,
         Viseris = 36806171,
+        Z190 = 20238183,
         Zion3 = 32025688,
         ZType = 75889561,
     }

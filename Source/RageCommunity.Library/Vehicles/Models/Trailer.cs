@@ -23,6 +23,7 @@
         TrailerSmall = 712162987,
         Trailers = -877478386,
         Trailers2 = -1579533167,
-        Trailers3 = -2058878099
+        Trailers3 = -2058878099,
+        Trailers4 = 19915451,
     }
 }

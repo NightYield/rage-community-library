@@ -33,10 +33,12 @@ namespace RageCommunity.Library.Vehicles.Models
         Rumpo3 = 1475773103,
         Speedo = -810318068,
         Speedo2 = 728614474,
+        Speedo4 = 44364650,
         Surfer = 699456151,
         Surfer2 = -1311240698,
         Taco = 1951180813,
         Youga = 65402552,
-        Youga2 = 1026149675
+        Youga2 = 1026149675,
+        Youga3 = 65411192,
     }
 }

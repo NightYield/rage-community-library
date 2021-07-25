@@ -42,6 +42,7 @@
         Oppressor2 = 12617908,
         PCJ = -909201658,
         Ratbike = 1873600305,
+        RRocket = 59722943,
         Ruffian = -893578776,
         Sanchez2 = -1453280962,
         Sanchez = 788045382,
@@ -54,7 +55,7 @@
         Vindicator = -1353081087,
         Vortex = -609625092,
         Wolfsbane = -618617997,
-        Zombiea = -1009268949,
-        Zombieb = -570033273,
+        ZombieA = -1009268949,
+        ZombieB = -570033273,
     }
 }
