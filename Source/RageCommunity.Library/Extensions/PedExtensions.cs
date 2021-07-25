@@ -25,7 +25,7 @@ namespace RageCommunity.Library.Extensions
         /// <summary>
         /// Causes this ped to start playing the specified scenario in place.
         /// </summary>
-        public static void StartScenario(this Ped ped, Scenario scenario, int unkDelay = 0, bool playEnterAnimation = true)
+        public static void StartScenarioInPlace(this Ped ped, Scenario scenario, int unkDelay = 0, bool playEnterAnimation = true)
         {
             NativeWrappers.TaskStartScenarioInPlace(ped, scenario.ToString(), unkDelay, playEnterAnimation);
         }
