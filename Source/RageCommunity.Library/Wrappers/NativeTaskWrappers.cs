@@ -13,7 +13,7 @@ namespace RageCommunity.Library.Wrappers
         /// <remarks>
         /// A list of scenarios can be found <a href="https://github.com/DurtyFree/gta-v-data-dumps/blob/master/scenariosCompact.json">here</a>.
         /// </remarks>
-        public static void TaskStartScenarioInPlace(Ped ped, string scenario, int unkDelay = 0, bool playEnterAnimation = true)
+        public static void TaskStartScenarioInPlace(Ped ped, Scenario scenario, int unkDelay = 0, bool playEnterAnimation = true)
         {
             NativeFunction.Natives.TASK_START_SCENARIO_IN_PLACE(ped, scenario, unkDelay, playEnterAnimation);
         }
