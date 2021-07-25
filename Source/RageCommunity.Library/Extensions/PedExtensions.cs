@@ -39,7 +39,7 @@ namespace RageCommunity.Library.Extensions
         /// <param name="duration">in miliseconds, if <c>-1</c> the task will never timeout</param>
         /// <param name="sittingScenario"><c>true</c> if the given <paramref name="scenario"/> is a sitting scenario, otherwise <c>false</c></param>
         /// <param name="teleport">if set to <c>true</c> the <paramref name="ped"/> will be teleported at the given <paramref name="position"/></param>
-        public static void StartScenario(this Ped ped, Scenario scenario, Vector3 position, float heading, int duration, bool sittingScenario, bool teleport)
+        public static void StartScenarioAtPosition(this Ped ped, Scenario scenario, Vector3 position, float heading, int duration, bool sittingScenario, bool teleport)
         {
             NativeWrappers.TaskStartScenarioAtPosition(ped, scenario.ToString(), position, heading, duration, sittingScenario, teleport);
         }
