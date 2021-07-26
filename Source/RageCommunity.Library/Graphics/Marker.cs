@@ -14,6 +14,7 @@ namespace RageCommunity.Library.Graphics
     public class Marker : ISpatial
     {
         public MarkerType MarkerType { get; set; }
+        /// <inheritdoc/>
         public Vector3 Position { get; set; }
         public Vector3 Direction { get; set; }
         public Vector3 Rotation { get; set; }
@@ -51,32 +52,32 @@ namespace RageCommunity.Library.Graphics
         {
             NativeWrappers.DrawMarker(MarkerType, Position, Direction, Rotation, Scale, MarkerColor, BobUpAndDown, FaceCamera, Rotate, DrawOnEntities);
         }
-
+        /// <inheritdoc/>
         public float DistanceTo(ISpatial target)
         {
             return Position.DistanceTo(target);
         }
-
+        /// <inheritdoc/>
         public float DistanceTo(Vector3 target)
         {
             return Position.DistanceTo(target);
         }
-
+        /// <inheritdoc/>
         public float DistanceTo2D(Vector3 target)
         {
             return Position.DistanceTo2D(target);
         }
-
+        /// <inheritdoc/>
         public float DistanceTo2D(ISpatial target)
         {
             return Position.DistanceTo2D(target);
         }
-
+        /// <inheritdoc/>
         public float TravelDistanceTo(Vector3 target)
         {
             return Position.TravelDistanceTo(target);
         }
-
+        /// <inheritdoc/>
         public float TravelDistanceTo(ISpatial target)
         {
             return Position.TravelDistanceTo(target);

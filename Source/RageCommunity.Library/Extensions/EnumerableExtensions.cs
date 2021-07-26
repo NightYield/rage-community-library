@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RageCommunity.Library.Extensions
 {
     public static class EnumerableExtensions
     {
-        private static readonly Random Random = new Random();
+        private static readonly Random Random = new();
 
         /// <summary>
         /// Shuffle this <paramref name="list"/>
