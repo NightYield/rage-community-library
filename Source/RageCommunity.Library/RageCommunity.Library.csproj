@@ -109,7 +109,7 @@
     <Compile Include="Vehicles\Models\Super.cs" />
     <Compile Include="Vehicles\Models\SUV.cs" />
     <Compile Include="Vehicles\Models\Trailer.cs" />
-    <Compile Include="Vehicles\Models\Train.cs" />
+    <Compile Include="Vehicles\Models\Rail.cs" />
     <Compile Include="Vehicles\Models\Utility.cs" />
     <Compile Include="Vehicles\Models\Van.cs" />
     <Compile Include="Vehicles\VehicleLightsState.cs" />

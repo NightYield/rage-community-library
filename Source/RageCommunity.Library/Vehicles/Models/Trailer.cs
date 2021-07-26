@@ -8,22 +8,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// 
         /// </summary>
-        ArmyTanker = -1207431159,
+        ArmyTanker = 3087536137,
 
         /// <summary>
         /// 
         /// </summary>
-        ArmyTrailer = -1476447243,
+        ArmyTrailer = 2818520053,
 
         /// <summary>
         /// 
         /// </summary>
-        ArmyTrailer2 = -1637149482,
+        ArmyTrailer2 = 2657817814,
 
         /// <summary>
         /// 
         /// </summary>
-        BaleTrailer = -399841706,
+        BaleTrailer = 3895125590,
 
         /// <summary>
         /// 
@@ -33,12 +33,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// 
         /// </summary>
-        CableCar = -960289747,
+        CableCar = 3334677549,
 
         /// <summary>
         /// 
         /// </summary>
-        DockTrailer = -2140210194,
+        DockTrailer = 2154757102,
 
         /// <summary>
         /// 
@@ -58,6 +58,16 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// 
         /// </summary>
+        Tanker = 3564062519,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Tanker2 = 1956216962,
+
+        /// <summary>
+        /// 
+        /// </summary>
         TR2 = 2078290630,
 
         /// <summary>
@@ -73,27 +83,27 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// 
         /// </summary>
-        TRFlat = -1352468814,
-
-        /// <summary>
-        /// 
-        /// </summary>
-        TVTrailer = -1770643266,
-
-        /// <summary>
-        /// 
-        /// </summary>
-        Tanker = -730904777,
-
-        /// <summary>
-        /// 
-        /// </summary>
-        Tanker2 = 1956216962,
-
-        /// <summary>
-        /// 
-        /// </summary>
         TrailerLogs = 2016027501,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Trailers = 3417488910,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Trailers2 = 2715434129,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Trailers3 = 2236089197,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Trailers4 = 3194418602,
 
         /// <summary>
         /// 
@@ -103,21 +113,11 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// 
         /// </summary>
-        Trailers = -877478386,
+        TRFlat = 2942498482,
 
         /// <summary>
         /// 
         /// </summary>
-        Trailers2 = -1579533167,
-
-        /// <summary>
-        /// 
-        /// </summary>
-        Trailers3 = -2058878099,
-
-        /// <summary>
-        /// 
-        /// </summary>
-        Trailers4 = 19915451,
+        TVTrailer = 2524324030,
     }
 }

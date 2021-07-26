@@ -18,12 +18,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Albany Franken Stange
         /// </summary>
-        BType2 = -831834716,
+        BType2 = 3463132580,
 
         /// <summary>
         /// Albany Roosevelt Valor
         /// </summary>
-        BType3 = -602287871,
+        BType3 = 3692679425,
 
         /// <summary>
         /// Lampadati Casco
@@ -33,7 +33,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Rune Cheburek
         /// </summary>
-        Cheburek = 33562175,
+        Cheburek = 3306466016,
 
         /// <summary>
         /// Grotti Cheetah (Classic)
@@ -48,32 +48,32 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Imponte Deluxo
         /// </summary>
-        Deluxo = 39502296,
+        Deluxo = 1483171323,
 
         /// <summary>
         /// Weeny Dynasty
         /// </summary>
-        Dynasty = 58832616,
+        Dynasty = 310284501,
 
         /// <summary>
         /// Vulcar Fagaloa
         /// </summary>
-        Fagaloa = 13977000,
+        Fagaloa = 1617472902,
 
         /// <summary>
         /// Benefactor Stirling GT 
         /// </summary>
-        Feltzer3 = -1566741232,
+        Feltzer3 = 2728226064,
 
         /// <summary>
         /// Grotti GT500
         /// </summary>
-        GT500 = 30966409,
+        GT500 = 2215179066,
 
         /// <summary>
         /// Pegassi Infernus (Classic)
         /// </summary>
-        Infernus2 = -1405937764,
+        Infernus2 = 2889029532,
 
         /// <summary>
         /// Dewbauchee JB700
@@ -83,32 +83,32 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Dewbauchee JB700 (Weaponized)
         /// </summary>
-        JB7002 = 55844811,
+        JB7002 = 394110044,
 
         /// <summary>
         /// Declasse Mamba
         /// </summary>
-        Mamba = -1660945322,
+        Mamba = 2634021974,
 
         /// <summary>
         /// Albany Manana
         /// </summary>
-        Manana = -2124201592,
+        Manana = 2170765704,
 
         /// <summary>
         /// Lampadati Michelli GT
         /// </summary>
-        Michelli = 15478129,
+        Michelli = 1046206681,
 
         /// <summary>
         /// Pegassi Monroe
         /// </summary>
-        Monroe = -433375717,
+        Monroe = 3861591579,
 
         /// <summary>
         /// Vulcar Nebula Turbo
         /// </summary>
-        Nebula = 7667251,
+        Nebula = 3412338231,
 
         /// <summary>
         /// Vapid Peyote
@@ -118,7 +118,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Vapid Peyote (Custom)
         /// </summary>
-        Peyote3 = 3860398,
+        Peyote3 = 1107404867,
 
         /// <summary>
         /// Lampadati Pigalle
@@ -128,22 +128,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Dewbauchee Rapid GT (Classic)
         /// </summary>
-        RapidGT3 = 29905146,
+        RapidGT3 = 2049897956,
 
         /// <summary>
         /// Vapid Retinue
         /// </summary>
-        Retinue = 66820354,
+        Retinue = 1841130506,
 
         /// <summary>
         /// Vapid Retinue MkII
         /// </summary>
-        Retinue2 = 21357117,
+        Retinue2 = 2031587082,
 
         /// <summary>
         /// Annis Savestra
         /// </summary>
-        Savestra = 46349949,
+        Savestra = 903794909,
 
         /// <summary>
         /// Grotti Stinger
@@ -153,22 +153,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Grotti Stinger GT
         /// </summary>
-        StingerGT = -2098947590,
+        StingerGT = 2196019706,
 
         /// <summary>
         /// Ocelot Stromberg
         /// </summary>
-        Stromberg = 8792708,
+        Stromberg = 886810209,
 
         /// <summary>
         /// Ocelot Swinger
         /// </summary>
-        Swinger = 59834152, 
+        Swinger = 500482303, 
 
         /// <summary>
         /// Pegassi Toreador
         /// </summary>
-        Toreador = 37833808,
+        Toreador = 1455990255,
 
         /// <summary>
         /// Pegassi Torero
@@ -193,41 +193,41 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Declasse Tornado (Mariachi)
         /// </summary>
-        Tornado4 = -2033222435,
+        Tornado4 = 2261744861,
 
         /// <summary>
         /// Declasse Tornado (Custom)
         /// </summary>
-        Tornado5 = -1797613329,
+        Tornado5 = 2497353967,
 
         /// <summary>
         /// Declasse Tornado (Rat Rod)
         /// </summary>
-        Tornado6 = -1558399629,
+        Tornado6 = 2736567667,
 
         /// <summary>
         /// Grotti Turismo (Classic)
         /// </summary>
-        Turismo2 = 54788197,
+        Turismo2 = 3312836369,
 
         /// <summary>
         /// Lampadati Viseris
         /// </summary>
-        Viseris = 36806171,
+        Viseris = 3903371924,
 
         /// <summary>
         /// Karin 190z
         /// </summary>
-        Z190 = 20238183,
+        Z190 = 838982985,
 
         /// <summary>
         /// Ubermacht Zion (Classic)
         /// </summary>
-        Zion3 = 32025688,
+        Zion3 = 1862507111,
 
         /// <summary>
         /// Truffade Z-Type
         /// </summary>
-        ZType = 75889561,
+        ZType = 758895617,
     }
 }

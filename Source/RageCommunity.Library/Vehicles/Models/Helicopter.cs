@@ -5,6 +5,11 @@ namespace RageCommunity.Library.Vehicles.Models
     public enum Helicopter : Int64
     {
         /// <summary>
+        /// Akula
+        /// </summary>
+        Akula = 1181327175,
+
+        /// <summary>
         /// Western Company Annihilator
         /// </summary>
         Annihilator = 837858166,
@@ -12,12 +17,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Western Company Annihilator (Stealth)
         /// </summary>
-        Annihilator2 = 2111324,
-
-        /// <summary>
-        /// Akula
-        /// </summary>
-        Akula = 7960002,
+        Annihilator2 = 295054921,
 
         /// <summary>
         /// Nagasaki Buzzard
@@ -32,7 +32,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Western Company Cargobob
         /// </summary>
-        Cargobob = -50547061,
+        Cargobob = 4244420235,
 
         /// <summary>
         /// Western Company Cargobob Jetsam
@@ -62,37 +62,37 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Nagasaki Havok
         /// </summary>
-        Havok = 47744383,
+        Havok = 2310691317,
 
         /// <summary>
         /// FH-1 Hunter
         /// </summary>
-        Hunter = 47006014,
+        Hunter = 4252008158,
 
         /// <summary>
         /// Buckingham Maverick
         /// </summary>
-        Maverick = -1660661558,
+        Maverick = 2634305738,
 
         /// <summary>
         /// Savage
         /// </summary>
-        Savage = -82626025,
+        Savage = 4212341271,
 
         /// <summary>
         /// Sea Sparrow
         /// </summary>
-        SeaSparrow = 12344804,
+        SeaSparrow = 3568198617,
 
         /// <summary>
         /// Sparrow
         /// </summary>
-        SeaSparrow2 = 19545389,
+        SeaSparrow2 = 1229411063,
 
         /// <summary>
         /// 
         /// </summary>
-        SeaSparrow3 = 11472908,
+        SeaSparrow3 = 1593933419,
 
         /// <summary>
         /// HVY Skylift
@@ -107,12 +107,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Buckingham Super Volito Carbon
         /// </summary>
-        Supervolito2 = -1671539132,
+        Supervolito2 = 2623428164,
 
         /// <summary>
         /// Buckingham Swift
         /// </summary>
-        Swift = -339587598,
+        Swift = 3955379698,
 
         /// <summary>
         /// Buckingham Swift Deluxe
@@ -122,7 +122,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Buckingham Valkyrie (Cannon)
         /// </summary>
-        Valkyrie = -1600252419,
+        Valkyrie = 2694714877,
 
         /// <summary>
         /// Buckingham Valkyrie
@@ -132,6 +132,6 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Buckingham Volatus
         /// </summary>
-        Volatus = -1845487887
+        Volatus = 2449479409
     }
 }

@@ -17,22 +17,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Bravado FIB (Granger)
         /// </summary>
-        FBI2 = -1647941228,
+        FBI2 = 2647026068,
 
         /// <summary>
         /// MTL Firetruck
         /// </summary>
-        FireTruck = 1938952078,
+        FireTruk = 1938952078,
 
         /// <summary>
         /// Declasse Lifeguard Granger
         /// </summary>
-        LGuard = 49569251,
+        LGuard = 469291905,
 
         /// <summary>
         /// Vapid Police Prison Bus
         /// </summary>
-        PBus = -2007026063,
+        PBus = 2287941233,
 
         /// <summary>
         /// Vapid Police Cruiser
@@ -42,7 +42,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Bravado Police Cruiser (Buffalo)
         /// </summary>
-        Police2 = -1627000575,
+        Police2 = 2667966721,
 
         /// <summary>
         /// Vapid Police Cruiser (Interceptor)
@@ -52,27 +52,27 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Vapid Unmarked Cruiser
         /// </summary>
-        Police4 = -1973172295,
+        Police4 = 2321795001,
+
+        /// <summary>
+        /// Western Police Bike
+        /// </summary>
+        PoliceB = 4260343491,
 
         /// <summary>
         /// Albany Police Roadcruiser
         /// </summary>
-        PoliceOld1 = -1536924937,
+        PoliceOld1 = 2758042359,
 
         /// <summary>
         /// Declasse Police Rancher
         /// </summary>
-        PoliceOld2 = -1779120616,
+        PoliceOld2 = 2515846680,
 
         /// <summary>
         /// Declasse Police Transporter
         /// </summary>
         PoliceT = 456714581,
-
-        /// <summary>
-        /// Western Police Bike
-        /// </summary>
-        PoliceB = -34623805,
 
         /// <summary>
         /// Buckingham Police Maverick
@@ -87,17 +87,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Police Predator
         /// </summary>
-        Predator = -488123221,
+        Predator = 3806844075,
 
         /// <summary>
         /// Brute Police Riot
         /// </summary>
-        Riot = -1205689942,
+        Riot = 3089277354,
 
         /// <summary>
         /// Vapid Sheriff Cruiser
         /// </summary>
-        Sheriff = -1683328900,
+        Sheriff = 2611638396,
 
         /// <summary>
         /// Declasse Sheriff SUV

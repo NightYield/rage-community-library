@@ -12,22 +12,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// LCC Avarus
         /// </summary>
-        Avarus = -2115793025,
+        Avarus = 2179174271,
 
         /// <summary>
         /// Western Bagger
         /// </summary>
-        Bagger = -2140431165,
-
-        /// <summary>
-        /// Pegassi Bati 801RR
-        /// </summary>
-        Bati2 = -891462355,
+        Bagger = 2154536131,
 
         /// <summary>
         /// Pegassi Bati 801
         /// </summary>
-        Bati = -114291515,
+        Bati = 4180675781,
+
+        /// <summary>
+        /// Pegassi Bati 801RR
+        /// </summary>
+        Bati2 = 3403504941,
 
         /// <summary>
         /// Nagasaki BF400
@@ -50,29 +50,29 @@ namespace RageCommunity.Library.Vehicles.Models
         Cliffhanger = 390201602,
 
         /// <summary>
-        /// Western Daemon Custom
-        /// </summary>
-        Daemon2 = -1404136503,
-
-        /// <summary>
         /// Western Daemon
         /// </summary>
         Daemon = 2006142190,
 
         /// <summary>
+        /// Western Daemon Custom
+        /// </summary>
+        Daemon2 = 2890830793,
+
+        /// <summary>
         /// Western Deathbike (Apocalypse)
         /// </summary>
-        Deathbike = 50910637,
+        Deathbike = 4267640610,
 
         /// <summary>
         /// Western Deathbike (Arena)
         /// </summary>
-        Deathbike2 = 5675177,
+        Deathbike2 = 2482017624,
 
         /// <summary>
         /// Western Deathbike (Nightmare)
         /// </summary>
-        Deathbike3 = 66747576,
+        Deathbike3 = 2920466844,
 
         /// <summary>
         /// Shitzu Defiler
@@ -82,17 +82,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Principe Diablous
         /// </summary>
-        Diablous = 6944074,
+        Diablous = 4055125828,
 
         /// <summary>
         /// Principe Diablous Custom
         /// </summary>
-        Diablous2 = 40615388,
+        Diablous2 = 1790834270,
 
         /// <summary>
         /// Dinka Double-T
         /// </summary>
-        Double = -1670998136,
+        Double = 2623969160,
 
         /// <summary>
         /// Dinka Enduro
@@ -107,7 +107,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Pegassi Faggio Sport
         /// </summary>
-        Faggio = -1842748181,
+        Faggio = 2452219115,
 
         /// <summary>
         /// Pegassi Faggio
@@ -117,12 +117,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Pegassi Faggio Mod
         /// </summary>
-        Faggio3 = -1289178744,
-
-        /// <summary>
-        /// Pegassi FCR 1000 Custom
-        /// </summary>
-        FCR2 = -757735410,
+        Faggio3 = 3005788552,
 
         /// <summary>
         /// Pegassi FCR
@@ -130,19 +125,24 @@ namespace RageCommunity.Library.Vehicles.Models
         FCR = 627535535,
 
         /// <summary>
+        /// Pegassi FCR 1000 Custom
+        /// </summary>
+        FCR2 = 3537231886,
+
+        /// <summary>
         /// Western Gargoyle
         /// </summary>
         Gargoyle = 741090084,
 
         /// <summary>
-        /// Shitzu Hakuchou Drag Bike
-        /// </summary>
-        Hakuchou2 = -255678177,
-
-        /// <summary>
         /// Shitzu Hakuchou
         /// </summary>
         Hakuchou = 1265391242,
+
+        /// <summary>
+        /// Shitzu Hakuchou Drag Bike
+        /// </summary>
+        Hakuchou2 = 4039289119,
 
         /// <summary>
         /// LCC Hexer
@@ -152,7 +152,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// LCC Innovation
         /// </summary>
-        Innovation = -159126838,
+        Innovation = 4135840458,
 
         /// <summary>
         /// Principe Lectro
@@ -162,37 +162,37 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Maibatsu Manchez
         /// </summary>
-        Manchez = -1523428744,
+        Manchez = 2771538552,
 
         /// <summary>
         /// Maibatsu Manchez Scout
         /// </summary>
-        Manchez2 = 21299329,
+        Manchez2 = 1086534307,
 
         /// <summary>
         /// Principe Nemesis
         /// </summary>
-        Nemesis = -634879114,
+        Nemesis = 3660088182,
 
         /// <summary>
         /// Western Nightblade
         /// </summary>
-        Nightblade = -1606187161,
+        Nightblade = 2688780135,
 
         /// <summary>
         /// Pegassi Oppressor
         /// </summary>
-        Oppressor = 60432930,
+        Oppressor = 884483972,
 
         /// <summary>
         /// Pegassi Oppressor MkII
         /// </summary>
-        Oppressor2 = 12617908,
+        Oppressor2 = 2069146067,
 
         /// <summary>
         /// Shitzu PCJ 600
         /// </summary>
-        PCJ = -909201658,
+        PCJ = 3385765638,
 
         /// <summary>
         /// Western Rat Bike
@@ -202,22 +202,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Western Rampant Rocket Tricycle
         /// </summary>
-        RRocket = 59722943,
+        RRocket = 916547552,
 
         /// <summary>
         /// Pegassi Ruffian
         /// </summary>
-        Ruffian = -893578776,
-
-        /// <summary>
-        /// Maibatsu Sanchez (Livery)
-        /// </summary>
-        Sanchez2 = -1453280962,
+        Ruffian = 3401388520,
 
         /// <summary>
         /// Maibatsu Sanchez
         /// </summary>
         Sanchez = 788045382,
+
+        /// <summary>
+        /// Maibatsu Sanchez (Livery)
+        /// </summary>
+        Sanchez2 = 2841686334,
 
         /// <summary>
         /// LCC Sanctus
@@ -227,7 +227,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Nagasaki Shotaro
         /// </summary>
-        Shotaro = -405626514,
+        Shotaro = 3889340782,
 
         /// <summary>
         /// Western Sovereign
@@ -237,7 +237,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Nagasaki Stryder
         /// </summary>
-        Stryder = 47847823,
+        Stryder = 301304410,
 
         /// <summary>
         /// Dinka Thrust
@@ -247,31 +247,31 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Shitzu Vader
         /// </summary>
-        Vader = -140902153,
+        Vader = 4154065143,
 
         /// <summary>
         /// Dinka Vindicator
         /// </summary>
-        Vindicator = -1353081087,
+        Vindicator = 2941886209,
 
         /// <summary>
         /// Pegassi Vortex
         /// </summary>
-        Vortex = -609625092,
+        Vortex = 3685342204,
 
         /// <summary>
         /// Western Wolfsbane
         /// </summary>
-        Wolfsbane = -618617997,
+        Wolfsbane = 3676349299,
 
         /// <summary>
         /// Western Zombie Bobber
         /// </summary>
-        ZombieA = -1009268949,
+        ZombieA = 3285698347,
 
         /// <summary>
         /// Western Zombie Chopper
         /// </summary>
-        ZombieB = -570033273,
+        ZombieB = 3724934023,
     }
 }

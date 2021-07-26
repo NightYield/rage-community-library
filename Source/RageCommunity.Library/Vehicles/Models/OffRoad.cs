@@ -12,82 +12,82 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// BF Bifta
         /// </summary>
-        Bifta = -349601129,
+        Bifta = 3945366167,
 
         /// <summary>
         /// Nagasaki Blazer
         /// </summary>
-        Blazer = -2128233223,
+        Blazer = 2166734073,
 
         /// <summary>
         /// Nagasaki Blazer (Lifeguard)
         /// </summary>
-        Blazer2 = -48031959,
+        Blazer2 = 4246935337,
 
         /// <summary>
         /// Nagasaki Blazer (Hot Rod)
         /// </summary>
-        Blazer3 = -1269889662,
+        Blazer3 = 3025077634,
 
         /// <summary>
         /// Nagasaki Blazer (Street)
         /// </summary>
-        Blazer4 = 14219250,
+        Blazer4 = 3854198872,
 
         /// <summary>
         /// Nagasaki Blazer (Aqua)
         /// </summary>
-        Blazer5 = -1590337689,
+        Blazer5 = 2704629607,
 
         /// <summary>
         /// Canis Bodhi
         /// </summary>
-        Bodhi2 = -1435919434,
+        Bodhi2 = 2859047862,
 
         /// <summary>
         /// Coil Brawler
         /// </summary>
-        Brawler = -1479664699,
+        Brawler = 2815302597,
 
         /// <summary>
         /// Benefactor Bruiser (Apocalypse)
         /// </summary>
-        Bruiser = 28316538,
+        Bruiser = 668439077,
 
         /// <summary>
         /// Benefactor Bruiser (Arena)
         /// </summary>
-        Bruiser2 = 20458105,
+        Bruiser2 = 2600885406,
 
         /// <summary>
         /// Benefactor Bruiser (Nightmare)
         /// </summary>
-        Bruiser3 = 51680334,
+        Bruiser3 = 2252616474,
 
         /// <summary>
         /// Declasse Brutus (Apocalypse)
         /// </summary>
-        Brutus = 50966950,
+        Brutus = 2139203625,
 
         /// <summary>
         /// Declasse Brutus (Arena)
         /// </summary>
-        Brutus2 = 21493759,
+        Brutus2 = 2403970600,
 
         /// <summary>
         /// Declasse Brutus (Nightmare)
         /// </summary>
-        Brutus3 = 13185320,
+        Brutus3 = 2038858402,
 
         /// <summary>
         /// Vapid Caracara
         /// </summary>
-        Caracara = 17288894,
+        Caracara = 1254014755,
 
         /// <summary>
         /// Vapid Caracara 4x4
         /// </summary>
-        Caracara2 = 1913262,
+        Caracara2 = 2945871676,
 
         /// <summary>
         /// Bravado Duneloader
@@ -97,7 +97,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// BF Dune Buggy
         /// </summary>
-        Dune = -1661854193,
+        Dune = 2633113103,
 
         /// <summary>
         /// BF Space Docker
@@ -112,37 +112,37 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// BF Ramp Buggy
         /// </summary>
-        Dune4 = -827162039,
+        Dune4 = 3982671785,
 
         /// <summary>
         /// BF Ramp Buggy (Alternate)
         /// </summary>
-        Dune5 = -827162039,
+        Dune5 = 3982671785,
 
         /// <summary>
         /// Karin Everon
         /// </summary>
-        Everon = 7873582,
+        Everon = 2538945576,
 
         /// <summary>
         /// Canis Freecrawler
         /// </summary>
-        Freecrawler = 20549462,
+        Freecrawler = 4240635011,
 
         /// <summary>
         /// Vapid Guardian
         /// </summary>
-        Guardian = 36879134,
+        Guardian = 2186977100,
 
         /// <summary>
         /// Annis Hellion
         /// </summary>
-        Hellion = 19241346,
+        Hellion = 3932816511,
 
         /// <summary>
         /// HVY Insurgent Pick-up
         /// </summary>
-        Insurgent = -1860900134,
+        Insurgent = 2434067162,
 
         /// <summary>
         /// HVY Insurgent
@@ -152,7 +152,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// HVY Insurgent (Custom)
         /// </summary>
-        Insurgent3 = -1924433270,
+        Insurgent3 = 2370534026,
 
         /// <summary>
         /// Canis Kalahari
@@ -162,7 +162,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Canis Kamacho
         /// </summary>
-        Kamacho = 13100941,
+        Kamacho = 4173521127,
 
         /// <summary>
         /// Cheval Marshall
@@ -172,32 +172,32 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// HVY Menacer
         /// </summary>
-        Menacer = 55625145,
+        Menacer = 2044532910,
 
         /// <summary>
         /// Canis Mesa (Merryweather)
         /// </summary>
-        Mesa3 = -2064372143,
+        Mesa3 = 2230595153,
 
         /// <summary>
         /// Vapid Liberator
         /// </summary>
-        Monster = -845961253,
+        Monster = 3449006043,
 
         /// <summary>
         /// Bravado Sasquatch (Apocalypse)
         /// </summary>
-        Monster3 = 20035863,
+        Monster3 = 1721676810,
 
         /// <summary>
         /// Bravado Sasquatch (Future Shock)
         /// </summary>
-        Monster4 = 22563725,
+        Monster4 = 840387324,
 
         /// <summary>
         /// Bravado Sasquatch (Nightmare)
         /// </summary>
-        Monster5 = 24474730,
+        Monster5 = 3579220348,
 
         /// <summary>
         /// HVY Nightshark
@@ -207,7 +207,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Nagasaki Outlaw
         /// </summary>
-        Outlaw = 1928619,
+        Outlaw = 408825843,
 
         /// <summary>
         /// Declasse Rancher XL
@@ -222,27 +222,27 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// RC Bandito
         /// </summary>
-        RCBandito = 26661098,
+        RCBandito = 4008920556,
 
         /// <summary>
         /// Karin Rebel
         /// </summary>
-        Rebel = -1207771834,
+        Rebel = 3087195462,
 
         /// <summary>
         /// Karin Rebel (Clean)
         /// </summary>
-        Rebel2 = -2045594037,
+        Rebel2 = 2249373259,
 
         /// <summary>
         /// Vapid Riata
         /// </summary>
-        Riata = 60639634,
+        Riata = 2762269779,
 
         /// <summary>
         /// Vapid Sandking
         /// </summary>
-        Sandking = -1189015600,
+        Sandking = 3105951696,
 
         /// <summary>
         /// Vapid Sandking XL
@@ -252,7 +252,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Karin Technical
         /// </summary>
-        Technical = -2096818938,
+        Technical = 2198148358,
 
         /// <summary>
         /// Karin Technical (Aqua)
@@ -272,31 +272,31 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Vapid Desert Raid
         /// </summary>
-        TrophyTruck2 = -663299102,
+        TrophyTruck2 = 3631668194,
 
         /// <summary>
         /// Maxwell Vagrant
         /// </summary>
-        Vagrant = 34622053,
+        Vagrant = 740289177,
 
         /// <summary>
         /// Dinka Verus
         /// </summary>
-        Verus = 62334643,
+        Verus = 298565713,
 
         /// <summary>
         /// Vapid Winky
         /// </summary>
-        Winky = 21627011,
+        Winky = 4084658662,
 
         /// <summary>
         /// Declasse Yosemite Rancher
         /// </summary>
-        Yosemite3 = 53588770,
+        Yosemite3 = 67753863,
 
         /// <summary>
         /// Rune Zhaba
         /// </summary>
-        Zhaba = 31010610,
+        Zhaba = 1284356689,
     }
 }

@@ -12,37 +12,37 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// MTL Brickade
         /// </summary>
-        Brickade = -305727417,
+        Brickade = 3989239879,
 
         /// <summary>
         /// Brute Bus
         /// </summary>
-        Bus = -713569950,
+        Bus = 3581397346,
 
         /// <summary>
         /// Brute Dashound
         /// </summary>
-        Coach = -2072933068,
+        Coach = 2222034228,
 
         /// <summary>
         /// Festival Bus
         /// </summary>
-        PBus2 = 63870836,
+        PBus2 = 345756458,
 
         /// <summary>
         /// MTL Dune
         /// </summary>
-        Rallytruck = -2103821244,
+        Rallytruck = 2191146052,
 
         /// <summary>
         /// Brute Rental Shuttle Bus
         /// </summary>
-        RentalBus = -1098802077,
+        RentalBus = 3196165219,
 
         /// <summary>
         /// Vapid Taxi
         /// </summary>
-        Taxi = -956048545,
+        Taxi = 3338918751,
 
         /// <summary>
         /// Brute Tour Bus
@@ -57,11 +57,11 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Jobuilt Trashmaster (Dirty)
         /// </summary>
-        Trash2 = -1255698084,
+        Trash2 = 3039269212,
 
         /// <summary>
         /// MTL Wastelander
         /// </summary>
-        Wastelander = 6066666,
+        Wastelander = 2382949506,
     }
 }

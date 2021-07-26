@@ -7,7 +7,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Kraken Submersibles Avisa
         /// </summary>
-        Avisa = 6192928,
+        Avisa = 2588363614,
 
         /// <summary>
         /// Nagasaki Dinghi (Colored)
@@ -32,7 +32,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Nagasaki Dinghy (Weaponized)
         /// </summary>
-        Dinghy5 = 51515382,
+        Dinghy5 = 3314393930,
 
         /// <summary>
         /// Shitzu Jetmax
@@ -42,37 +42,37 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Rune Kosatka (Submarine HQ)
         /// </summary>
-        Kosatka = 65666842,
+        Kosatka = 1336872304,
 
         /// <summary>
         /// Shitzu Longfin
         /// </summary>
-        Longfin = 53017717,
+        Longfin = 1861786828,
 
         /// <summary>
         /// Dinka Marquis
         /// </summary>
-        Marquis = -1043459709,
+        Marquis = 3251507587,
 
         /// <summary>
         /// Kurtz 31 Patrol Boat
         /// </summary>
-        PatrolBoat = 48599646,
+        PatrolBoat = 4018222598,
 
         /// <summary>
         /// Speedophile Seashark
         /// </summary>
-        Seashark = -1030275036,
+        Seashark = 3264692260,
 
         /// <summary>
         /// Speedophile Seashark (Lifeguard)
         /// </summary>
-        Seashark2 = -616331036,
+        Seashark2 = 3678636260,
 
         /// <summary>
         /// Speedophile Seashark SPX
         /// </summary>
-        Seashark3 = -311022263,
+        Seashark3 = 3983945033,
 
         /// <summary>
         /// Pegassi Speeder (Colored)
@@ -97,12 +97,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Kraken Submersibles Kraken
         /// </summary>
-        Submersible2 = -1066334226,
+        Submersible2 = 3228633070,
 
         /// <summary>
         /// Shitzu Suntrap
         /// </summary>
-        Suntrap = -282946103,
+        Suntrap = 4012021193,
 
         /// <summary>
         /// Lampadati Toro
@@ -127,6 +127,6 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Buckingham Tug
         /// </summary>
-        Tug = -2100640717
+        Tug = 2194326579
     }
 }

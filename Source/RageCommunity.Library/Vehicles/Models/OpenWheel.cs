@@ -7,21 +7,21 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Progen PR4 (Formula 1 Car)
         /// </summary>
-        Formula = 27084445,
+        Formula = 340154634,
 
         /// <summary>
         /// Ocelot R88 (Formula 1 Car)
         /// </summary>
-        Formula2 = 34170262,
+        Formula2 = 2334210311,
 
         /// <summary>
         /// Benefactor BR8 (Formula 1 Car)
         /// </summary>
-        OpenWheel1 = 14638520,
+        OpenWheel1 = 1492612435,
 
         /// <summary>
         /// Declasse DR1 (Indy Car)
         /// </summary>
-        OpenWheel2 = 20206458,
+        OpenWheel2 = 1181339704,
     }
 }

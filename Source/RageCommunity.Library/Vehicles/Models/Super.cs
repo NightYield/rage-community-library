@@ -8,47 +8,47 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Truffade Adder
         /// </summary>
-        Adder = -1216765807,
+        Adder = 3078201489,
 
         /// <summary>
         /// Overflod Autarch
         /// </summary>
-        Autarch = 31432682,
+        Autarch = 3981782132,
 
         /// <summary>
         /// Vapid Bullet
         /// </summary>
-        Bullet = -1696146015,
+        Bullet = 2598821281,
 
         /// <summary>
         /// Grotti Cheetah
         /// </summary>
-        Cheetah = -1311154784,
+        Cheetah = 2983812512,
 
         /// <summary>
         /// Coil Cyclone
         /// </summary>
-        Cyclone = 39203240,
+        Cyclone = 1392481335,
 
         /// <summary>
         /// Principe Deveste Eight
         /// </summary>
-        Deveste = 43693520,
+        Deveste = 1591739866,
 
         /// <summary>
         /// Progen Emerus
         /// </summary>
-        Emerus = 31833051,
-
-        /// <summary>
-        /// Overflod Entity XF
-        /// </summary>
-        EntityXF = -1291952903,
+        Emerus = 1323778901,
 
         /// <summary>
         /// Overflod Entity XXR
         /// </summary>
-        Entity2 = 31969801,
+        Entity2 = 2174267100,
+
+        /// <summary>
+        /// Overflod Entity XF
+        /// </summary>
+        EntityXF = 3003014393,
 
         /// <summary>
         /// Vapid FMJ
@@ -58,7 +58,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Grotti Furia
         /// </summary>
-        Furia = 2180452,
+        Furia = 960812448,
 
         /// <summary>
         /// Progen GP1
@@ -73,17 +73,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Progen Itali GTB
         /// </summary>
-        ItaliGTB = -2048333973,
+        ItaliGTB = 2246633323,
 
         /// <summary>
         /// Progen Itali GTB (Custom)
         /// </summary>
-        ItaliGTB2 = -482719877,
+        ItaliGTB2 = 3812247419,
 
         /// <summary>
         /// Benefactor Krieger
         /// </summary>
-        Krieger = 25538566,
+        Krieger = 3630826055,
+
+        /// <summary>
+        /// Annis RE-7B
+        /// </summary>
+        LE7B = 3062131285,
 
         /// <summary>
         /// Truffade Nero
@@ -103,22 +108,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Ocelot Penetrator
         /// </summary>
-        Penetrator = -1758137366,
+        Penetrator = 2536829930,
 
         /// <summary>
         /// Pfister 811
         /// </summary>
-        Pfister811 = -1829802492,
+        Pfister811 = 2465164804,
 
         /// <summary>
         /// Grotti X80 Proto
         /// </summary>
         Prototipo = 2123327359,
-
-        /// <summary>
-        /// Annis RE-7B
-        /// </summary>
-        LE7B = -1232836011,
 
         /// <summary>
         /// Pegassi Reaper
@@ -128,17 +128,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Annis S80RR
         /// </summary>
-        S80 = 10744112,
+        S80 = 3970348707,
 
         /// <summary>
         /// Ubermacht SC1
         /// </summary>
-        SC1 = 60589443,
+        SC1 = 1352136073,
 
         /// <summary>
         /// Declasse Scramjet
         /// </summary>
-        Scramjet = 4392025,
+        Scramjet = 3656405053,
 
         /// <summary>
         /// Emperor ETR1
@@ -148,7 +148,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Karin Sultan RS
         /// </summary>
-        SultanRS = -295689028,
+        SultanRS = 3999278268,
 
         /// <summary>
         /// Progen T20
@@ -158,7 +158,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Cheval Taipan
         /// </summary>
-        Taipan = 45294019,
+        Taipan = 3160260734,
 
         /// <summary>
         /// Pegassi Tempesta
@@ -168,17 +168,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Pegassi Tezeract
         /// </summary>
-        Tezeract = 7062020,
+        Tezeract = 1031562256,
 
         /// <summary>
         /// Truffade Thrax
         /// </summary>
-        Thrax = 16385476,
+        Thrax = 1044193113,
 
         /// <summary>
         /// Lampadati Tigon
         /// </summary>
-        Tigon = 20869444,
+        Tigon = 2936769864,
 
         /// <summary>
         /// Grotti TurismoR
@@ -188,7 +188,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Overflod Tyrant
         /// </summary>
-        Tyrant = 29155135,
+        Tyrant = 3918533058,
 
         /// <summary>
         /// Progen Tyrus
@@ -208,17 +208,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Grotti Vigilante
         /// </summary>
-        Vigilante = 26839093,
+        Vigilante = 3052358707,
 
         /// <summary>
         /// Grotti Visione
         /// </summary>
-        Visione = 59659319,
+        Visione = 3296789504,
 
         /// <summary>
         /// Coil Voltic
         /// </summary>
-        Voltic = -1622444098,
+        Voltic = 2672523198,
 
         /// <summary>
         /// Coil Voltic (Topless)
@@ -233,11 +233,11 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Pegassi Zentorno
         /// </summary>
-        Zentorno = -1403128555,
+        Zentorno = 2891838741,
 
         /// <summary>
         /// Pegassi Zorrusso
         /// </summary>
-        Zorrusso = 52341166,
+        Zorrusso = 3612858749,
     }
 }

@@ -12,7 +12,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// HVY Barracks
         /// </summary>
-        Barracks = -823509173,
+        Barracks = 3471458123,
 
         /// <summary>
         /// HVY Barracks Semi
@@ -27,12 +27,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Barrage
         /// </summary>
-        Barrage = 37981144,
+        Barrage = 4081974053,
 
         /// <summary>
         /// HVY Chernobog
         /// </summary>
-        Chernobog = 36950539,
+        Chernobog = 3602674979,
 
         /// <summary>
         /// Canis Crusader
@@ -42,17 +42,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Bravado Half-track
         /// </summary>
-        Halftrack = -32236122,
+        Halftrack = 4262731174,
 
         /// <summary>
         /// TM-02 Khanjali Tank
         /// </summary>
-        Khanjali = 29187653,
+        Khanjali = 2859440138,
 
         /// <summary>
         /// Invade and Persuade RC Tank
         /// </summary>
-        MiniTank = 35833700,
+        MiniTank = 3040635986,
 
         /// <summary>
         /// Rhino Tank
@@ -62,31 +62,31 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Scarab (Black)
         /// </summary>
-        Scarab = 47068346,
+        Scarab = 3147997943,
 
         /// <summary>
         /// Scarab (Arena)
         /// </summary>
-        Scarab2 = 15902130,
+        Scarab2 = 1542143200,
 
         /// <summary>
         /// Scarab (Nightmare)
         /// </summary>
-        Scarab3 = 11245314,
+        Scarab3 = 3715219435,
 
         /// <summary>
         /// Mammoth Thruster Jetpack
         /// </summary>
-        Thruster = 53178769,
+        Thruster = 1489874736,
 
         /// <summary>
         /// Vom Feuer Anti-Aircraft Trailer
         /// </summary>
-        TrailerSmall2 = 28620912,
+        TrailerSmall2 = 2413121211,
 
         /// <summary>
         /// Vetir
         /// </summary>
-        Vetir = 29536455
+        Vetir = 2014313426
     }
 }

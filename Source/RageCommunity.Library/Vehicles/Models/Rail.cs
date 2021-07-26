@@ -2,7 +2,7 @@
 
 namespace RageCommunity.Library.Vehicles.Models
 {
-    public enum Train : Int64
+    public enum Rail : Int64
     {
 
         /// <summary>
@@ -14,6 +14,11 @@ namespace RageCommunity.Library.Vehicles.Models
         /// 
         /// </summary>
         FreightCar = 184361638,
+
+        /// <summary>
+        /// 
+        /// </summary>
+        FreightCar2 = 3186376089,
 
         /// <summary>
         /// 
@@ -33,7 +38,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// 
         /// </summary>
-        FreightTrailer = -777275802,
+        FreightTrailer = 3517691494,
 
         /// <summary>
         /// 

@@ -7,12 +7,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Maxwell Asbo
         /// </summary>
-        Asbo = 45238743,
+        Asbo = 1118611807,
 
         /// <summary>
         /// Dinka Blista
         /// </summary>
-        Blista = -344943009,
+        Blista = 3950024287,
 
         /// <summary>
         /// Grotti Brioso R/A
@@ -22,17 +22,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Grotti Brioso 300
         /// </summary>
-        Brioso2 = 44925732,
+        Brioso2 = 1429622905,
 
         /// <summary>
         /// BF Club
         /// </summary>
-        Club = 40459594,
+        Club = 2196012677,
 
         /// <summary>
         /// Karin Dilettante
         /// </summary>
-        Dilettante = -1130810103,
+        Dilettante = 3164157193,
 
         /// <summary>
         /// Karin Dilettante (Patrol)
@@ -42,37 +42,37 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Weeny Issi
         /// </summary>
-        Issi2 = -1177863319,
+        Issi2 = 3117103977,
 
         /// <summary>
         /// Weeny Issi Classic
         /// </summary>
-        Issi3 = 56001661,
+        Issi3 = 931280609,
 
         /// <summary>
         /// Weeny Issi (Apocalypse)
         /// </summary>
-        Issi4 = 39840664,
+        Issi4 = 628003514,
 
         /// <summary>
         /// Weeny Issi (Arena)
         /// </summary>
-        Issi5 = 5868356,
+        Issi5 = 1537277726,
 
         /// <summary>
         /// Weeny Issi (Nightmare)
         /// </summary>
-        Issi6 = 5574824,
+        Issi6 = 1239571361,
 
         /// <summary>
         /// Benefactor Panto
         /// </summary>
-        Panto = -431692672,
+        Panto = 3863274624,
 
         /// <summary>
         /// Bollokan Prarie
         /// </summary>
-        Prairie = -1450650718,
+        Prairie = 2844316578,
 
         /// <summary>
         /// Declasse Rhapsody
@@ -82,6 +82,6 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// BF Weevil
         /// </summary>
-        Weevil = 45123690
+        Weevil = 1644055914
     }
 }

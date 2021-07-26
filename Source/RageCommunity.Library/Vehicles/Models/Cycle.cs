@@ -17,12 +17,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Fixter
         /// </summary>
-        Fixter = -836512833,
+        Fixter = 3458454463,
 
         /// <summary>
         /// Scorcher
         /// </summary>
-        Scorcher = -186537451,
+        Scorcher = 4108429845,
 
         /// <summary>
         /// Whippet Race Bike
@@ -32,11 +32,11 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Endurex Race Bike
         /// </summary>
-        TriBike2 = -1233807380,
+        TriBike2 = 3061159916,
 
         /// <summary>
         /// Tri-Cycles Race Bike
         /// </summary>
-        TriBike3 = -400295096
+        TriBike3 = 3894672200
     }
 }

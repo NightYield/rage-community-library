@@ -7,17 +7,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// RO-86 Alkonost
         /// </summary>
-        Alkonost = 48539321,
+        Alkonost = 3929093893,
 
         /// <summary>
         /// Buckingham Alpha-Z1
         /// </summary>
-        AlphaZ1 = 47418981,
+        AlphaZ1 = 2771347558,
 
         /// <summary>
         /// Mammoth Avenger
         /// </summary>
-        Avenger = 7550343,
+        Avenger = 2176659152,
 
         /// <summary>
         /// Western Company Besra
@@ -27,22 +27,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Atomic Blimp
         /// </summary>
-        Blimp = -150975354,
+        Blimp = 4143991942,
 
         /// <summary>
         /// Xero Blimp
         /// </summary>
-        Blimp2 = -613725916,
+        Blimp2 = 3681241380,
 
         /// <summary>
         /// Blimp
         /// </summary>
-        Blimp3 = 43943908,
+        Blimp3 = 3987008919,
 
         /// <summary>
         /// RM-10 Bombushka
         /// </summary>
-        Bombushka = 38619281,
+        Bombushka = 4262088844,
 
         /// <summary>
         /// Cargo Plane
@@ -52,12 +52,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Western Company Cuban 800
         /// </summary>
-        Cuban800 = -644710429,
+        Cuban800 = 3650256867,
 
         /// <summary>
         /// Mammoth Dodo
         /// </summary>
-        Dodo = -901163259,
+        Dodo = 3393804037,
 
         /// <summary>
         /// Western Company Duster
@@ -67,7 +67,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Buckingham Howard NX-25
         /// </summary>
-        Howard = 55221172,
+        Howard = 3287439187,
 
         /// <summary>
         /// Mammoth Hydra
@@ -82,7 +82,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Jobuilt P-996 Lazer
         /// </summary>
-        Lazer = -1281684762,
+        Lazer = 3013282534,
 
         /// <summary>
         /// Buckingham Luxor
@@ -92,17 +92,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Buckingham Luxor Deluxe
         /// </summary>
-        Luxor2 = -1214293858,
+        Luxor2 = 3080673438,
 
         /// <summary>
         /// Jobuilt Mammatus
         /// </summary>
-        Mammatus = -1746576111,
+        Mammatus = 2548391185,
 
         /// <summary>
         /// Nagasaki Ultralight
         /// </summary>
-        Microlight = 45600584,
+        Microlight = 2531412055,
 
         /// <summary>
         /// Buckingham MilJet
@@ -112,57 +112,57 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Mammoth Mogul
         /// </summary>
-        Mogul = 42584068,
+        Mogul = 3545667823,
 
         /// <summary>
         /// V-65 Molotok
         /// </summary>
-        Molotok = 6872134,
+        Molotok = 1565978651,
 
         /// <summary>
         /// Buckingham Nimbus
         /// </summary>
-        Nimbus = -1295027632,
+        Nimbus = 2999939664,
 
         /// <summary>
         /// P-45 Nokota
         /// </summary>
-        Nokota = 36214992,
+        Nokota = 1036591958,
 
         /// <summary>
         /// Buckingham Pyro
         /// </summary>
-        Pyro = 16907528,
+        Pyro = 2908775872,
 
         /// <summary>
         /// Western Company Rogue
         /// </summary>
-        Rogue = 33216741,
+        Rogue = 3319621991,
 
         /// <summary>
         /// Western Company Seabreeze
         /// </summary>
-        Seabreeze = 26662056,
+        Seabreeze = 3902291871,
 
         /// <summary>
         /// Buckingham Shamal
         /// </summary>
-        Shamal = -1214505995,
+        Shamal = 3080461301,
 
         /// <summary>
         /// LF-22 Starling
         /// </summary>
-        Starling = 36422252,
+        Starling = 2594093022,
 
         /// <summary>
         /// B-11 Strikeforce
         /// </summary>
-        Strikeforce = 64147251,
+        Strikeforce = 1692272545,
 
         /// <summary>
         /// Western Company Mallard
         /// </summary>
-        Stunt = -2122757008,
+        Stunt = 2172210288,
 
         /// <summary>
         /// Titan
@@ -172,12 +172,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Mammoth Tula
         /// </summary>
-        Tula = 59732448,
+        Tula = 1043222410,
 
         /// <summary>
         /// Jobuilt Velum
         /// </summary>
-        Velum = -1673356438,
+        Velum = 2621610858,
 
         /// <summary>
         /// Jobuilt Velum (5-Seater)
@@ -192,6 +192,6 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Volatol
         /// </summary>
-        Volatol = 45931434,
+        Volatol = 447548909,
     }
 }

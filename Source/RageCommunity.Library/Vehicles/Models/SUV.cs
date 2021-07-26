@@ -4,16 +4,10 @@ namespace RageCommunity.Library.Vehicles.Models
 {
     public enum SUV : Int64
     {
-
-        /// <summary>
-        /// Karin BeeJay XL
-        /// </summary>
-        BJXL = 850565707,
-
         /// <summary>
         /// Gallivanter Baller
         /// </summary>
-        Baller = -808831384,
+        Baller = 3486135912,
 
         /// <summary>
         /// Gallivanter Baller II
@@ -41,6 +35,11 @@ namespace RageCommunity.Library.Vehicles.Models
         Baller6 = 666166960,
 
         /// <summary>
+        /// Karin BeeJay XL
+        /// </summary>
+        BJXL = 850565707,
+
+        /// <summary>
         /// Albany Cavalcade
         /// </summary>
         Cavalcade = 2006918058,
@@ -48,7 +47,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Albany Cavalcade II
         /// </summary>
-        Cavalcade2 = -789894171,
+        Cavalcade2 = 3505073125,
 
         /// <summary>
         /// Vapid Contender
@@ -63,27 +62,27 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Benfactor Dubsta 2
         /// </summary>
-        Dubsta2 = -394074634,
+        Dubsta2 = 3900892662,
 
         /// <summary>
         /// Benefactor Dubsta 6x6
         /// </summary>
-        Dubsta3 = -1237253773,
+        Dubsta3 = 3057713523,
 
         /// <summary>
         /// Fathom FQ2
         /// </summary>
-        FQ2 = -1137532101,
+        FQ2 = 3157435195,
 
         /// <summary>
         /// Declasse Granger
         /// </summary>
-        Granger = -1775728740,
+        Granger = 2519238556,
 
         /// <summary>
         /// Bravado Gresley
         /// </summary>
-        Gresley = -1543762099,
+        Gresley = 2751205197,
 
         /// <summary>
         /// Emperor Habanero
@@ -103,7 +102,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Dundreary Landstalker XL
         /// </summary>
-        Landstalker2 = 50238170,
+        Landstalker2 = 3456868130,
 
         /// <summary>
         /// Canis Mesa
@@ -113,32 +112,32 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Canis Mesa (Liberty City)
         /// </summary>
-        Mesa2 = -748008636,
+        Mesa2 = 3546958660,
 
         /// <summary>
         /// Lampadati Novak
         /// </summary>
-        Novak = 55255001,
+        Novak = 2465530446,
 
         /// <summary>
         /// Mammoth Patriot
         /// </summary>
-        Patriot = -808457413,
+        Patriot = 3486509883,
 
         /// <summary>
         /// Mammoth Patriot Stretch
         /// </summary>
-        Patrio2 = 3080498,
+        Patriot2 = 3874056184,
 
         /// <summary>
         /// Vapid Radius
         /// </summary>
-        Radi = -1651067813,
+        Radi = 2643899483,
 
         /// <summary>
         /// Ubermacht Rebla GTS
         /// </summary>
-        Rebla = 13163306,
+        Rebla = 83136452,
 
         /// <summary>
         /// Obey Rocoto
@@ -153,7 +152,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Canis Seminole Frontier
         /// </summary>
-        Seminole2 = 28287721,
+        Seminole2 = 2484160806,
 
         /// <summary>
         /// Benefactor Serrano
@@ -163,12 +162,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Mammoth Squaddie
         /// </summary>
-        Squaddie = 48430718,
+        Squaddie = 4192631813,
 
         /// <summary>
         /// Pegassi Toros
         /// </summary>
-        Toros = 66006680,
+        Toros = 3126015148,
 
         /// <summary>
         /// Benefactor XLS
@@ -178,6 +177,6 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Benefactor XLS (Armored)
         /// </summary>
-        XLS2 = -432008408,
+        XLS2 = 3862958888,
     }
 }

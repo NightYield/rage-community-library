@@ -12,7 +12,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Bravado Banshee
         /// </summary>
-        Banshee = -1041692462,
+        Banshee = 3253274834,
 
         /// <summary>
         /// Bravado Banshee (Topless)
@@ -23,6 +23,16 @@ namespace RageCommunity.Library.Vehicles.Models
         /// Grotti Bestia GTS
         /// </summary>
         BestiaGTS = 1274868363,
+
+        /// <summary>
+        /// Dinka Blista Compact
+        /// </summary>
+        Blista2 = 1039032026,
+
+        /// <summary>
+        /// Dinka Blista (Go Go Monkey)
+        /// </summary>
+        Blista3 = 3703315515,
 
         /// <summary>
         /// Bravado Buffalo
@@ -40,24 +50,39 @@ namespace RageCommunity.Library.Vehicles.Models
         Buffalo3 = 237764926,
 
         /// <summary>
-        /// Dinka Blista Compact
-        /// </summary>
-        Blista2 = 58362883,
-
-        /// <summary>
-        /// Dinka Blista (Go Go Monkey)
-        /// </summary>
-        Blista3 = 59032472,
-
-        /// <summary>
         /// Karin Calico GTF
         /// </summary>
-        Calico = 55210212,
+        Calico = 3101054893,
 
         /// <summary>
         /// Grotti Carbonizzare
         /// </summary>
         Carbonizzare = 2072687711,
+
+        /// <summary>
+        /// Pfister Comet 
+        /// </summary>
+        Comet2 = 3249425686,
+
+        /// <summary>
+        /// Pfister Comet (Retro)
+        /// </summary>
+        Comet3 = 2272483501,
+
+        /// <summary>
+        /// Pfister Comet (Safari)
+        /// </summary>
+        Comet4 = 1561920505,
+
+        /// <summary>
+        /// Pfister Comet SR
+        /// </summary>
+        Comet5 = 661493923,
+
+        /// <summary>
+        /// Pfister Comet S2
+        /// </summary>
+        Comet6 = 2568944644,
 
         /// <summary>
         /// Invetero Coquette
@@ -67,42 +92,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Invetero Coquette D10
         /// </summary>
-        Coquette4 = 33420452,
-
-        /// <summary>
-        /// Pfister Comet 
-        /// </summary>
-        Comet2 = -1045541610,
-
-        /// <summary>
-        /// Pfister Comet (Retro)
-        /// </summary>
-        Comet3 = -2022483795,
-
-        /// <summary>
-        /// Pfister Comet (Safari)
-        /// </summary>
-        Comet4 = 15615344,
-
-        /// <summary>
-        /// Pfister Comet SR
-        /// </summary>
-        Comet5 = 34083187,
-
-        /// <summary>
-        /// Pfister Comet S2
-        /// </summary>
-        Comet6 = 43354217,
+        Coquette4 = 2566281822,
 
         /// <summary>
         /// Ubermacht Cypher
         /// </summary>
-        Cypher = 33399936,
+        Cypher = 1755697647,
 
         /// <summary>
         /// Obey 8F Drafter
         /// </summary>
-        Drafter = 4133373,
+        Drafter = 686471183,
 
         /// <summary>
         /// Annis Elegy (Retro Custom)
@@ -112,32 +112,27 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Annis Elegy RH8
         /// </summary>
-        Elegy2 = -566387422,
+        Elegy2 = 3728579874,
 
         /// <summary>
         /// Annis Euros
         /// </summary>
-        Euros = 47631214,
-
-        /// <summary>
-        /// Karin Futo GTX
-        /// </summary>
-        Futo2 = 48166169,
+        Euros = 2038480341,
 
         /// <summary>
         /// Benefactor Feltzer
         /// </summary>
-        Feltzer2 = -1995326987,
+        Feltzer2 = 2299640309,
 
         /// <summary>
         /// Vapid Flash GT
         /// </summary>
-        FlashGT = 33326033,
+        FlashGT = 3035832600,
 
         /// <summary>
         /// Lampadati Furore GT
         /// </summary>
-        FuroreGT = -1089039904,
+        FuroreGT = 3205927392,
 
         /// <summary>
         /// Schyster Fusilade
@@ -150,64 +145,69 @@ namespace RageCommunity.Library.Vehicles.Models
         Futo = 2016857647,
 
         /// <summary>
+        /// Karin Futo GTX
+        /// </summary>
+        Futo2 = 2787736776,
+
+        /// <summary>
         /// Vapid GB200
         /// </summary>
-        GB200 = 7552009,
+        GB200 = 1909189272,
 
         /// <summary>
         /// Pfister Growler
         /// </summary>
-        Growler = 44477915,
+        Growler = 1304459735,
 
         /// <summary>
         /// Declasse Hotring Sabre
         /// </summary>
-        Hotring = 51320777,
+        Hotring = 1115909093,
 
         /// <summary>
         /// Overflod Imorgon
         /// </summary>
-        Imorgon = 59081768,
+        Imorgon = 3162245632,
 
         /// <summary>
         /// Weeny Issi Sport
         /// </summary>
-        Issi7 = 48907629,
+        Issi7 = 1854776567,
 
         /// <summary>
         /// Grotti Itali GTO
         /// </summary>
-        ItaliGTO = 5337487,
+        ItaliGTO = 3963499524,
 
         /// <summary>
         /// Grotti Itali RSX
         /// </summary>
-        ItaliRSX = 56886607,
+        ItaliRSX = 3145241962,
 
         /// <summary>
         /// Dinka Jester
         /// </summary>
-        Jester = -1297672541,
+        Jester = 2997294755,
 
         /// <summary>
         /// Dinka Jester (Racecar)
         /// </summary>
-        Jester2 = -1106353882,
+        Jester2 = 3188613414,
 
         /// <summary>
         /// Dinka Jester (Classic)
         /// </summary>
-        Jester3 = 21483523,
+        Jester3 = 4080061290,
 
         /// <summary>
         /// Dinka Jester RR
         /// </summary>
-        Jester4 = 53661903,
+        Jester4 = 2712905841,
 
         /// <summary>
         /// Ocelot Jugular
         /// </summary>
-        Jugular = 5657728,
+        Jugular = 4086055493,
 
         /// <summary>
         /// Hijak Khamelion
@@ -217,12 +217,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Lampadati Komoda
         /// </summary>
-        Komoda = 40977520,
+        Komoda = 3460613305,
 
         /// <summary>
         /// Karin Kuruma
         /// </summary>
-        Kuruma = -1372848492,
+        Kuruma = 2922118804,
 
         /// <summary>
         /// Karin Kuruma (Armored)
@@ -232,7 +232,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Ocelot Locust
         /// </summary>
-        Locust = 36138915,
+        Locust = 3353694737,
 
         /// <summary>
         /// Ocelot Lynx
@@ -242,22 +242,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Dewbauchee Massacro
         /// </summary>
-        Massacro = -142942670,
+        Massacro = 4152024626,
 
         /// <summary>
         /// Dewbauchee Massacro (Racecar)
         /// </summary>
-        Massacro2 = -631760477,
+        Massacro2 = 3663206819,
 
         /// <summary>
         /// Vysser Neo
         /// </summary>
-        Neo = 7095426,
+        Neo = 2674840994,
 
         /// <summary>
         /// Pfister Neon
         /// </summary>
-        Neon = 7284225,
+        Neon = 2445973230,
 
         /// <summary>
         /// Obey 9F
@@ -267,47 +267,47 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Obey 9F Cabrio
         /// </summary>
-        Ninef2 = -1461482751,
+        Ninef2 = 2833484545,
 
         /// <summary>
         /// Obey Omnis
         /// </summary>
-        Omnis = -777172681,
+        Omnis = 3517794615,
 
         /// <summary>
         /// Enus Paragon R
         /// </summary>
-        Paragon = 45774920,
+        Paragon = 3847255899,
 
         /// <summary>
         /// Enus Paragon R (Armored)
         /// </summary>
-        Paragon2 = 31914349,
+        Paragon2 = 1416466158,
 
         /// <summary>
         /// Ocelot Pariah
         /// </summary>
-        Pariah = 37853734,
+        Pariah = 867799010,
 
         /// <summary>
         /// Maibatsu Penumbra
         /// </summary>
-        Penumbra = -377465520,
+        Penumbra = 3917501776,
 
         /// <summary>
         /// Maibatsu Penumbra FF
         /// </summary>
-        Penumbra2 = 40047623,
+        Penumbra2 = 3663644634,
 
         /// <summary>
         /// Coil Raiden
         /// </summary>
-        Raiden = 34783251,
+        Raiden = 2765724541,
 
         /// <summary>
         /// Dewbauchee Rapid GT
         /// </summary>
-        RapidGT = -1934452204,
+        RapidGT = 2360515092,
 
         /// <summary>
         /// Dewbauchee Rapid GT Cabrio
@@ -317,22 +317,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// BF Raptor
         /// </summary>
-        Raptor = -674927303,
+        Raptor = 3620039993,
 
         /// <summary>
         /// Annis Remus
         /// </summary>
-        Remus = 52243194,
+        Remus = 1377217886,
 
         /// <summary>
         /// Ubermacht Revolter
         /// </summary>
-        Revolter = 7411974,
+        Revolter = 3884762073,
 
         /// <summary>
         /// Dinka RT3000
         /// </summary>
-        RT3000 = 17199629,
+        RT3000 = 3842363289,
 
         /// <summary>
         /// Hijak Ruston
@@ -342,7 +342,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Benefactor Schafter V12
         /// </summary>
-        Schafter3 = -1485523546,
+        Schafter3 = 2809443750,
 
         /// <summary>
         /// Benefactor Schafter (LWB)
@@ -352,22 +352,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Benefactor Schlagen GT
         /// </summary>
-        Schlagen = 49949281,
+        Schlagen = 3787471536,
 
         /// <summary>
         /// Benefactor Schwartzer
         /// </summary>
-        Schwarzer = -746882698,
-
-        /// <summary>
-        /// Dewbauchee Seven-70
-        /// </summary>
-        Seven70 = -1757836725,
+        Schwarzer = 3548084598,
 
         /// <summary>
         /// Ubermacht Sentinel (Classic)
         /// </summary>
-        Sentinel3 = 39471798,
+        Sentinel3 = 1104234922,
+
+        /// <summary>
+        /// Dewbauchee Seven-70
+        /// </summary>
+        Seven70 = 2537130571,
 
         /// <summary>
         /// Dewbauchee Specter
@@ -382,12 +382,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Benefactor Streiter
         /// </summary>
-        Streiter = 53944999,
+        Streiter = 1741861769,
 
         /// <summary>
         /// Dinka Sugoi
         /// </summary>
-        Sugoi = 62689225,
+        Sugoi = 987469656,
 
         /// <summary>
         /// Karin Sultan
@@ -397,17 +397,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Karin Sultan (Classic)
         /// </summary>
-        Sultan2 = 13793446,
+        Sultan2 = 872704284,
 
         /// <summary>
         /// Karin Sultan RS (Classic)
         /// </summary>
-        Sultan3 = 47067722,
+        Sultan3 = 4003946083,
 
         /// <summary>
         /// Karin Sultan RS
         /// </summary>
-        SultanRS = 6360717,
+        SultanRS = 3999278268,
 
         /// <summary>
         /// Benefactor Surano
@@ -417,7 +417,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Declasse Drift Tampa
         /// </summary>
-        Tampa2 = -1071380347,
+        Tampa2 = 3223586949,
 
         /// <summary>
         /// Lampadati Tropos Rallye
@@ -427,7 +427,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Emperor Vectre
         /// </summary>
-        Vectre = 51687934,
+        Vectre = 2754593701,
 
         /// <summary>
         /// Bravado Verlierer
@@ -437,36 +437,36 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Dinka Veto (Classic Go-Kart)
         /// </summary>
-        Veto = 13210029,
+        Veto = 3437611258,
 
         /// <summary>
         /// Dinka Veto (Modern Go-Kart)
         /// </summary>
-        Veto2 = 59602051,
+        Veto2 = 2802050217,
 
         /// <summary>
         /// Albany V-STR
         /// </summary>
-        VSTR = 13723682,
+        VSTR = 1456336509,
 
         /// <summary>
         /// Annis ZR350
         /// </summary>
-        ZR350 = 39238866,
+        ZR350 = 2436313176,
 
         /// <summary>
         /// Annis ZR380 (Apocalypse)
         /// </summary>
-        ZR380 = 7432193,
+        ZR380 = 540101442,
 
         /// <summary>
         /// Annis ZR380 (Future Shock)
         /// </summary>
-        ZR3802 = 57855221,
+        ZR3802 = 3188846534,
 
         /// <summary>
         /// Annis ZR380 (Nightmare)
         /// </summary>
-        ZR3803 = 26119149,
+        ZR3803 = 2816263004,
     }
 }

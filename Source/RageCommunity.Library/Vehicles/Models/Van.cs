@@ -10,7 +10,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Bravado Bison
         /// </summary>
-        Bison = -16948145,
+        Bison = 4278019151,
 
         /// <summary>
         /// Bravado Bison (Construction)
@@ -30,12 +30,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Brute Boxville (LSDWP)
         /// </summary>
-        Boxville = -1987130134,
+        Boxville = 2307837162,
 
         /// <summary>
         /// Brute Boxville 
         /// </summary>
-        Boxville2 = -233098306,
+        Boxville2 = 4061868990,
 
         /// <summary>
         /// Brute Boxville (Humane Labs)
@@ -55,17 +55,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Declasse Burrito (LSDWP)
         /// </summary>
-        Burrito = -1346687836,
+        Burrito = 2948279460,
 
         /// <summary>
         /// Declasse Burrito (Bug Stars)
         /// </summary>
-        Burrito2 = -907477130,
+        Burrito2 = 3387490166,
 
         /// <summary>
         /// Declasse Burrito
         /// </summary>
-        Burrito3 = -1743316013,
+        Burrito3 = 2551651283,
 
         /// <summary>
         /// Declasse Burrito (Construction)
@@ -85,7 +85,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Declasse Gang Burrito (The lost)
         /// </summary>
-        GBurrito = -1745203402,
+        GBurrito = 2549763894,
 
         /// <summary>
         /// Declasse Gang Burrito
@@ -95,17 +95,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Zirconium Journey
         /// </summary>
-        Journey = -120287622,
+        Journey = 4174679674,
 
         /// <summary>
         /// Vapid Minivan
         /// </summary>
-        Minivan = -310465116,
+        Minivan = 3984502180,
 
         /// <summary>
         /// Vapid Minivan (Custom)
         /// </summary>
-        Minivan2 = -1126264336,
+        Minivan2 = 3168702960,
 
         /// <summary>
         /// Bravado Paradise
@@ -115,7 +115,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Brute Pony
         /// </summary>
-        Pony = -119658072,
+        Pony = 4175309224,
 
         /// <summary>
         /// Brute Pony (Cannabis)
@@ -130,7 +130,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Bravado Rumpo (Deludamol)
         /// </summary>
-        Rumpo2 = -1776615689,
+        Rumpo2 = 2518351607,
 
         /// <summary>
         /// Bravado Rumpo (Custom)
@@ -140,7 +140,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Vapid Speedo
         /// </summary>
-        Speedo = -810318068,
+        Speedo = 3484649228,
 
         /// <summary>
         /// Vapid Speedo (Clown Van)
@@ -150,7 +150,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Vapid Speedo (Custom)
         /// </summary>
-        Speedo4 = 44364650,
+        Speedo4 = 219613597,
 
         /// <summary>
         /// BF Surfer
@@ -160,7 +160,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// BF Surfer (Rusty)
         /// </summary>
-        Surfer2 = -1311240698,
+        Surfer2 = 2983726598,
 
         /// <summary>
         /// Brute Taco Van
@@ -180,6 +180,6 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Bravado Youga (Classic 4x4)
         /// </summary>
-        Youga3 = 65411192,
+        Youga3 = 1802742206,
     }
 }

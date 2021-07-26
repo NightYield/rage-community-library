@@ -17,17 +17,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// MTL Cerberus
         /// </summary>
-        Cerberus = 67060407,
+        Cerberus = 3493417227,
 
         /// <summary>
         /// MTL Cerberus (Future Shock)
         /// </summary>
-        Cerberus2 = 63183883,
+        Cerberus2 = 679453769,
 
         /// <summary>
         /// MTL Cerberus (Nightmare)
         /// </summary>
-        Cerberus3 = 17620928,
+        Cerberus3 = 1909700336,
 
         /// <summary>
         /// Jobuilt Hauler
@@ -47,17 +47,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Maibatsu Mule (Alternate)
         /// </summary>
-        Mule2 = -1050465301,
+        Mule2 = 3244501995,
 
         /// <summary>
         /// Maibatsu Mule (Custom)
         /// </summary>
-        Mule3 = -2052737935,
+        Mule3 = 2242229361,
 
         /// <summary>
         /// 
         /// </summary>
-        Mule4 = 18009086,
+        Mule4 = 1945374990,
 
         /// <summary>
         /// Maibatsu Mule (Armored)
@@ -67,12 +67,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Jobuilt Phantom
         /// </summary>
-        Phantom = -2137348917,
+        Phantom = 2157618379,
 
         /// <summary>
         /// Jobuilt Phantom (Wedge)
         /// </summary>
-        Phantom2 = -1649536104,
+        Phantom2 = 2645431192,
 
         /// <summary>
         /// Jobuilt Phantom (Custom)
@@ -87,7 +87,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// MTL Pounder (Custom)
         /// </summary>
-        Pounder2 = 49449836,
+        Pounder2 = 1653666139,
 
         /// <summary>
         /// Brute Stockade
@@ -97,11 +97,11 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Brute Stockade (Liberty City)
         /// </summary>
-        Stockade3 = -214455498,
+        Stockade3 = 4080511798,
 
         /// <summary>
         /// Benefactor Terrorbyte
         /// </summary>
-        Terbyte = 23388212,
+        Terbyte = 2306538597,
     }
 }

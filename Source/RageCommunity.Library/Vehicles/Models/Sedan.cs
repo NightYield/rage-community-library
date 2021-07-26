@@ -7,17 +7,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Declasse Asea
         /// </summary>
-        Asea = -1809822327,
+        Asea = 2485144969,
 
         /// <summary>
         /// Declasse Asea (Liberty City)
         /// </summary>
-        Asea2 = -1807623979,
+        Asea2 = 2487343317,
 
         /// <summary>
         /// Karin Asterope
         /// </summary>
-        Asterope = -1903012613,
+        Asterope = 2391954683,
 
         /// <summary>
         /// Enus Cognoscenti 55
@@ -32,27 +32,27 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Enus Cognoscenti
         /// </summary>
-        Cognoscenti = -2030171296,
+        Cognoscenti = 2264796000,
 
         /// <summary>
         /// Enus Cognoscenti (Armored)
         /// </summary>
-        Cognoscenti2 = -604842630,
+        Cognoscenti2 = 3690124666,
 
         /// <summary>
         /// Albany Emperor
         /// </summary>
-        Emperor = -685276541,
+        Emperor = 3609690755,
 
         /// <summary>
         /// Albany Emperor (Rusty)
         /// </summary>
-        Emperor2 = -1883002148,
+        Emperor2 = 2411965148,
 
         /// <summary>
-        /// Albany Emperor (Liberty City)
+        /// Albany Emperor (North Yankton)
         /// </summary>
-        Emperor3 = -1241712818,
+        Emperor3 = 3053254478,
 
         /// <summary>
         /// Cheval Fugitive
@@ -67,12 +67,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Benefactor Glendale (Custom)
         /// </summary>
-        Glendale2 = 23566941,
+        Glendale2 = 3381377750,
 
         /// <summary>
         /// Vulcar Ingot
         /// </summary>
-        Ingot = -1289722222,
+        Ingot = 3005245074,
 
         /// <summary>
         /// Karin Intruder
@@ -82,27 +82,27 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Benefactor Turreted Limo
         /// </summary>
-        Limo2 = -114627507,
+        Limo2 = 4180339789,
 
         /// <summary>
         /// Declasse Premier
         /// </summary>
-        Premier = -1883869285,
+        Premier = 2411098011,
 
         /// <summary>
         /// Albany Primo
         /// </summary>
-        Primo = -1150599089,
+        Primo = 3144368207,
 
         /// <summary>
         /// Albany Primo (Custom)
         /// </summary>
-        Primo2 = -2040426790,
+        Primo2 = 2254540506,
 
         /// <summary>
         /// Dundreary Regina
         /// </summary>
-        Regina = -14495224,
+        Regina = 4280472072,
 
         /// <summary>
         /// Chariot Romero Hearse
@@ -112,12 +112,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Benefactor Schafter
         /// </summary>
-        Schafter2 = -1255452397,
+        Schafter2 = 3039514899,
 
         /// <summary>
         /// Benefactor Schafter V12 (Armored)
         /// </summary>
-        Schafter5 = -888242983,
+        Schafter5 = 3406724313,
 
         /// <summary>
         /// Benefactor Schafter LWB (Armored)
@@ -127,12 +127,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Enus Stafford
         /// </summary>
-        Stafford = 6077902,
+        Stafford = 321186144,
 
         /// <summary>
         /// Vapid Stanier
         /// </summary>
-        Stanier = -1477580979,
+        Stanier = 2817386317,
 
         /// <summary>
         /// Zirconium Stratum
@@ -142,27 +142,27 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Dundreary Stretch
         /// </summary>
-        Stretch = -1961627517,
+        Stretch = 2333339779,
 
         /// <summary>
         /// Enus Super Diamond
         /// </summary>
-        SuperD = 34461795,
+        SuperD = 1123216662,
 
         /// <summary>
         /// Cheval Surge
         /// </summary>
-        Surge = -1894894188,
+        Surge = 2400073108,
 
         /// <summary>
         /// Obey Tailgater
         /// </summary>
-        Tailgater = -1008861746,
+        Tailgater = 3286105550,
 
         /// <summary>
         /// 
         /// </summary>
-        Tailgater2 = 13667095,
+        Tailgater2 = 3050505892,
 
         /// <summary>
         /// Vulcar Warrener
@@ -172,7 +172,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Vulcar Warrener HKR
         /// </summary>
-        Warrener2 = 13114902,
+        Warrener2 = 579912970,
 
         /// <summary>
         /// Albany Washington

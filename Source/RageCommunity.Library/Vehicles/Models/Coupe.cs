@@ -12,27 +12,27 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Dewbauchee Exemplar
         /// </summary>
-        Exemplar = -5153954,
+        Exemplar = 4289813342,
 
         /// <summary>
         /// Ocelot F620
         /// </summary>
-        F620 = -591610296,
+        F620 = 3703357000,
 
         /// <summary>
         /// Lampadati Felon
         /// </summary>
-        Felon = -391594584,
+        Felon = 3903372712,
 
         /// <summary>
         /// Lampadati Felon GT
         /// </summary>
-        Felon2 = -89291282,
+        Felon2 = 4205676014,
 
         /// <summary>
         /// Ocelot Jackal
         /// </summary>
-        Jackal = -624529134,
+        Jackal = 3670438162,
 
         /// <summary>
         /// Ubermacht Oracle
@@ -42,12 +42,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Ubermacht Oracle XS
         /// </summary>
-        Oracle2 = -511601230,
+        Oracle2 = 3783366066,
 
         /// <summary>
         /// Karin Previon
         /// </summary>
-        Previon = 42588421,
+        Previon = 1416471345,
 
         /// <summary>
         /// Ubermacht Sentinel
@@ -67,16 +67,16 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Enus Windsor Drop
         /// </summary>
-        Windsor2 = -1930048799,
+        Windsor2 = 2364918497,
 
         /// <summary>
         /// Ubermacht Zion
         /// </summary>
-        Zion = -1122289213,
+        Zion = 3172678083,
 
         /// <summary>
         /// Ubermacht Zion Cabrio
         /// </summary>
-        Zion2 = -1193103848
+        Zion2 = 3101863448
     }
 }

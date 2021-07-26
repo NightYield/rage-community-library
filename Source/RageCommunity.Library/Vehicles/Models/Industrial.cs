@@ -12,12 +12,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// HVY Cutter
         /// </summary>
-        Cutter = -1006919392,
+        Cutter = 3288047904,
 
         /// <summary>
         /// HVY Dump
         /// </summary>
-        Dump = -2130482718,
+        Dump = 2164484578,
 
         /// <summary>
         /// MTL Flatbed
@@ -27,7 +27,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Vapid Guardian
         /// </summary>
-        Guardian = -2107990196,
+        Guardian = 2186977100,
 
         /// <summary>
         /// HVY Dock Handler
@@ -37,7 +37,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// HVY Mixer (Old)
         /// </summary>
-        Mixer = -784816453,
+        Mixer = 3510150843,
 
         /// <summary>
         /// HVY Mixer II (New)
@@ -47,7 +47,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Jobuilt Rubble
         /// </summary>
-        Rubble = -1705304628,
+        Rubble = 2589662668,
 
         /// <summary>
         /// Brute Tipper (Empty)
@@ -57,6 +57,6 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Brute Tipper II (Loaded)
         /// </summary>
-        TipTruck2 = -947761570
+        TipTruck2 = 3347205726
     }
 }

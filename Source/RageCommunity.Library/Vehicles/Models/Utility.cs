@@ -18,17 +18,17 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Nagasaki Caddy (Utility)
         /// </summary>
-        Caddy2 = -537896628,
+        Caddy2 = 3757070668,
 
         /// <summary>
         /// Nagasaki Caddy (Bunker)
         /// </summary>
-        Caddy3 = -769147461,
+        Caddy3 = 3525819835,
 
         /// <summary>
         /// HVY Docktug
         /// </summary>
-        Docktug = -884690486,
+        Docktug = 3410276810,
 
         /// <summary>
         /// HVY Forklift
@@ -43,12 +43,12 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// HVY Ripley
         /// </summary>
-        Ripley = -845979911,
+        Ripley = 3448987385,
 
         /// <summary>
         /// Vapid Sadler
         /// </summary>
-        Sadler = -599568815,
+        Sadler = 3695398481,
 
         /// <summary>
         /// Vapid Sadler (Liberty City)
@@ -58,22 +58,22 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Vapid Scrap Truck
         /// </summary>
-        Scrap = -1700801569,
+        Scrap = 2594165727,
 
         /// <summary>
         /// Vapid Slamtruck
         /// </summary>
-        SlamTruck = 27336220,
+        SlamTruck = 3249056020,
 
         /// <summary>
         /// Vapid Tow Truck
         /// </summary>
-        TowTruck = -1323100960,
+        TowTruck = 2971866336,
 
         /// <summary>
         /// Vapid Tow Truck (Large)
         /// </summary>
-        TowTruck2 = -442313018,
+        TowTruck2 = 3852654278,
 
         /// <summary>
         /// Stanley Tractor
@@ -83,7 +83,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Stanley Fieldmaster
         /// </summary>
-        Tractor2 = -2076478498,
+        Tractor2 = 2218488798,
 
         /// <summary>
         /// Stanley Fieldmaster (Liberty City)
@@ -98,7 +98,7 @@ namespace RageCommunity.Library.Vehicles.Models
         /// <summary>
         /// Cargo Container Trailer
         /// </summary>
-        TrailerS4 = -1100548694,
+        Trailers4 = 3194418602,
 
         /// <summary>
         /// Brute Utility Truck (Cherry Picker)
