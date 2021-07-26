@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Rage;
+﻿using Rage;
 
 [assembly: Rage.Attributes.Plugin("Rage Community Library Test", Description = "A plugin to test the contents of the Rage Community Library.", Author = "NightYield and Contributors", PrefersSingleInstance = true)]
 namespace RageCommunity.Library.TestPlugin
