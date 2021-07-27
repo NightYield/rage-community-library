@@ -55,6 +55,7 @@
     <Compile Include="Graphics\MarkerType.cs" />
     <Compile Include="Attributes\DefectNativeAttribute.cs" />
     <Compile Include="Objects\ObjectBone.cs" />
+    <Compile Include="Peds\Freemode\PedFeatures.cs" />
     <Compile Include="Peds\PedComponent.cs" />
     <Compile Include="Peds\Freemode\EyeColor.cs" />
     <Compile Include="Peds\Freemode\FaceFeature.cs" />
