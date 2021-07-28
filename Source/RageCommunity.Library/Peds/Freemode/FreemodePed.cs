@@ -17,6 +17,10 @@ namespace RageCommunity.Library.Peds.Freemode
         /// Gets or sets this <see cref="FreemodePed"/> <see cref="HeadBlendData"/>
         /// </summary>     
         private PedFeatures _features;
+        private PedWardrobe _wardrobe;
+        /// <summary>
+        /// Gets this <see cref="FreemodePed"/> <see cref="HeadBlendData"/>
+        /// </summary>
         public HeadBlendData HeadBlend
         {
             get
@@ -66,6 +70,10 @@ namespace RageCommunity.Library.Peds.Freemode
         /// Gets an instance of <see cref="PedFeatures"/> that can be used to modify this <see cref="FreemodePed"/> face features
         /// </summary>
         public PedFeatures Features => _features ??= new PedFeatures(this);
+        /// <summary>
+        /// Gets an instance of <see cref="PedWardrobe"/> that can be used to modify the ped outfit
+        /// </summary>
+        public PedWardrobe Wardrobe => _wardrobe ??= new PedWardrobe(this);
         /// <summary>
         /// Initializes a new instances of the <see cref="FreemodePed"/> class
         /// </summary>
@@ -229,7 +237,7 @@ namespace RageCommunity.Library.Peds.Freemode
             }
             if (IsMale)
             {
-                SetComponentVariation(PedComponent.HairStyle, maleHairModel.GetRandomElement(), 0);              
+                Wardrobe.HairStyle = new WearableComponent(maleHairModel.GetRandomElement(), 0, 0);
                 foreach (HeadOverlay headOverlay in selectedHeadOverlays)
                 {
                     int index = headOverlay switch
