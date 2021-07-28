@@ -6,6 +6,7 @@ namespace RageCommunity.Library.Task
     /// <summary>
     /// Represent a synchronized scene in the game world
     /// </summary>
+    /// <remarks>Source: <a href="https://gist.github.com/NoNameSet/02d3ed3b78379f8d71141118bb4fdc2d">Github Gist</a></remarks>
     public sealed class SynchronizedScene : IHandleable, IDeletable, ISpatial
     {
         /// <inheritdoc/>
@@ -57,14 +58,32 @@ namespace RageCommunity.Library.Task
         /// <c>true</c> if this <see cref="SynchronizedScene"/> is attached to any <see cref="Entity"/>, otherwise <c>false</c>
         /// </value>
         public bool IsAttached { get; private set; } = false;
+        private Vector3 _position;
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public Vector3 Position { get; set; }
+        public Vector3 Position
+        {
+            get => _position;
+            set
+            {
+                _position = value;
+                NativeWrappers.SetSynchronizedSceneOrigin(HandleValue, _position, _rotation.Roll, _rotation.Pitch, _rotation.Yaw);
+            }
+        }
+        private Rotator _rotation;
         /// <summary>
         /// Gets or sets the rotation of this <see cref="SynchronizedScene"/>
         /// </summary>
-        public Rotator Rotation { get; set; }
+        public Rotator Rotation
+        {
+            get => _rotation;
+            set
+            {
+                _rotation = value;
+                NativeWrappers.SetSynchronizedSceneOrigin(HandleValue, _position, _rotation.Roll, _rotation.Pitch, _rotation.Yaw);
+            }
+        }
         /// <summary>
         /// Initialize a new instance of <see cref="SynchronizedScene"/> class
         /// </summary>
@@ -72,8 +91,8 @@ namespace RageCommunity.Library.Task
         /// <param name="rotator">The rotator</param>
         public SynchronizedScene(Vector3 position, Rotator rotator)
         {
-            Position = position;
-            Rotation = rotator;
+            _position = position;
+            _rotation = rotator;
             uint _handle = NativeWrappers.CreateSynchronizedScene(Position, Rotation.Roll, Rotation.Pitch, Rotation.Yaw, 2);
             Handle = new PoolHandle(_handle);
         }

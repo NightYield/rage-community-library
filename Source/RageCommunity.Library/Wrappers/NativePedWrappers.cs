@@ -329,6 +329,15 @@ namespace RageCommunity.Library.Wrappers
             Natives.SetSynchronizedSceneRate(sceneID, rate);
         }
         /// <summary>
+        /// Sets the synchronized scene origin
+        /// </summary>
+        /// <param name="sceneID">The synchronized scene handle</param>
+        /// <param name="unk">unknown parameter, default is 2</param>
+        public static void SetSynchronizedSceneOrigin(uint sceneID, Vector3 position, float roll, float pitch, float yaw, int unk = 2)
+        {
+            Natives.SetSynchronizedSceneOrigin(sceneID, position, roll, pitch, yaw, unk);
+        }
+        /// <summary>
         /// Attach this synchronized scene to the given <paramref name="entity"/>
         /// </summary>
         public static void AttachSynchronizedSceneToEntity(uint sceneID, Entity entity, int entityBoneIndex)
