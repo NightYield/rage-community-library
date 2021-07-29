@@ -92,6 +92,7 @@
     <Compile Include="Task\Scenario.cs" />
     <Compile Include="Task\SynchronizedScene.cs" />
     <Compile Include="Vehicles\Models\Boat.cs" />
+    <Compile Include="Vehicles\Models\OpenWheel.cs" />
     <Compile Include="Vehicles\Models\Commercial.cs" />
     <Compile Include="Vehicles\Models\Compact.cs" />
     <Compile Include="Vehicles\Models\Coupe.cs" />
@@ -106,11 +107,12 @@
     <Compile Include="Vehicles\Models\Plane.cs" />
     <Compile Include="Vehicles\Models\Sedan.cs" />
     <Compile Include="Vehicles\Models\Service.cs" />
+    <Compile Include="Vehicles\Models\SportClassic.cs" />
     <Compile Include="Vehicles\Models\Sport.cs" />
     <Compile Include="Vehicles\Models\Super.cs" />
     <Compile Include="Vehicles\Models\SUV.cs" />
     <Compile Include="Vehicles\Models\Trailer.cs" />
-    <Compile Include="Vehicles\Models\Train.cs" />
+    <Compile Include="Vehicles\Models\Rail.cs" />
     <Compile Include="Vehicles\Models\Utility.cs" />
     <Compile Include="Vehicles\Models\Van.cs" />
     <Compile Include="Vehicles\VehicleLightsState.cs" />
