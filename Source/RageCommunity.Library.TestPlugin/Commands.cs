@@ -1,6 +1,8 @@
 ﻿using Rage;
 using Rage.Attributes;
+using Rage.Native;
 using Rage.ConsoleCommands.AutoCompleters;
+using Rage.ConsoleCommands;
 using RageCommunity.Library.Extensions;
 using RageCommunity.Library.Wrappers;
 using RageCommunity.Library.Vehicles;
@@ -8,6 +10,7 @@ using RageCommunity.Library.Peds.Freemode;
 using RageCommunity.Library.Task;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 using System;
 
 namespace RageCommunity.Library.TestPlugin
@@ -85,28 +88,28 @@ namespace RageCommunity.Library.TestPlugin
         [ConsoleCommand("Rage Community Library GetAllVehicleColors test")]
         public static void Command_GetAllVehicleColor()
         {
-             GameFiber.StartNew(() =>
-            {
-                var vehicles = World.GetAllVehicles();
-                foreach (Vehicle vehicle in vehicles)
-                {
-                    if (vehicle)
-                    {
-                        VehicleColor vehicleColor = vehicle.GetColor();
-                        List<string> log = new List<string>()
-                        {
+            GameFiber.StartNew(() =>
+           {
+               var vehicles = World.GetAllVehicles();
+               foreach (Vehicle vehicle in vehicles)
+               {
+                   if (vehicle)
+                   {
+                       VehicleColor vehicleColor = vehicle.GetColor();
+                       List<string> log = new List<string>()
+                       {
                             $"Vehicle: {vehicle.GetMakeName()} - {vehicle.GetDisplayName()}",
                             $"Primary: {vehicleColor.PrimaryColorName}",
                             $"Secondary: {vehicleColor.SecondaryColorName}",
-                        };
-                        Game.LogTrivial(string.Join(", ", log));
-                        if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown) 
-                        {
-                             Game.LogTrivial("================UNKNOWN COLOR===============");
-                        }
-                    }
-                }
-            }, "GetAllVehicleColors Command Fiber");
+                       };
+                       Game.LogTrivial(string.Join(", ", log));
+                       if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown)
+                       {
+                           Game.LogTrivial("================UNKNOWN COLOR===============");
+                       }
+                   }
+               }
+           }, "GetAllVehicleColors Command Fiber");
         }
 
         [ConsoleCommand("Rage Community Library Delete Entity")]
@@ -130,7 +133,7 @@ namespace RageCommunity.Library.TestPlugin
         [ConsoleCommand("Rage Community Library Delete Ped")]
         public static void Command_DeletePed([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterPed))] Ped ped)
         {
-            if(ped)
+            if (ped)
             {
                 ped.Delete();
             }
@@ -220,7 +223,7 @@ namespace RageCommunity.Library.TestPlugin
             try
             {
                 Game.LogTrivial($"Spawning {model}");
-                Ped ped =  new Ped(model.ToString(), Game.LocalPlayer.Character.GetOffsetPositionFront(5), Game.LocalPlayer.Character.Heading);
+                Ped ped = new Ped(model.ToString(), Game.LocalPlayer.Character.GetOffsetPositionFront(5), Game.LocalPlayer.Character.Heading);
                 SpawnedEntities.Add(ped);
             }
             catch
@@ -229,7 +232,7 @@ namespace RageCommunity.Library.TestPlugin
             }
         }
         [ConsoleCommand("Rage Community Library spawn freemode ped and randomize the appearance")]
-        public static void Command_SpawnFreemodePed([ConsoleCommandParameter(Description = "if true, will spawn a male ped, otherwise will spawn a female ped")]bool isMale)
+        public static void Command_SpawnFreemodePed([ConsoleCommandParameter(Description = "if true, will spawn a male ped, otherwise will spawn a female ped")] bool isMale)
         {
             GameFiber.StartNew(() =>
             {
@@ -286,7 +289,7 @@ namespace RageCommunity.Library.TestPlugin
         {
             if (ped)
             {
-                var scenarios =  ped.GetActiveScenarios();
+                var scenarios = ped.GetActiveScenarios();
                 if (scenarios.Any())
                 {
                     scenarios.ForEach(x => Game.LogTrivial(x.ToString()));
@@ -392,7 +395,7 @@ namespace RageCommunity.Library.TestPlugin
                             benchStatus = 4;
                             break;
                         case 4:
-                            Game.DisplayHelp(standUpStr,100);
+                            Game.DisplayHelp(standUpStr, 100);
                             if (Game.IsControlPressed(2, GameControl.ScriptRRight))
                             {
                                 benchStatus = 5;
@@ -431,6 +434,77 @@ namespace RageCommunity.Library.TestPlugin
                     }
                 }
             });
-        }      
+        }
+        [ConsoleCommand("Rage Community Library - Install random mods on specified vehicle")]
+        public static void InstallRandomModsOnVehicle([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterVehicleAliveOnly))] string vehicleHandle)
+        {
+            Game.LogTrivial(vehicleHandle);
+            bool success = uint.TryParse(vehicleHandle, NumberStyles.HexNumber, CultureInfo.CurrentCulture, out uint handle);
+            if (!success) return;
+            Vehicle vehicle = World.GetEntityByHandle<Vehicle>(new PoolHandle(handle));
+            if (vehicle)
+            {
+                vehicle.Mods.InstallModKit();
+                Random random = new Random(Environment.TickCount);
+                for (int i = 0; i <= 100; i++)
+                {
+                    try
+                    {
+                        int randomIndex = random.Next(NativeFunction.Natives.GET_NUM_VEHICLE_MODS<int>(vehicle, i));
+                        NativeFunction.Natives.SET_VEHICLE_MOD(vehicle, i, randomIndex, false);
+                        string modLabel = NativeFunction.Natives.GET_​MOD_​TEXT_​LABEL<string>(vehicle, i, randomIndex);
+                        string modSlotName = NativeFunction.Natives.GET_​MOD_​SLOT_​NAME<string>(vehicle, i);
+                        modLabel = string.IsNullOrWhiteSpace(modLabel) ? "NULL" : NativeWrappers.GetLabelText(modLabel);
+                        modSlotName = string.IsNullOrWhiteSpace(modSlotName) ? "NULL" : modSlotName;
+                        Game.LogTrivial($"Installing {modLabel} as its {modSlotName} - ({i}, {randomIndex})");
+                    }
+                    catch (Exception e)
+                    {
+                        Game.LogTrivialDebug(e.ToString());
+                        continue;
+                    }
+                }
+                vehicle.Mods.HasTurbo = random.Next(2) == 1;
+                vehicle.Mods.HasXenonHeadlights = random.Next(2) == 1;
+                VehiclePaint[] blackList =
+                    {
+                        VehiclePaint.DEFAULT_ALLOY_COLOR, VehiclePaint.Unknown, VehiclePaint.Police_Car_Blue, VehiclePaint.Metallic_Taxi_Yellow, VehiclePaint.MP100_GOLD, VehiclePaint.MP100_GOLD_SATIN,
+                        VehiclePaint.MP100_GOLD_SPEC, VehiclePaint.MODSHOP_BLACK1,
+                    };
+                VehiclePaint selected = Enum.GetValues(typeof(VehiclePaint)).Cast<VehiclePaint>().Except(blackList).GetRandomElement();
+                vehicle.SetColor(new VehicleColor(selected, selected));
+                NativeFunction.Natives.xf40dd601a65f7f19(vehicle, (int)Enum.GetValues(typeof(VehiclePaint)).Cast<VehiclePaint>().Except(blackList).GetRandomElement());//_SET_VEHICLE_INTERIOR_COLOUR
+                NativeFunction.Natives.x6089cdf6a57f326c(vehicle, (int)Enum.GetValues(typeof(VehiclePaint)).Cast<VehiclePaint>().Except(blackList).GetRandomElement());//_SET_VEHICLE_DASHBOARD_COLOUR
+                for (int i = 0; i < 4; i++)
+                {
+                    NativeFunction.Natives.x2aa720e4287bf269(vehicle, i, random.Next() % 2 == 0);
+                }
+                NativeFunction.Natives.x8e0a582209a62695(vehicle, MathHelper.GetRandomInteger(1, 255), MathHelper.GetRandomInteger(1, 255), MathHelper.GetRandomInteger(1, 255));
+                int liveryCount = NativeFunction.Natives.GET_​VEHICLE_​LIVERY_​COUNT<int>(vehicle);
+                if (liveryCount > 0)
+                {
+                    int randomLivery = random.Next(liveryCount);
+                    NativeFunction.Natives.SET_​VEHICLE_​LIVERY(vehicle, liveryCount);
+                    Game.LogTrivial($"Set livery: {NativeWrappers.GetLabelText(NativeFunction.Natives.GET_​LIVERY_​NAME<string>(vehicle, randomLivery))}");
+                }
+            }
+            else Game.LogTrivial("vehicle does not exist");
+        }
+        private class VehicleAutoCompleterAliveOnly : ConsoleCommandAutoCompleterEntity
+        {
+            public VehicleAutoCompleterAliveOnly(Type type) : base(type)
+            {
+            }
+            public override void UpdateOptions()
+            {
+                Options.Clear();
+                foreach (Vehicle vehicle in World.GetAllVehicles().Where(x => x && x.IsAlive).OrderBy(x => Vector3.DistanceSquared(x.Position, Game.LocalPlayer.Character)))
+                {
+                    AutoCompleteOption option = new AutoCompleteOption(vehicle.Handle.Value.ToString("x"), vehicle.Handle.Value.ToString("x"),
+                        $"{vehicle.GetMakeName()} {vehicle.GetDisplayName()}. Distance to player: {vehicle.DistanceTo(Game.LocalPlayer.Character)}");
+                    Options.Add(option);
+                }
+            }
+        }
     }
 }
