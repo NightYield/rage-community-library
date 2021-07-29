@@ -60,7 +60,7 @@ namespace RageCommunity.Library.Extensions
         public static void CopyVehicleDamages(this Vehicle vehicle, Vehicle targetVehicle) => NativeWrappers.CopyVehicleDamages(vehicle, targetVehicle);
 
         /// <summary>
-        /// get the vehicle <see cref="Model"/> display name or the <see cref="Game"/> name
+        /// Gets the vehicle <see cref="Model"/> display name or the <see cref="Game"/> name
         /// </summary>
         /// <param name="vehicleModel">the <see cref="Model"/>. (must be a vehicle model)</param>
         public static string GetDisplayName(this Model vehicleModel)
@@ -68,8 +68,9 @@ namespace RageCommunity.Library.Extensions
             string labelName = NativeWrappers.GetDisplayNameFromVehicleModel(vehicleModel.Hash);
             return NativeWrappers.GetLabelText(labelName);
         }
+
         /// <summary>
-        /// get the vehicle <see cref="Model"/> manufacturer name
+        /// Gets this <see cref="Vehicle"/> <see cref="Model"/> manufacturer name
         /// </summary>
         /// <param name="vehicleModel">the <see cref="Model"/>. (must be a vehicle model)</param>
         public static string GetMakeName(this Model vehicleModel)
@@ -81,16 +82,19 @@ namespace RageCommunity.Library.Extensions
             }
             return NativeWrappers.GetLabelText(labelName);
         }
+        
         /// <summary>
         /// Gets this <see cref="Vehicle"/> display name or the <see cref="Game"/> name
         /// </summary>
         /// <exception cref="Rage.Exceptions.InvalidHandleableException"></exception>
         public static string GetDisplayName(this Vehicle vehicle) => GetDisplayName(vehicle.Model);
+        
         /// <summary>
         /// Gets this <see cref="Vehicle"/> manufacturer name
         /// </summary>
         /// <exception cref="Rage.Exceptions.InvalidHandleableException"></exception>
         public static string GetMakeName(this Vehicle vehicle) => GetMakeName(vehicle.Model);
+        
         /// <summary>
         /// Randomise this <see cref="Vehicle"/> license plate
         /// </summary>
@@ -111,8 +115,9 @@ namespace RageCommunity.Library.Extensions
                                        MathHelper.GetRandomInteger(9).ToString();
             }
         }
+
         /// <summary>
-        /// Checks whether this <see cref="Vehicle"/> is stuck on roof
+        /// Checks whether this <see cref="Vehicle"/> is stuck on it's roof
         /// </summary>
         /// <param name="vehicle">The <see cref="Vehicle"/> to check</param>
         /// <returns><c>true</c> if this <see cref="Vehicle"/> is stuck on roof</returns>
@@ -120,6 +125,7 @@ namespace RageCommunity.Library.Extensions
         {
             return NativeWrappers.IsVehicleStuckOnRoof(vehicle);
         }
+
         /// <summary>
         /// Gets the <see cref="VehicleColor"/> of this <see cref="Vehicle"/>
         /// </summary>
@@ -130,6 +136,7 @@ namespace RageCommunity.Library.Extensions
             VehiclePaint secondaryColor = secondary >= 0 && secondary <= 160 ? (VehiclePaint)secondary : VehiclePaint.Unknown;
             return new VehicleColor(primaryColor, secondaryColor);
         }
+
         /// <summary>
         /// Sets this <see cref="Vehicle"/> colors
         /// </summary>
@@ -141,17 +148,20 @@ namespace RageCommunity.Library.Extensions
             }
             NativeWrappers.SetVehicleColours(vehicle, (int)vehicleColor.PrimaryColor, (int)vehicleColor.SecondaryColor);
         }
+
         /// <summary>
         /// Sets this <see cref="Vehicle"/> primary and secondary colors
         /// </summary>
         /// <param name="primaryColor">The primary color to be sets</param>
         /// <param name="secondaryColor">The secondary color to be sets</param>
         public static void SetColor(this Vehicle vehicle, VehiclePaint primaryColor, VehiclePaint secondaryColor) => vehicle.SetColor(new VehicleColor(primaryColor, secondaryColor));
+        
         /// <summary>
         /// Sets this <see cref="Vehicle"/> primary color only
         /// </summary>
         /// <param name="primaryColor">The primary color to be sets</param>
         public static void SetColor(this Vehicle vehicle, VehiclePaint primaryColor) => vehicle.SetColor(new VehicleColor(primaryColor, vehicle.GetColor().SecondaryColor));
+        
         /// <summary>
         /// Sets this <see cref="Vehicle"/> forward speed
         /// </summary>

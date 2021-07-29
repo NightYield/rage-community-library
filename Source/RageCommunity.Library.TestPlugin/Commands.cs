@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System;
+using System.IO;
 
 namespace RageCommunity.Library.TestPlugin
 {
@@ -231,6 +232,7 @@ namespace RageCommunity.Library.TestPlugin
                 Game.LogTrivial($"Error spawning {model}");
             }
         }
+        
         [ConsoleCommand("Rage Community Library spawn freemode ped and randomize the appearance")]
         public static void Command_SpawnFreemodePed([ConsoleCommandParameter(Description = "if true, will spawn a male ped, otherwise will spawn a female ped")] bool isMale)
         {
@@ -249,6 +251,7 @@ namespace RageCommunity.Library.TestPlugin
                 }
             });
         }
+        
         [ConsoleCommand(Description = "Rage Community Library dispose all spawned entities")]
         public static void Command_DisposeAllSpawnedEntities([ConsoleCommandParameter(Description = "if true, the entities will be deleted, otherwise will be dismissed ")] bool delete)
         {
@@ -268,6 +271,7 @@ namespace RageCommunity.Library.TestPlugin
             }
             SpawnedEntities = new List<Entity>();
         }
+        
         [ConsoleCommand(Description = "Rage Community Library get ped active tasks")]
         public static void Command_GetPedActiveTasks([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterPedAliveOnly))] Ped ped)
         {
@@ -284,6 +288,7 @@ namespace RageCommunity.Library.TestPlugin
                 }
             }
         }
+        
         [ConsoleCommand(Description = "Rage Community Library get ped active scenarios")]
         public static void Command_GetPedActiveScenarios([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterPedAliveOnly))] Ped ped)
         {
@@ -302,6 +307,7 @@ namespace RageCommunity.Library.TestPlugin
         }
         private static List<SynchronizedScene> synchronizedScenes = new List<SynchronizedScene>();
         private static bool BenchThreadActivated = false;
+        
         [ConsoleCommand(Description = "Rage Community Library synchronized scene test")]
         public static void Command_SynchronizedSceneTest()
         {
@@ -434,6 +440,50 @@ namespace RageCommunity.Library.TestPlugin
                     }
                 }
             });
+        }      
+
+        [ConsoleCommand(Description = "Rage Community Library - Vehicle class spawn test (class must be changed manually in method)")]
+        public static void Command_SpawnVehicleClass()
+        {
+            var models = (Vehicles.Models.Van[])Enum.GetValues(typeof(Vehicles.Models.Van));
+            foreach (var model in models)
+            {
+                SpawnVehicleModel(model);
+            }
+            CreateVehicleHashFile();
+            Game.LogTrivial($"Spawning complete.");
+
+            void CreateVehicleHashFile() => File.WriteAllLines(@"VEHICLE_HASHES.txt", _vehicles.OrderBy(x => x));
+        }
+
+        private static List<string> _vehicles = new List<string>();
+        
+        private static void SpawnVehicleModel<T>(T model)
+        {
+            Type type = model.GetType();
+            if (!type.IsEnum)
+            {
+                Game.LogTrivial($"Type is not an enum.");
+                return;
+            }
+
+            try
+            {
+                Vehicle vehicle = new Vehicle(model.ToString(), Game.LocalPlayer.Character.GetOffsetPositionFront(5), Game.LocalPlayer.Character.Heading);
+                Game.LogTrivial($"Spawned {vehicle.GetMakeName()} {vehicle.Model.Name} ({vehicle.Model.Hash})");
+                _vehicles.Add($"{vehicle.Model.Name} = {vehicle.Model.Hash}");
+                GameFiber.Sleep(1000);
+                if (vehicle)
+                {
+                    vehicle.Delete();
+                }
+                GameFiber.Sleep(1000);
+            }
+            catch
+            {
+                Game.LogTrivial($"Error spawning {model}");
+            }
+        }
         }
         [ConsoleCommand("Rage Community Library - Install random mods on specified vehicle")]
         public static void InstallRandomModsOnVehicle([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterVehicleAliveOnly))] string vehicleHandle)
