@@ -170,6 +170,6 @@ namespace RageCommunity.Library.Task
         public float TravelDistanceTo(ISpatial spatialObject)
         {
             return NativeWrappers.CalculateTravelDistanceBetweenPoints(Position, spatialObject.Position);
-        }
+        }       
     }
 }

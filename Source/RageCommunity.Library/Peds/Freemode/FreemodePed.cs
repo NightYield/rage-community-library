@@ -124,7 +124,7 @@ namespace RageCommunity.Library.Peds.Freemode
         /// <param name="opacity">a floating-point between 0.0 and 1.0 to indicates how transparent the overlay is, values outside the valid ranges are clamped</param>
         /// <remarks>See <a href="https://docs.fivem.net/natives/?_0x48F44967FA05CC1E">this</a> for <paramref name="index"/> references, or use <see cref="NativeWrappers.GetPedHeadOverlayNum(int)"/></remarks>
         public void SetHeadOverlay(HeadOverlay headOverlay, int index, float opacity)
-        {
+        {           
             opacity = MathHelper.Clamp(opacity, 0.0f, 1.0f);
             NativeWrappers.SetPedHeadOverlay(this, (int)headOverlay, index, opacity);
         }
@@ -170,14 +170,14 @@ namespace RageCommunity.Library.Peds.Freemode
         /// </summary>
         public void RandomizeAppearance()
         {
-            Random random = new((int)Game.GetHashKey(DateTime.UtcNow.ToString("O")));
+            Random random = new(NativeWrappers.GetRandomIntInRange2(1000, 90000));
             //https://s.id/BkZuh
-            #region local variable
+#region local variable
             int[] mothers = { 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 45 };
             int[] fathers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 42, 43, 44 };
-            int[] maleHairModel = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 30, 31, 32, 33,
+            int[] maleHairModel = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 30, 31, 32, 33, 
                 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 65, 66, 67, 68, 70, 71, 73 };
-            int[] femaleHairModel = { 1, 2, 3, 4, 5, 7, 9, 10, 11, 14, 15, 17, 18, 20, 21, 22, 38, 39, 40, 41, 45, 47, 48, 49, 52, 53,
+            int[] femaleHairModel = { 1, 2, 3, 4, 5, 7, 9, 10, 11, 14, 15, 17, 18, 20, 21, 22, 38, 39, 40, 41, 45, 47, 48, 49, 52, 53, 
                 54, 55, 56, 58, 59, 60, 65, 74, 75, 76 };
             int[] normalHairColor = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 28, 29, 55, 56, 57, 58, 59, 60, 61, 62, 63 };
             int[] hairHighlightColor = { 0, 1, 2, 11, 12, 20, 21, 22, 33, 34, 29, 36, 35, 40, 41, 53, 52, 51, 47, 45, 62, 63 };
@@ -199,19 +199,19 @@ namespace RageCommunity.Library.Peds.Freemode
             //https://s.id/Bx6sU
             Dictionary<HeadOverlay, float> opacityMultiplier = new()
             {
-                { HeadOverlay.Blemishes, 0.1f },
-                { HeadOverlay.FacialHair, 1f },
-                { HeadOverlay.Eyebrows, 1f },
-                { HeadOverlay.Ageing, 0.5f },
-                { HeadOverlay.Makeup, 1f },
-                { HeadOverlay.Blush, 0.6f },
-                { HeadOverlay.Complexion, 0.6f },
-                { HeadOverlay.SunDamage, 0.4f },
-                { HeadOverlay.Lipstick, 1f },
-                { HeadOverlay.Freckles, 1f },
-                { HeadOverlay.ChestHair, 1f },
+                {HeadOverlay.Blemishes, 0.1f },
+                {HeadOverlay.FacialHair, 1f },
+                {HeadOverlay.Eyebrows, 1f },
+                {HeadOverlay.Ageing, 0.5f },
+                {HeadOverlay.Makeup, 1f },
+                {HeadOverlay.Blush, 0.6f },
+                {HeadOverlay.Complexion, 0.6f },
+                {HeadOverlay.SunDamage, 0.4f },
+                {HeadOverlay.Lipstick, 1f },
+                {HeadOverlay.Freckles, 1f },
+                {HeadOverlay.ChestHair, 1f },
             };
-            #endregion
+#endregion
             GameFiber.Yield();
             HeadBlend = new HeadBlendData(firstID, secondID, thirdID, firstID, secondID, thirdID, (float)Math.Round(resemblance, 5), (float)Math.Round(skinTone, 5), (float)Math.Round(thirdMix, 5), false);
             Stopwatch stopwatch = Stopwatch.StartNew();
@@ -294,7 +294,7 @@ namespace RageCommunity.Library.Peds.Freemode
                         default: break;
                     }
                 }
-            }
+            }            
         }
         /// <summary>
         /// Gets a <see cref="FreemodePed"/> from the specified <paramref name="ped"/>
