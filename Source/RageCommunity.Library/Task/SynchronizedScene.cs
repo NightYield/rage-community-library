@@ -58,7 +58,7 @@ namespace RageCommunity.Library.Task
         /// <c>true</c> if this <see cref="SynchronizedScene"/> is attached to any <see cref="Entity"/>, otherwise <c>false</c>
         /// </value>
         public bool IsAttached { get; private set; } = false;
-        private Vector3 _position;
+        private Vector3 _position = Vector3.Zero;
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
@@ -71,7 +71,7 @@ namespace RageCommunity.Library.Task
                 NativeWrappers.SetSynchronizedSceneOrigin(HandleValue, _position, _rotation.Roll, _rotation.Pitch, _rotation.Yaw);
             }
         }
-        private Rotator _rotation;
+        private Rotator _rotation = Rotator.Zero;
         /// <summary>
         /// Gets or sets the rotation of this <see cref="SynchronizedScene"/>
         /// </summary>
