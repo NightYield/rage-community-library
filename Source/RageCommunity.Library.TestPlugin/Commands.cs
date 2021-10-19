@@ -1,6 +1,5 @@
 ﻿using Rage;
 using Rage.Attributes;
-using Rage.Native;
 using Rage.ConsoleCommands.AutoCompleters;
 using Rage.ConsoleCommands;
 using RageCommunity.Library.Extensions;
@@ -10,7 +9,6 @@ using RageCommunity.Library.Peds.Freemode;
 using RageCommunity.Library.Task;
 using System.Collections.Generic;
 using System.Linq;
-using System.Globalization;
 using System;
 using System.IO;
 
