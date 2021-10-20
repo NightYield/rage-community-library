@@ -8,6 +8,9 @@ using Rage;
 
 namespace RageCommunity.Library.Peds
 {
+    /// <summary>
+    /// Represent the <see cref="Ped"/> component variation
+    /// </summary>
     public class PedWardrobe
     {
         private readonly Ped _owner;
@@ -16,6 +19,9 @@ namespace RageCommunity.Library.Peds
             _owner = owner;
         }
         #region Component
+        /// <summary>
+        /// Gets or sets the mask component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Mask
         {
             get
@@ -30,6 +36,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 1, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the hair style component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent HairStyle
         {
             get
@@ -44,6 +53,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 2, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the torso component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Torso
         {
             get
@@ -58,6 +70,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 3, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the leg component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Leg
         {
             get
@@ -72,6 +87,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 4, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the parachute component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Parachute
         {
             get
@@ -86,6 +104,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 5, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the shoes component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Shoes
         {
             get
@@ -100,6 +121,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 6, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the accessories component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Accessories
         {
             get
@@ -114,6 +138,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 7, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the undershirt component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent UnderShirt
         {
             get
@@ -128,6 +155,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 8, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the body armor component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent BodyArmor
         {
             get
@@ -142,6 +172,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 9, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the decal component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Decal
         {
             get
@@ -156,6 +189,9 @@ namespace RageCommunity.Library.Peds
                 NativeWrappers.SetPedComponentVariation(_owner, 10, value.Drawable, value.Texture, value.Palette);
             }
         }
+        /// <summary>
+        /// Gets or sets the tops component variation on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Tops
         {
             get
@@ -172,6 +208,9 @@ namespace RageCommunity.Library.Peds
         }
         #endregion
         #region Props
+        /// <summary>
+        /// Gets or sets the hat prop index on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Hat
         {
             get
@@ -182,6 +221,9 @@ namespace RageCommunity.Library.Peds
             }
             set => NativeWrappers.SetPedPropIndex(_owner, 1, value.Drawable, value.Texture, true);
         }
+        /// <summary>
+        /// Gets or sets the glass prop index on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Glass
         {
             get
@@ -192,6 +234,9 @@ namespace RageCommunity.Library.Peds
             }
             set => NativeWrappers.SetPedPropIndex(_owner, 2, value.Drawable, value.Texture, true);
         }
+        /// <summary>
+        /// Gets or sets the ear prop index on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Ear
         {
             get
@@ -202,6 +247,9 @@ namespace RageCommunity.Library.Peds
             }
             set => NativeWrappers.SetPedPropIndex(_owner, 2, value.Drawable, value.Texture, true);
         }
+        /// <summary>
+        /// Gets or sets the watch prop index on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Watch
         {
             get
@@ -212,6 +260,9 @@ namespace RageCommunity.Library.Peds
             }
             set => NativeWrappers.SetPedPropIndex(_owner, 6, value.Drawable, value.Texture, true);
         }
+        /// <summary>
+        /// Gets or sets the bracelet prop index on this <see cref="Ped"/>
+        /// </summary>
         public WearableComponent Bracelet
         {
             get
