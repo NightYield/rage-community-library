@@ -25,5 +25,27 @@ namespace RageCommunity.Library.Wrappers
                 NativeFunction.Natives.IS_POSITION_OCCUPIED<bool>(position, range, p4, checkVehicles, checkPeds, p7, p8, 0, p10) : 
                 NativeFunction.Natives.IS_POSITION_OCCUPIED<bool>(position, range, p4, checkVehicles, checkPeds, p7, p8, ignoreEntity, p10);
         }
+        /// <summary>
+        /// Similar with <see cref="MathHelper.GetRandomSingle(float, float)"/>
+        /// </summary>
+        public static float GetRandomFloatInRange(float startRange, float endRange)
+        {
+            return NativeFunction.Natives.GetRandomFloatInRange<float>(startRange, endRange);
+        }
+        /// <summary>
+        /// Similar with <see cref="MathHelper.GetRandomInteger(int, int)"/>
+        /// </summary>
+        public static int GetRandomIntInRange(int startRange, int endRange)
+        {
+            return NativeFunction.Natives.GetRandomIntInRange<int>(startRange, endRange);
+        }
+        /// <summary>
+        /// Similar with <see cref="MathHelper.GetRandomInteger(int, int)"/>
+        /// <para>NativeDB Introduced: v1734</para>
+        /// </summary>
+        public static int GetRandomIntInRange2(int startRange, int endRange)
+        {
+            return NativeFunction.Natives.xF2D49816A804D134<int>(startRange, endRange);
+        }
     }
 }

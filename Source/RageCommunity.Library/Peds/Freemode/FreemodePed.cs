@@ -15,6 +15,11 @@ namespace RageCommunity.Library.Peds.Freemode
     {
         /// <summary>
         /// Gets or sets this <see cref="FreemodePed"/> <see cref="HeadBlendData"/>
+        /// </summary>     
+        private PedFeatures _features;
+        private PedWardrobe _wardrobe;
+        /// <summary>
+        /// Gets this <see cref="FreemodePed"/> <see cref="HeadBlendData"/>
         /// </summary>
         public HeadBlendData HeadBlend
         {
@@ -61,6 +66,14 @@ namespace RageCommunity.Library.Peds.Freemode
         /// Gets a value that indicates whether this <see cref="FreemodePed"/> <see cref="HeadBlendData"/> is finished
         /// </summary>
         public bool HasHeadBlendFinished => NativeWrappers.HasPedHeadBlendFinished(this);
+        /// <summary>
+        /// Gets an instance of <see cref="PedFeatures"/> that can be used to modify this <see cref="FreemodePed"/> face features
+        /// </summary>
+        public PedFeatures Features => _features ??= new PedFeatures(this);
+        /// <summary>
+        /// Gets an instance of <see cref="PedWardrobe"/> that can be used to modify the ped outfit
+        /// </summary>
+        public PedWardrobe Wardrobe => _wardrobe ??= new PedWardrobe(this);
         /// <summary>
         /// Initializes a new instances of the <see cref="FreemodePed"/> class
         /// </summary>
@@ -157,7 +170,7 @@ namespace RageCommunity.Library.Peds.Freemode
         /// </summary>
         public void RandomizeAppearance()
         {
-            Random random = new((int)Game.GetHashKey(DateTime.UtcNow.ToString("O")));
+            Random random = new(NativeWrappers.GetRandomIntInRange2(1000, 90000));
             //https://s.id/BkZuh
 #region local variable
             int[] mothers = { 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 45 };
@@ -224,7 +237,7 @@ namespace RageCommunity.Library.Peds.Freemode
             }
             if (IsMale)
             {
-                SetComponentVariation(PedComponent.HairStyle, maleHairModel.GetRandomElement(), 0);              
+                Wardrobe.HairStyle = new WearableComponent(maleHairModel.GetRandomElement(), 0, 0);
                 foreach (HeadOverlay headOverlay in selectedHeadOverlays)
                 {
                     int index = headOverlay switch

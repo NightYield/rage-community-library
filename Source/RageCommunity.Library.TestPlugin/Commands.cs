@@ -1,6 +1,7 @@
 ﻿using Rage;
 using Rage.Attributes;
 using Rage.ConsoleCommands.AutoCompleters;
+using Rage.ConsoleCommands;
 using RageCommunity.Library.Extensions;
 using RageCommunity.Library.Wrappers;
 using RageCommunity.Library.Vehicles;
@@ -86,28 +87,28 @@ namespace RageCommunity.Library.TestPlugin
         [ConsoleCommand("Rage Community Library GetAllVehicleColors test")]
         public static void Command_GetAllVehicleColor()
         {
-             GameFiber.StartNew(() =>
-            {
-                var vehicles = World.GetAllVehicles();
-                foreach (Vehicle vehicle in vehicles)
-                {
-                    if (vehicle)
-                    {
-                        VehicleColor vehicleColor = vehicle.GetColor();
-                        List<string> log = new List<string>()
-                        {
+            GameFiber.StartNew(() =>
+           {
+               var vehicles = World.GetAllVehicles();
+               foreach (Vehicle vehicle in vehicles)
+               {
+                   if (vehicle)
+                   {
+                       VehicleColor vehicleColor = vehicle.GetColor();
+                       List<string> log = new List<string>()
+                       {
                             $"Vehicle: {vehicle.GetMakeName()} - {vehicle.GetDisplayName()}",
                             $"Primary: {vehicleColor.PrimaryColorName}",
                             $"Secondary: {vehicleColor.SecondaryColorName}",
-                        };
-                        Game.LogTrivial(string.Join(", ", log));
-                        if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown) 
-                        {
-                             Game.LogTrivial("================UNKNOWN COLOR===============");
-                        }
-                    }
-                }
-            }, "GetAllVehicleColors Command Fiber");
+                       };
+                       Game.LogTrivial(string.Join(", ", log));
+                       if (vehicleColor.PrimaryColor == VehiclePaint.Unknown || vehicleColor.SecondaryColor == VehiclePaint.Unknown)
+                       {
+                           Game.LogTrivial("================UNKNOWN COLOR===============");
+                       }
+                   }
+               }
+           }, "GetAllVehicleColors Command Fiber");
         }
 
         [ConsoleCommand("Rage Community Library Delete Entity")]
@@ -131,7 +132,7 @@ namespace RageCommunity.Library.TestPlugin
         [ConsoleCommand("Rage Community Library Delete Ped")]
         public static void Command_DeletePed([ConsoleCommandParameter(AutoCompleterType = typeof(ConsoleCommandAutoCompleterPed))] Ped ped)
         {
-            if(ped)
+            if (ped)
             {
                 ped.Delete();
             }
@@ -221,7 +222,7 @@ namespace RageCommunity.Library.TestPlugin
             try
             {
                 Game.LogTrivial($"Spawning {model}");
-                Ped ped =  new Ped(model.ToString(), Game.LocalPlayer.Character.GetOffsetPositionFront(5), Game.LocalPlayer.Character.Heading);
+                Ped ped = new Ped(model.ToString(), Game.LocalPlayer.Character.GetOffsetPositionFront(5), Game.LocalPlayer.Character.Heading);
                 SpawnedEntities.Add(ped);
             }
             catch
@@ -231,7 +232,7 @@ namespace RageCommunity.Library.TestPlugin
         }
         
         [ConsoleCommand("Rage Community Library spawn freemode ped and randomize the appearance")]
-        public static void Command_SpawnFreemodePed([ConsoleCommandParameter(Description = "if true, will spawn a male ped, otherwise will spawn a female ped")]bool isMale)
+        public static void Command_SpawnFreemodePed([ConsoleCommandParameter(Description = "if true, will spawn a male ped, otherwise will spawn a female ped")] bool isMale)
         {
             GameFiber.StartNew(() =>
             {
@@ -291,7 +292,7 @@ namespace RageCommunity.Library.TestPlugin
         {
             if (ped)
             {
-                var scenarios =  ped.GetActiveScenarios();
+                var scenarios = ped.GetActiveScenarios();
                 if (scenarios.Any())
                 {
                     scenarios.ForEach(x => Game.LogTrivial(x.ToString()));
@@ -398,7 +399,7 @@ namespace RageCommunity.Library.TestPlugin
                             benchStatus = 4;
                             break;
                         case 4:
-                            Game.DisplayHelp(standUpStr,100);
+                            Game.DisplayHelp(standUpStr, 100);
                             if (Game.IsControlPressed(2, GameControl.ScriptRRight))
                             {
                                 benchStatus = 5;

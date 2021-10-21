@@ -191,6 +191,47 @@ namespace RageCommunity.Library.Wrappers
             return Natives.GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS<int>(ped, pedPropID, drawable);
         }
         /// <summary>
+        /// Gets the drawable of the specified ped component
+        /// </summary>
+        /// <param name="ped">The ped</param>
+        /// <param name="componentId">The component id</param>
+        public static int GetPedDrawableVariation(Ped ped, int componentId)
+        {
+            return Natives.GetPedDrawableVariation<int>(ped, componentId);
+        }
+        /// <summary>
+        /// Gets the texture of the specified ped component
+        /// </summary>
+        /// <param name="ped">The ped</param>
+        /// <param name="componentId">The component id</param>
+        public static int GetPedTextureVariation(Ped ped, int componentId)
+        {
+            return Natives.GetPedTextureVariation<int>(ped, componentId);
+        }
+        /// <summary>
+        /// Gets the palette index of the specified ped component
+        /// </summary>
+        /// <param name="ped">The ped</param>
+        /// <param name="componentId">The component id</param>
+        public static int GetPedPaletteVariation(Ped ped, int componentId)
+        {
+            return Natives.GetPedPaletteVariation<int>(ped, componentId);
+        }
+        /// <summary>
+        /// Gets the index of the specified ped prop
+        /// </summary>
+        public static int GetPedPropIndex(Ped ped, int componentId)
+        {
+            return Natives.GetPedPropIndex<int>(ped, componentId);
+        }
+        /// <summary>
+        /// Gets the texture index of the specified ped prop
+        /// </summary>
+        public static int GetPedPropTextureIndex(Ped ped, int componentId)
+        {
+            return Natives.GetPedPropTextureIndex<int>(ped, componentId);
+        }
+        /// <summary>
         /// Creates a new synchronized scene
         /// </summary>
         /// <param name="p6">Always 2</param>
@@ -286,6 +327,15 @@ namespace RageCommunity.Library.Wrappers
         public static void SetSynchronizedSceneRate(uint sceneID, float rate)
         {
             Natives.SetSynchronizedSceneRate(sceneID, rate);
+        }
+        /// <summary>
+        /// Sets the synchronized scene origin
+        /// </summary>
+        /// <param name="sceneID">The synchronized scene handle</param>
+        /// <param name="unk">unknown parameter, default is 2</param>
+        public static void SetSynchronizedSceneOrigin(uint sceneID, Vector3 position, float roll, float pitch, float yaw, int unk = 2)
+        {
+            Natives.SetSynchronizedSceneOrigin(sceneID, position, roll, pitch, yaw, unk);
         }
         /// <summary>
         /// Attach this synchronized scene to the given <paramref name="entity"/>
